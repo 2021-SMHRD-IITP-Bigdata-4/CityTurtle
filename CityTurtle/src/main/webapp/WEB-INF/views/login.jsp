@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-    <title>Purple Buzz - Contact Page</title>
+    <title>CityTurtle - Login Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="resources/img/apple-icon.png">
@@ -27,11 +27,32 @@ https://templatemo.com/tm-561-purple-buzz
 -->
 
 <style>
+	.bg-light{
+		height:553px;
+		padding-top:55px;
+		padding-bottom:75px;
+	}
 	.flex-fill.mx-xl-5.mb-2{
-		padding-right : 7rem;
-		padding-left : 7rem;
+		margin: 0 auto;
+		width : 700px;
+		padding-right: 7rem;
+		padding-left: 7rem;
+	}
+	.container.py-4{
+		margin: 0 auto;
+		width : 503px;
+	}
+	.row.align-items-center.justify-content-between{
+		padding-bottom:20px;
+	}
+	.form-check{
+		padding-top:8px; padding-bottom:8px;
+	}
+	.otherButton.text-center{
+		padding-top:8px; padding-bottom:8px;
 	}
 
+	
 </style>
 
 
@@ -42,7 +63,7 @@ https://templatemo.com/tm-561-purple-buzz
     <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
         <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand h1" href="index.do">
-                <img src="resources/img/logoCT2.png"/>
+                <img src="resources/img/logoCTCT4.png"/>
                 <span class="text-dark h4">도시</span> <span class="text-primary h4">거북</span>
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -99,9 +120,9 @@ https://templatemo.com/tm-561-purple-buzz
                     </label>
                 </div>
                 <div class="d-grid gap-2">
-                    <button class="btn btn-primary" type="button">로그인</button>
+                    <button class="btn btn-primary btn-lg" type="button">로그인</button>
                 </div>
-                <div class="text-center">
+                <div class="otherButton text-center">
                     <span class="text-secondary">다른 계정으로 로그인</span>
                     <button type ="button" class = "btn"><img src='./resources/img/logoNaver4.png'></button>
                     <button type ="button" class = "btn"><img src='./resources/img/logoKakao4.png'></button>
@@ -109,7 +130,7 @@ https://templatemo.com/tm-561-purple-buzz
                 </div>
                 <div class="row">
                   <div class="col-lg-6 col-sm-12 text-lg-start text-center">
-                      <button type="button" class="btn text-secondary">회원가입</button>
+                      <button type="button" class="btn text-secondary" onclick="location.href='signIn.do'">회원가입</button>
                   </div>
                   <div class="col-lg-6 col-sm-12 text-lg-end text-center">
                       <button type="button" class="btn text-secondary">아이디/비밀번호 찾기</button>
