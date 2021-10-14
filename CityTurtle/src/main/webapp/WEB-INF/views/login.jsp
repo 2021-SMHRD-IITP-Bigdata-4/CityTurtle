@@ -130,7 +130,7 @@ https://templatemo.com/tm-561-purple-buzz
                 </div>
                 <div class="row">
                   <div class="col-lg-6 col-sm-12 text-lg-start text-center">
-                      <button type="button" class="btn text-secondary" onclick="location.href='signIn.do'">회원가입</button>
+                      <button type="button" class="btn text-secondary" onclick="location.href='signUp.do'">회원가입</button>
                   </div>
                   <div class="col-lg-6 col-sm-12 text-lg-end text-center">
                       <button type="button" class="btn text-secondary">아이디/비밀번호 찾기</button>
