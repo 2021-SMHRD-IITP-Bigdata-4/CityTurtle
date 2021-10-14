@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,6 +77,7 @@ https://templatemo.com/tm-561-purple-buzz
                		<label for="exampleInputEmail1" class="form-label mt-4">아이디</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
+                
 				<div class="form-group has-success">
 					<label class="form-label mt-4" for="inputValid">비밀번호</label>
 					<input type="password" class="form-control is-valid" id="inputValid">
@@ -135,7 +138,7 @@ https://templatemo.com/tm-561-purple-buzz
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="선택입력">
                 </div>
 				<div class="d-grid gap-2">
-                    <button class="btn btn-primary btn-lg" type="button">가입하기</button>
+                    <button class="btn btn-primary btn-lg" type="button">수정하기</button>
                 </div>
 
             </form>

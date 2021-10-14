@@ -15,6 +15,11 @@ public class CityTurtleController {
 	public String signUp() {
 		return "signUp";
 	}
+
+	@RequestMapping("/userUpdate.do")
+	public String userUpdate() {
+		return "userUpdate";
+	}
 	
 	@RequestMapping("/index.do")
 	public String index() {
