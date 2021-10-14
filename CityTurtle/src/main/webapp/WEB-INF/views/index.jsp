@@ -28,8 +28,14 @@ https://templatemo.com/tm-561-purple-buzz
 
 <style>
 	.flex-fill.mx-xl-5.mb-2{
-		padding-right : 7rem;
-		padding-left : 7rem;
+		margin: 0 auto;
+		width : 700px;
+		padding-right: 7rem;
+		padding-left: 7rem;
+	}
+	.container.py-4{
+		margin: 0 auto;
+		width : 553px;
 	}
 
 </style>
@@ -42,7 +48,7 @@ https://templatemo.com/tm-561-purple-buzz
     <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
         <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand h1" href="index.do">
-                <img src="resources/img/logoCT2.png"/>
+                <img src="resources/img/logoCTCT4.png"/>
                 <span class="text-dark h4">도시</span> <span class="text-primary h4">거북</span>
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

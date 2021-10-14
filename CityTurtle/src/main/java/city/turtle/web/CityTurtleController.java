@@ -11,6 +11,11 @@ public class CityTurtleController {
 		return "login";
 	}
 	
+	@RequestMapping("/signIn.do")
+	public String signUp() {
+		return "signIn";
+	}
+	
 	@RequestMapping("/index.do")
 	public String index() {
 		return "index";
