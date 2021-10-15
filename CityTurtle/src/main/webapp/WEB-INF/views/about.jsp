@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-    <title>Purple Buzz - About Page</title>
+    <title>Purple Buzz - about Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="resources/img/apple-icon.png">
@@ -60,7 +60,7 @@ https://templatemo.com/tm-561-purple-buzz
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="index.do">서비스</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="about.do">랭킹</a>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="competition.do">경쟁</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="work.do">이벤트</a>

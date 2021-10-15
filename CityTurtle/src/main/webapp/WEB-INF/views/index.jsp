@@ -62,7 +62,7 @@ https://templatemo.com/tm-561-purple-buzz
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="index.do">서비스</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="about.do">랭킹</a>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="competition.do">경쟁</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="work.do">이벤트</a>
@@ -99,13 +99,14 @@ https://templatemo.com/tm-561-purple-buzz
                         <div class="py-5 row d-flex align-items-center">
                             <div class="banner-content col-lg-8 col-8 offset-2 m-lg-auto text-left py-5 pb-5">
                                 <h1 class="banner-heading h1 text-secondary display-3 mb-0 pb-5 mx-0 px-0 light-300 typo-space-line">
-                                    Develop <strong>Strategies</strong> for 
-                                  <br>your business
+                                    	김봉현 
+                                  <br><strong>익스프레스</strong>
                               </h1>
                                 <p class="banner-body text-muted py-3 mx-0 px-0">
-                                    Purple Buzz is a corporate HTML template with Bootstrap 5 Beta 1. This CSS template is 100% free to download provided by <a rel="nofollow" href="https://templatemo.com/page/1" target="_parent">TemplateMo</a>. Total 6 HTML pages included in this template. Icon fonts by <a rel="nofollow" href="https://boxicons.com/" target="_blank">Boxicons</a>. Photos are from <a rel="nofollow" href="https://unsplash.com/" target="_blank">Unsplash</a> and <a rel="nofollow" href="https://icons8.com/" target="_blank">Icons 8</a>.
+                                    	김봉현 개발 팀장과 함께하는 거북목 챌린지 
+                                    	<br>누구보다 빠르게 거북목에서 벗어나라!
                               </p>
-                                <a class="banner-button btn rounded-pill btn-outline-primary btn-lg px-4" href="#" role="button">Get Started</a>
+                                <a class="banner-button btn rounded-pill btn-outline-primary btn-lg px-4" href="#" role="button">이벤트 참여하기</a>
                             </div>
                         </div>
 
@@ -165,7 +166,7 @@ https://templatemo.com/tm-561-purple-buzz
     <section class="service-wrapper py-3">
         <div class="container-fluid pb-3">
             <div class="row">
-                <h2 class="h2 text-center col-12 py-5 semi-bold-600">Services</h2>
+                <h2 class="h2 text-center col-12 py-5 semi-bold-600">도시 거북</h2>
                 <div class="service-header col-2 col-lg-3 text-end light-300">
                     <i class='bx bx-gift h3 mt-1'></i>
                 </div>

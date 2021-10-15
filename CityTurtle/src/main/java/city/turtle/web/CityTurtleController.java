@@ -20,6 +20,11 @@ public class CityTurtleController {
 	public String userUpdate() {
 		return "userUpdate";
 	}
+
+	@RequestMapping("/competition.do")
+	public String competition() {
+		return "competition";
+	}
 	
 	@RequestMapping("/index.do")
 	public String index() {

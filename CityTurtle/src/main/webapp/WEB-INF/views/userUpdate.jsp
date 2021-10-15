@@ -6,7 +6,7 @@
 <html lang="en">
 
 <head>
-    <title>CityTurtle - SignUp Page</title>
+    <title>CityTurtle - userUpdate Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="resources/img/apple-icon.png">
@@ -73,11 +73,7 @@ https://templatemo.com/tm-561-purple-buzz
                 </a>
             </div>
             <form>
-                <div class="form-group">
-               		<label for="exampleInputEmail1" class="form-label mt-4">아이디</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-                
+
 				<div class="form-group has-success">
 					<label class="form-label mt-4" for="inputValid">비밀번호</label>
 					<input type="password" class="form-control is-valid" id="inputValid">
