@@ -28,7 +28,7 @@ https://templatemo.com/tm-561-purple-buzz
 
 <style>
 	.bg-light{
-		height: 1053px;
+		height: 1153px;
 		padding-top:55px;
 		padding-bottom:75px;
 	}
@@ -58,6 +58,7 @@ https://templatemo.com/tm-561-purple-buzz
 </style>
 
 
+
 </head>
 
 <body>
@@ -70,76 +71,76 @@ https://templatemo.com/tm-561-purple-buzz
                     <span class="text-dark h4">도시</span> <span class="text-primary h4">거북</span>                 
                 </a>
             </div>
-            <form>
+            <form action="insertMembers.do" method="post">
                 <div class="form-group">
-               		<label for="exampleInputEmail1" class="form-label mt-4">아이디</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+               		<label for="mb_id" class="form-label mt-4">아이디</label>
+                    <input type="text" class="form-control" name="mb_id">
                 </div>
                 <div class="form-group">
-               		<label for="exampleInputEmail1" class="form-label mt-4">닉네임</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+               		<label for="mb_nick" class="form-label mt-4">닉네임</label>
+                    <input type="text" class="form-control" name="mb_nick">
                 </div>
 				<div class="form-group has-success">
 					<label class="form-label mt-4" for="inputValid">비밀번호</label>
-					<input type="password" class="form-control is-valid" id="inputValid">
+					<input type="password" class="form-control" id="mb_pwd1" name="mb_pwd">
 					<div class="valid-feedback"></div>
 				</div>
 
 				<div class="form-group has-danger">
 					<label class="form-label mt-4" for="inputInvalid">비밀번호 재확인</label> 
-					<input type="password" class="form-control is-invalid" id="inputInvalid">
-					<div class="invalid-feedback">비밀번호가 일치하지 않습니다</div>
+					<input type="password" class="form-control" id="mb_pwd2">
+					<div class="invalid-feedback"><font id="pwd_feedback" size="2"></font></div>
 				</div>
                 <div class="form-group">
                		<label for="exampleInputEmail1" class="form-label mt-4">이름</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" name="mb_name">
                 </div>
                 <div class ="bir_wrap">
                 	<label class="form-label mt-4">생년월일</label>
                 	<div class="bir_yy">
                 		<span class="ps_box">
-                			<input type="text" class="form-control" id="yy" placeholder="년(4자)" maxlength="4">
+                			<input type="text" class="form-control" id="yy" placeholder="년(4자)" maxlength="4" name="mb_yy">
                 		</span>
                 	</div>
                 	<div class="bir_mm">
                 		<span class="ps_box focus">
-			                <select class="form-select" id="mm" id="exampleSelect1">
+			                <select class="form-select" id="mm" name ="mb_mm">
 						        <option>월</option>
-						        <option>1</option>
-						        <option>2</option>
-						        <option>3</option>
-						        <option>4</option>
-						        <option>5</option>
-						        <option>6</option>
-						        <option>7</option>
-						        <option>8</option>
-						        <option>9</option>
-						        <option>10</option>
-						        <option>11</option>
-						        <option>12</option>
+						        <option value="01">1</option>
+						        <option value="02">2</option>
+						        <option value="03">3</option>
+						        <option value="04">4</option>
+						        <option value="05">5</option>
+						        <option value="06">6</option>
+						        <option value="07">7</option>
+						        <option value="08">8</option>
+						        <option value="09">9</option>
+						        <option value="10">10</option>
+						        <option value="11">11</option>
+						        <option value="12">12</option>
 						     </select>
                 		</span>
                 	</div>
                 	<div class="bir_dd">
                 		<span class="ps_box">
-                			<input type ="text" class="form-control" id ="dd" placeholder="일" maxlength="2">
+                			<input type ="text" class="form-control" id ="dd" placeholder="일" maxlength="2" name="mb_dd">
                 		</span>
                 	</div>
                 </div>
 			    <div class="form-group">
-			      <label for="exampleSelect1" class="form-label mt-4">성별</label>
-			      <select class="form-select" id="exampleSelect1">
-			        <option>남자</option>
-			        <option>여자</option>
-			        <option>거북</option>
+			      <label for="mb_sex" class="form-label mt-4">성별</label>
+			      <select class="form-select" name="mb_sex">
+			        <option value="남자">남자</option>
+			        <option value="여자">여자</option>
+			        <option value="거북">거북</option>
 			      </select>
 			    </div>                
                 <div class="form-group">
-               		<label for="exampleInputEmail1" class="form-label mt-4">본인 확인 이메일</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="선택입력">
+               		<label for="mb_email" class="form-label mt-4">본인 확인 이메일</label>
+                    <input type="email" class="form-control" placeholder="선택입력" name="mb_email">
                 </div>
 				<div class="d-grid gap-2">
-                    <button class="btn btn-primary btn-lg" type="button" onclick="location.href='insertMembers.do'">가입하기</button>
+                    <button class="btn btn-primary btn-lg" type="submit">가입하기</button>
                 </div>
 
             </form>

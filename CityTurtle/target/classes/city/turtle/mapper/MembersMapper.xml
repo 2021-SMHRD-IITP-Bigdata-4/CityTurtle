@@ -5,8 +5,7 @@
 
 <mapper namespace="city.turtle.mapper.MembersMapper">
     <insert id="insertMembers" parameterType="city.turtle.mapper.MembersVO">
-        insert into members(mb_id, mb_nick, mb_pwd, mb_name, mb_birthdate, mb_sex, mb_email)
-        values(#{mb_id},#{mb_nick},#{mb_pwd},#{mb_name},#{mb_birthdate},#{mb_sex},#{mb_email})
+        insert into members(mb_id, mb_nick, mb_pwd, mb_name, mb_birthdate, mb_sex, mb_email, admin_yn)
+        values(#{mb_id},#{mb_nick},#{mb_pwd},#{mb_name},concat(#{mb_yy}, #{mb_mm}, #{mb_dd}),#{mb_sex},#{mb_email}, 0)
     </insert>
-    
 </mapper>

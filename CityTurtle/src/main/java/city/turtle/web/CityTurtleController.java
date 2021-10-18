@@ -28,7 +28,12 @@ public class CityTurtleController {
 	@RequestMapping("/insertMembers.do")
 	public String insertMembers(MembersVO vo) {
 		mapper.insertMembers(vo);
-		return "redirect:/index.do";
+		return "redirect:/signUpSuccess.do";
+	}
+	// 회원가입 성공
+	@RequestMapping("/signUpSuccess.do")
+	public String signUpSuccess() {
+		return "signUpSuccess";
 	}
 
 	@RequestMapping("/userUpdate.do")
