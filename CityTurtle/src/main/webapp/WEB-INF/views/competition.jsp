@@ -43,8 +43,30 @@ https://templatemo.com/tm-561-purple-buzz
 	.creative-progress.col-md-7{
 		padding-top:50px;
 	}
-
-	
+	.form-select{
+		width:300px;
+	}
+	.col-lg-12.row{
+		width:1000px;
+		margin:0 auto;
+	}
+	.invite{
+		padding-top:20px;
+		padding-bottom:20px;
+	}
+	.form-group{
+		width:1000px;
+		margin:0 auto;
+	}
+	.form-group.betting{
+		width:700px;
+	}
+	.start{
+		padding-top:20px;
+	}
+	.col-lg-4.col-sm-12{
+		
+	}
 
 </style>
 
@@ -94,16 +116,7 @@ https://templatemo.com/tm-561-purple-buzz
         <div class="container">
             <div class="row d-flex align-items-center py-5">
                 <div class="text-start">
-                    <h1 class="h2 py-5 text-primary typo-space-line">개인전</h1>
-					  <div class="form-group">					
-					      <label for="exampleSelect1" class="form-label mt-4">종목</label>
-					      <select class="form-select" id="exampleSelect1">
-					        <option>거북목+눈깜빡</option>
-					        <option>거북목</option>
-					        <option>눈깜빡</option>
-					      </select>
-					      <button type="button" class="btn btn-primary">초대하기</button>
-				      </div>						               
+                    <h1 class="h2 py-5 text-primary typo-space-line">개인전</h1>					               
                 </div>
                 
              <div class="col-lg-12 row">
@@ -127,6 +140,10 @@ https://templatemo.com/tm-561-purple-buzz
             </div>
                 
  				<div class="form-group">
+	
+ 				  <div class="invite">
+ 				    <button type="button" class="btn btn-primary">초대하기</button>
+				  </div>
  				  <div>
 					<table class="table table-hover">
 					  <thead>
@@ -149,23 +166,36 @@ https://templatemo.com/tm-561-purple-buzz
 					</table>
  				  </div>
  				
-				  <label class="form-label mt-4">베팅</label>
-				  <div class="form-group">
+				  <div class="form-group betting">
+					<label class="form-label mt-4">베팅</label>
 				    <div class="input-group mb-3">
 				      <input type="text" class="form-control" placeholder="베팅할 상품을 등록하세요" aria-label="Recipient's username" aria-describedby="button-addon2">
 				      <button class="btn btn-primary" type="button" id="button-addon2">베팅하기</button>
 				    </div>
 				  </div>
-				</div>	
-				<div>
-					<label>시작</label>
+				<div class="row date">
+		    	  <div class="col-lg-4 col-sm-12">					
+					<label for="exampleSelect1" class="form-label">종목</label>
+					<select class="form-select" id="exampleSelect1">
+					  <option>거북목+눈깜빡</option>
+					  <option>거북목</option>
+					  <option>눈깜빡</option>
+					</select>
+				  </div>	
+				  <div class="col-lg-4 col-sm-12">
+					<label class="form-label">시작</label>
 					<input type="datetime-local" class="form-control">
-					<label>종료</label>
+				  </div>
+				  <div class="col-lg-4 col-sm-12">
+					<label class="form-label">종료</label>
 					<input type="datetime-local" class="form-control">			
-				</div>          
-				<div>   
+				  </div>
+				</div>
+				        
+				<div class="start">   
                   <button type="button" class="btn btn-primary btn-lg">시작하기</button>
             	</div>
+           	  </div>
             </div>
         </div>
     </section>
@@ -184,16 +214,7 @@ https://templatemo.com/tm-561-purple-buzz
         <div class="container">
             <div class="row d-flex align-items-center py-5">
                 <div class="text-start">
-                    <h2 class="h2 py-5 typo-space-line">단체전</h2>
-					  <div class="form-group">
-					      <label for="exampleSelect1" class="form-label mt-4">종목</label>
-					      <select class="form-select" id="exampleSelect1">
-					        <option>거북목+눈깜빡</option>
-					        <option>거북목</option>
-					        <option>눈깜빡</option>
-					      </select>
-					      <button type="button" class="btn btn-primary">초대하기</button>
-				      </div>						               
+                    <h2 class="h2 py-5 typo-space-line">단체전</h2>					               
                 </div>
                 
             <div class="col-lg-12 row">
@@ -227,8 +248,11 @@ https://templatemo.com/tm-561-purple-buzz
                 </div>
             </div>
                 
- 				<div class="form-group">
- 				  <div>
+ 				<div class="form-group">			    				  
+ 				  <div class="invite">
+ 				    <button type="button" class="btn btn-primary">초대하기</button>
+				  </div>
+				  <div>
 					<table class="table table-hover">
 					  <thead>
 					    <tr>
@@ -253,23 +277,36 @@ https://templatemo.com/tm-561-purple-buzz
 					</table>
  				  </div>
  				
-				  <label class="form-label mt-4">베팅</label>
-				  <div class="form-group">
+				  <div class="form-group betting">
+   				    <label class="form-label mt-4">베팅</label>
 				    <div class="input-group mb-3">
 				      <input type="text" class="form-control" placeholder="베팅할 상품을 등록하세요" aria-label="Recipient's username" aria-describedby="button-addon2">
 				      <button class="btn btn-primary" type="button" id="button-addon2">베팅하기</button>
 				    </div>
 				  </div>
-				</div>	
-				<div>
-					<label>시작</label>
+				<div class="row">
+  				  <div class="col-lg-4 col-sm-12">					
+					  <label for="exampleSelect1" class="form-label">종목</label>
+					  <select class="form-select" id="exampleSelect1">
+					    <option>거북목+눈깜빡</option>
+					    <option>거북목</option>
+					    <option>눈깜빡</option>
+					  </select>
+				  </div>					
+				  <div class="col-lg-4 col-sm-12">
+					<label class="form-label">시작</label>
 					<input type="datetime-local" class="form-control">
-					<label>종료</label>
+				  </div>
+				  <div class="col-lg-4 col-sm-12">
+					<label class="form-label">종료</label>
 					<input type="datetime-local" class="form-control">			
-				</div>          
-				<div>   
+				  </div>
+				</div>     
+				     
+				<div class = "start">   
                   <button type="button" class="btn btn-primary btn-lg">시작하기</button>
             	</div>
+              </div>
             </div>
         </div>        
     </section>
