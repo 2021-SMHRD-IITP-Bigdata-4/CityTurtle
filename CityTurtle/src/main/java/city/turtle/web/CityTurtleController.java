@@ -70,4 +70,30 @@ public class CityTurtleController {
 	public String work() {
 		return "work";
 	}
+	// 이벤트 페이지
+	@RequestMapping("/Event.do")
+	public String Event() {
+		return "Event";
+	}
+	// 이벤트 페이지에서 클릭시 이동
+	@RequestMapping("/EventClick.do")
+	public String EventClick() {
+		return "EventClick";
+	}
+	// 공지사항 목록 페이지
+	@RequestMapping("/boardList.do")
+	public String boardList() {
+		return "boardList";
+	}
+	// 공지사항 글쓰기 페이지
+	@RequestMapping("/boardWrite.do")
+	public String boardWrite() {
+		return "boardWrite";
+	}
+	
+	@RequestMapping("/boardDetails.do")
+	public String boardDetails() {
+		return "boardDetails";
+	}
+	
 }
