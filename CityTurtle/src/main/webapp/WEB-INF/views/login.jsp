@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cpath" value ="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -108,12 +110,13 @@ https://templatemo.com/tm-561-purple-buzz
                     <span class="text-dark h4">도시</span> <span class="text-primary h4">거북</span>                 
                 </a>
             </div>
-            <form>
+          <c:if test="${signIn == null}">
+            <form action="${cpath}/signIn.do" method="post">
                 <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="아이디">
+                    <input type="text" class="form-control" name="mb_id" placeholder="아이디">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="비밀번호">
+                    <input type="password" class="form-control" name="mb_pwd" placeholder="비밀번호">
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -122,8 +125,9 @@ https://templatemo.com/tm-561-purple-buzz
                     </label>
                 </div>
                 <div class="d-grid gap-2">
-                    <button class="btn btn-primary btn-lg" type="button">로그인</button>
+                    <button class="btn btn-primary btn-lg" type="submit">로그인</button>
                 </div>
+            </form>
                 <div class="otherButton text-center">
                     <span class="text-secondary">다른 계정으로 로그인</span>
                     <button type ="button" class = "btn"><img src='./resources/img/logoNaver4.png'></button>
@@ -138,7 +142,7 @@ https://templatemo.com/tm-561-purple-buzz
                       <button type="button" class="btn text-secondary">아이디/비밀번호 찾기</button>
                   </div>
                 </div>
-            </form>
+              </c:if>
         </div>
     </section>
     <!-- End Banner Hero -->

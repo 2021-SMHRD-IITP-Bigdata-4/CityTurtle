@@ -1,7 +1,11 @@
 package city.turtle.web;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -19,7 +23,25 @@ public class CityTurtleController {
 	public String login() {
 		return "login";
 	}
-	
+	// 로그인
+	@RequestMapping("/signIn.do")
+	public String signIn(MembersVO vo, HttpServletRequest request) {
+		MembersVO signIn = mapper.signIn(vo);
+		HttpSession session =request.getSession();				
+		if (signIn != null) {
+			session.setAttribute("signIn", signIn);
+			return "redirect:/index.do";
+		} else {
+			session.setAttribute("signIn", null);
+			return "redirect:/login.do";
+		}
+	}
+	// 로그아웃
+	@RequestMapping("/logout.do")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		return "redirect:/login.do";
+	}
 	// 회원가입 페이지
 	@RequestMapping("/signUp.do")
 	public String signUp() {
@@ -37,7 +59,7 @@ public class CityTurtleController {
 		int result = mapper.mbidCheck(mb_id);
 		return result;
 	}
-	// 회원가입 성공
+	// 회원가입 성공 페이지
 	@RequestMapping("/signUpSuccess.do")
 	public String signUpSuccess() {
 		return "signUpSuccess";
