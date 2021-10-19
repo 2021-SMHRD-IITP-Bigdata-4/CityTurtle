@@ -3,6 +3,7 @@ package city.turtle.web;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import city.turtle.mapper.MembersMapper;
 import city.turtle.mapper.MembersVO;
@@ -29,6 +30,12 @@ public class CityTurtleController {
 	public String insertMembers(MembersVO vo) {
 		mapper.insertMembers(vo);
 		return "redirect:/signUpSuccess.do";
+	}
+	// 아이디 중복체크
+	@RequestMapping("/mbidCheck.do")
+	public @ResponseBody int mbidCheck(String mb_id) {
+		int result = mapper.mbidCheck(mb_id);
+		return result;
 	}
 	// 회원가입 성공
 	@RequestMapping("/signUpSuccess.do")

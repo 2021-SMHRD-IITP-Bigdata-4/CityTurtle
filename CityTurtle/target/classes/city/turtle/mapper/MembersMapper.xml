@@ -4,8 +4,14 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="city.turtle.mapper.MembersMapper">
+    <!-- 로그인 -->
     <insert id="insertMembers" parameterType="city.turtle.mapper.MembersVO">
         insert into members(mb_id, mb_nick, mb_pwd, mb_name, mb_birthdate, mb_sex, mb_email, admin_yn)
         values(#{mb_id},#{mb_nick},#{mb_pwd},#{mb_name},concat(#{mb_yy}, #{mb_mm}, #{mb_dd}),#{mb_sex},#{mb_email}, 0)
     </insert>
+    
+    <!-- 아이디 중복체크 -->
+    <select id="mbidCheck" parameterType="String" resultType="int">
+        select count(*) from members where mb_id = #{mb_id}
+    </select>
 </mapper>
