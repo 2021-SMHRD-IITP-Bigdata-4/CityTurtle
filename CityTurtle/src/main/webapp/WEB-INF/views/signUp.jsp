@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cpath" value ="${pageContext.request.contextPath}"/>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,8 +60,6 @@ https://templatemo.com/tm-561-purple-buzz
 	
 </style>
 
-
-
 </head>
 
 <body>
@@ -74,7 +75,8 @@ https://templatemo.com/tm-561-purple-buzz
             <form action="insertMembers.do" method="post">
                 <div class="form-group">
                		<label for="mb_id" class="form-label mt-4">아이디</label>
-                    <input type="text" class="form-control" name="mb_id">
+                    <input type="text" class="form-control" name="mb_id" id="mb_id">
+					<div><font id="id_feedback" size="2"></font></div>
                 </div>
                 <div class="form-group">
                		<label for="mb_nick" class="form-label mt-4">닉네임</label>
@@ -89,7 +91,7 @@ https://templatemo.com/tm-561-purple-buzz
 				<div class="form-group has-danger">
 					<label class="form-label mt-4" for="inputInvalid">비밀번호 재확인</label> 
 					<input type="password" class="form-control" id="mb_pwd2">
-					<div class="invalid-feedback"><font id="pwd_feedback" size="2"></font></div>
+					<div><font id="pwd_feedback" size="2"></font></div>
 				</div>
                 <div class="form-group">
                		<label for="exampleInputEmail1" class="form-label mt-4">이름</label>
@@ -174,6 +176,57 @@ https://templatemo.com/tm-561-purple-buzz
     <script src="resources/js/templatemo.js"></script>
     <!-- Custom -->
     <script src="resources/js/custom.js"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>	
+	<script type ="text/javascript">
+
+		$('#mb_pwd2').keyup(function(){
+			let pass1 = $("#mb_pwd1").val();
+		    let pass2 = $("#mb_pwd2").val();
+		    
+		    if (pass1 != "" || pass2 != ""){
+		    	if (pass1 == pass2){
+		        	$("#pwd_feedback").html('비밀번호가 일치합니다');
+		        	$("#pwd_feedback").attr('color','#2fb380');
+		        	$("#mb_pwd2").removeClass("is-invalid");
+		        	$("#mb_pwd2").addClass("is-valid");
+		        } else {
+		        	$("#pwd_feedback").html('비밀번호가 일치하지 않습니다');
+		            $("#pwd_feedback").attr('color','#dc3545');
+		        	$("#mb_pwd2").removeClass("is-valid");		            
+		        	$("#mb_pwd2").addClass("is-invalid");
+		        }
+		    }
+		
+		})
+		
+		$('#mb_id').keyup(function(){
+			let mb_id = $('#mb_id').val();
+			
+			$.ajax({
+				url : "${cpath}/mbidCheck.do",
+				type : "post",
+				data : {mb_id: mb_id},
+				dataType : 'json',
+				success : function(result){
+					if(result == 1){
+						$("#id_feedback").html('이미 사용중인 아이디입니다.');
+						$("#id_feedback").attr('color','#dc3545');
+					} else{
+						$("#id_feedback").html('사용할 수 있는 아이디입니다.');
+						$("#id_feedback").attr('color','#2fb380');
+					} 
+				},
+				error : function(){
+					alert("서버요청실패");
+				}
+			})
+			 
+		})
+
+	</script>
+
+
 
 </body>
 

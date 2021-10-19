@@ -6,4 +6,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface MembersMapper {
 	
 	public void insertMembers(MembersVO vo);
+	public int mbidCheck(String mb_id);
 }
+
