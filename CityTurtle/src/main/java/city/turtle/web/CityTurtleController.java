@@ -96,4 +96,9 @@ public class CityTurtleController {
 		return "boardDetails";
 	}
 	
+	@RequestMapping("/service.do")
+	public String service() {
+		return "service";
+	}
+	
 }
