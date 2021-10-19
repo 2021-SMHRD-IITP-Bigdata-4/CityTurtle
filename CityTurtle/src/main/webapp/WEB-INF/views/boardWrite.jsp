@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>공지사항 글쓰기</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="resources/img/apple-icon.png">
@@ -42,8 +42,8 @@ https://templatemo.com/tm-561-purple-buzz
       <!-- Header -->
       <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
         <div class="container d-flex justify-content-between align-items-center">
-            <a class="navbar-brand h1" href="index.html">
-                <i class='bx bx-buildings bx-sm text-dark'></i>
+            <a class="navbar-brand h1" href="index.do">
+                <img src="resources/img/logoCTCT4.png"/>
                 <span class="text-dark h4">도시</span> <span class="text-primary h4">거북</span>
             </a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,16 +54,16 @@ https://templatemo.com/tm-561-purple-buzz
                 <div class="flex-fill mx-xl-5 mb-2">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="index.html">서비스</a>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="service.do">서비스</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="about.html">랭킹</a>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="competition.do">랭킹</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="work.html">이벤트</a>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="Event.do">이벤트</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="pricing.html">공지</a>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="boardList.do">공지</a>
                         </li>
                        
                     </ul>
@@ -132,12 +132,12 @@ https://templatemo.com/tm-561-purple-buzz
 
     <!-- Start Footer -->
     <footer class="bg-secondary pt-4">
-        <div class="container" style="margin-left: 19%;">
+        <div class="container">
             <div class="row py-4">
 
                 <div class="col-lg-3 col-12 align-left">
-                    <a class="navbar-brand" href="index.html">
-                        <i class='bx bx-buildings bx-sm text-light'></i>
+                    <a class="navbar-brand" href="index.do">
+                        
                         <span class="text-light h5">도시</span> <span class="text-light h5 semi-bold-600">거북</span>
                     </a>
                     <p class="text-light my-lg-4 my-2">
@@ -166,29 +166,25 @@ https://templatemo.com/tm-561-purple-buzz
                                 <i class="bi bi-twitter" style="font-size: 30px; margin-left: 45%;"></i>
                             </a>
                         </li>
-                       
 
-                       
-
-
-                        
                     </ul>
                 </div>
+                
 
                 <div class="col-lg-3 col-md-4 my-sm-0 mt-4" style="margin-left: 15%;">
-                    <h3 class="h4 pb-lg-3 text-light light-300" >Our Company</h2>
+                    <h3 class="h4 pb-lg-3 text-light light-300" >바로가기</h2>
                         <ul class="list-unstyled text-light light-300">
                             <li class="pb-2">
-                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light" href="index.html">서비스</a>
+                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light" href="service.do">서비스</a>
                             </li>
                             <li class="pb-2">
-                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light py-1" href="about.html">랭킹</a>
+                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light py-1" href="competition.do">경쟁</a>
                             </li>
                             <li class="pb-2">
-                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light py-1" href="work.html">이벤트</a>
+                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light py-1" href="Event.do">이벤트</a>
                             </li>
                             <li class="pb-2">
-                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i></i><a class="text-decoration-none text-light py-1" href="pricing.html">공지</a>
+                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i></i><a class="text-decoration-none text-light py-1" href="boardList.do">공지</a>
                             </li>
                             
                         </ul>
@@ -197,10 +193,10 @@ https://templatemo.com/tm-561-purple-buzz
                 
 
                 <div class="col-lg-3 col-md-4 my-sm-0 mt-4" style="margin-left: 10%;">
-                    <h2 class="h4 pb-lg-3 text-light light-300">For Client</h2>
+                    <h2 class="h4 pb-lg-3 text-light light-300">고객센터</h2>
                     <ul class="list-unstyled text-light light-300">
                         <li class="pb-2">
-                            <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light py-1" href="tel:010-020-0340">010-020-0340</a>
+                            <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light py-1" href="tel:062-655-3509">062-655-3509</a>
                         </li>
                         <li class="pb-2">
                             <i class='bx-fw bx bx-mail-send bx-xs'></i><a class="text-decoration-none text-light py-1" href="mailto:info@company.com">info@company.com</a>
