@@ -6,6 +6,10 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.social.google.connect.GoogleConnectionFactory;
+import org.springframework.social.oauth2.GrantType;
+import org.springframework.social.oauth2.OAuth2Operations;
+import org.springframework.social.oauth2.OAuth2Parameters;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,31 +39,45 @@ public class CityTurtleController {
 		this.naverLoginBO = naverLoginBO;
 	}
 	
+	/* GoogleLogin */
+	@Autowired
+	private GoogleConnectionFactory googleConnectionFactory;
+	@Autowired
+	private OAuth2Parameters googleOAuth2Parameters;
+
+	
 	// 로그인페이지
 	//로그인 첫 화면 요청 메소드
 	
 	@RequestMapping(value = "/login.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public String login(Model model, HttpSession session) {
 		
-		/* 네이버아이디로 인증 URL을 생성하기 위하여 naverLoginBO클래스의 getAuthorizationUrl메소드 호출 */
-		String naverAuthUrl = naverLoginBO.getAuthorizationUrl(session);
-		
+		/* 네아로 인증 URL을 생성하기 위하여 naverLoginBO클래스의 getAuthorizationUrl메소드 호출 */
+		String naverAuthUrl = naverLoginBO.getAuthorizationUrl(session);		
 		//https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=2h3X9WHxJSgNBE7HJo3Q&
-		//redirect_uri=http%3A%2F%2Flocalhost%3A8081%2Fweb%2Fcallback.do&state=791f3cbc-b99a-4ac7-9fb1-7c5b5132c23a
-		System.out.println("네이버:" + naverAuthUrl);
+		//redirect_uri=http%3A%2F%2Flocalhost%3A8081%2Fweb%2FcallbackNaver.do&state=791f3cbc-b99a-4ac7-9fb1-7c5b5132c23a
+		System.out.println("네이버:" + naverAuthUrl);		
 		
+		/* 구글code 발행 */
+		OAuth2Operations oauthOperations = googleConnectionFactory.getOAuthOperations();
+		String urlGoogle = oauthOperations.buildAuthorizeUrl(GrantType.AUTHORIZATION_CODE, googleOAuth2Parameters);
+		System.out.println("구글:" + urlGoogle);
+
 		//네이버 
-		model.addAttribute("url", naverAuthUrl);
+		model.addAttribute("urlNaver", naverAuthUrl);
+		//구글
+		model.addAttribute("urlGoogle", urlGoogle);
+		
 
 		/* 생성한 인증 URL을 View로 전달 */
 		return "login";
 	}
 	
 	//네이버 로그인 성공시 callback호출 메소드
-	@RequestMapping(value = "/callback.do", method = { RequestMethod.GET, RequestMethod.POST })
-	public String callback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session)
+	@RequestMapping(value = "/callbackNaver.do", method = { RequestMethod.GET, RequestMethod.POST })
+	public String callbackNaver(Model model, @RequestParam String code, @RequestParam String state, HttpSession session)
 			throws IOException {
-		System.out.println("여기는 callback");
+		System.out.println("로그인 성공 callbackNaver");
 		OAuth2AccessToken oauthToken;
         oauthToken = naverLoginBO.getAccessToken(session, code, state);
         //로그인 사용자 정보를 읽어온다.
@@ -69,6 +87,16 @@ public class CityTurtleController {
         /* 네이버 로그인 성공 페이지 View 호출 */
 		return "loginSuccess";
 	}
+	
+	// 구글 callback호출 메소드
+	@RequestMapping(value = "/callbackGoogle.do", method = { RequestMethod.GET, RequestMethod.POST })
+	public String googleCallback(Model model, @RequestParam String code) throws IOException {
+		System.out.println("로그인 성공 callbackGoogle");
+
+		return "loginSuccess";
+	}
+
+
 	
 	// 로그인
 	@RequestMapping("/signIn.do")
@@ -89,7 +117,6 @@ public class CityTurtleController {
 		session.invalidate();
 		return "redirect:/login.do";
 	}
-
 
 	// 회원가입 페이지
 	@RequestMapping("/signUp.do")

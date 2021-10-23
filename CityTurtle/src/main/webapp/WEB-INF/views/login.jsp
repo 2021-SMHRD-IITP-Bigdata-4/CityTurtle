@@ -131,9 +131,9 @@ https://templatemo.com/tm-561-purple-buzz
             </form>
                 <div class="otherButton text-center">
                     <span class="text-secondary">다른 계정으로 로그인</span>
-                    <button type ="button" class = "btn" onclick="location.href='${url}'"><img src='./resources/img/logoNaver4.png'></button>
+                    <button type ="button" class = "btn" onclick="location.href='${urlNaver}'"><img src='./resources/img/logoNaver5.png'></button>
+                    <button type ="button" class = "btn" onclick="location.href='${urlGoogle}'"><img src='./resources/img/logoGoogle4.png'></button>
                     <button type ="button" class = "btn"><img src='./resources/img/logoKakao4.png'></button>
-                    <button type ="button" class = "btn"><img src='./resources/img/logoGoogle4.png'></button>
                 </div>
                 <div class="row">
                   <div class="col-lg-6 col-sm-12 text-lg-start text-center">
@@ -154,8 +154,7 @@ https://templatemo.com/tm-561-purple-buzz
             <div class="row py-4">
 
                 <div class="col-lg-3 col-12 align-left">
-                    <a class="navbar-brand" href="index.do">
-                        
+                    <a class="navbar-brand" href="index.do">                     
                         <span class="text-light h5">도시</span> <span class="text-light h5 semi-bold-600">거북</span>
                     </a>
                     <p class="text-light my-lg-4 my-2">
