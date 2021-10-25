@@ -125,8 +125,11 @@ public class CityTurtleController {
 	}
 	// 회원가입
 	@RequestMapping("/insertMembers.do")
-	public String insertMembers(MembersVO vo) {
+	public String insertMembers(MembersVO vo, HttpServletRequest request) {
 		mapper.insertMembers(vo);
+		MembersVO signUp = mapper.signIn(vo);
+		HttpSession session = request.getSession();
+		session.setAttribute("signUp", signUp);		
 		return "redirect:/signUpSuccess.do";
 	}
 	// 아이디 중복체크

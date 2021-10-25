@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cpath" value ="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -116,7 +118,7 @@ https://templatemo.com/tm-561-purple-buzz
             <div>
             	<h1 class ="text-dark text-center">환영합니다!</h1>
             	<p class="text-center"> 
-            		거북님의 회원가입을 축하드립니다 <br> 새로운 아이디는 <strong>도시거북</strong>입니다.
+            		${signUp.mb_name}님의 회원가입을 축하드립니다 <br> 새로운 아이디는 <strong>${signUp.mb_id}</strong>입니다.         		
             	</p>
             </div>
             <div class="d-grid gap-2">
