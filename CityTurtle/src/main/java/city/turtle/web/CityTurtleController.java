@@ -209,4 +209,12 @@ public class CityTurtleController {
 		return "service";
 	}
 	
+	@RequestMapping("/individual.do")
+	public String individual() {
+		return "individual";
+	}
+	@RequestMapping("/Team.do")
+	public String Team() {
+		return "Team";
+	}
 }

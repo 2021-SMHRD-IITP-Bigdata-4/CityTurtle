@@ -57,12 +57,21 @@ https://templatemo.com/tm-561-purple-buzz
 		padding-top:20px;
 		padding-bottom:20px;
 	}
+	.enter{
+		padding-top:5px;
+		padding-bottom:5px;
+	}
 	.form-group{
 		width:1000px;
 		margin:0 auto;
 	}
-	.form-group.betting{
-		width:700px;
+	.form-group.searching{
+		margin-right:0;
+		width:350px;
+	}
+	.form-group.classification{
+		margin-right:inherit;
+		width:100px;
 	}
 	.start{
 		padding-top:20px;
@@ -70,7 +79,9 @@ https://templatemo.com/tm-561-purple-buzz
 	.col-lg-4.col-sm-12{
 		
 	}
-
+	.justify-content-end{
+		width:95%;
+	}
 </style>
 
 </head>
@@ -119,198 +130,202 @@ https://templatemo.com/tm-561-purple-buzz
         <div class="container">
             <div class="row d-flex align-items-center py-5">
                 <div class="text-start">
-                    <h1 class="h2 py-5 text-primary typo-space-line">개인전</h1>					               
+                    <h2 class="h2 py-5 text-primary typo-space-line">개인전</h2>
+				<div class="row">
+				<ul id="nav3" class="nav justify-content-end">
+				<div class="col-lg-4 col-sm-12">
+					<div class="form-group classification">
+						<div class="input-group mb-3">
+							<select class="form-select" id="button-addon2">
+							    <option>방장</option>
+							    <option>방이름</option>
+							    <option>종목</option>
+							    <option>기간</option>
+							</select>
+						</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-sm-12">
+						<div class="form-group searching">
+							<div class="input-group mb-3">
+					      		<input type="text" class="form-control" placeholder="검색어" aria-label="Recipient's username" aria-describedby="button-addon2">
+					      		<button class="btn btn-primary" type="button" id="button-addon2">검색</button>
+					    	</div>
+               	 	  	</div>
+               	   	 </div>
+               	   	 </ul>
+               	 </div>	
                 </div>
-                
-             <div class="col-lg-12 row">
-                <div class="team-member col-md-4">
-                    <img class="team-member-img img-fluid rounded-circle p-4" src="./resources/img/team-01.jpg" alt="Card image">
-                    <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                        <li>접시빌런</li>
-                        <li>Business Development</li>
-                    </ul>
-                </div>
-                <div class="team-member col-md-4">
- 					<h2 class="h2 text-primary text-center py-5">VS</h2>
-                </div>
-                <div class="team-member col-md-4">
-                    <img class="team-member-img img-fluid rounded-circle p-4" src="./resources/img/team-03.jpg" alt="Card image">
-                    <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                        <li>새우잡이노예</li>
-                        <li>Developer</li>
-                    </ul>
-                </div>
-            </div>
-                
- 				<div class="form-group">
-	
- 				  <div class="invite">
- 				    <button type="button" class="btn btn-primary">초대하기</button>
-				  </div>
- 				  <div>
-					<table class="table table-hover">
-					  <thead>
-					    <tr>
-					      <th scope="col">User</th>
-					      <th scope="col">Betting</th>
-					    </tr>
-					  </thead>
-					  <tbody>
-					    <tr>
-					      <th scope="row">새우잡이노예</th>
-					      <td>스타벅스 아메리카노</td>
-					    </tr>
-
-					    <tr class="table-light">
-					      <th scope="row">접시빌런</th>
-					      <td>칙촉</td>
-					    </tr>
-					  </tbody>
-					</table>
- 				  </div>
- 				
-				  <div class="form-group betting">
-					<label class="form-label mt-4">베팅</label>
-				    <div class="input-group mb-3">
-				      <input type="text" class="form-control" placeholder="베팅할 상품을 등록하세요" aria-label="Recipient's username" aria-describedby="button-addon2">
-				      <button class="btn btn-primary" type="button" id="button-addon2">베팅하기</button>
-				    </div>
-				  </div>
-				<div class="row date">
-		    	  <div class="col-lg-4 col-sm-12">					
-					<label for="exampleSelect1" class="form-label">종목</label>
-					<select class="form-select" id="exampleSelect1">
-					  <option>거북목+눈깜빡</option>
-					  <option>거북목</option>
-					  <option>눈깜빡</option>
-					</select>
-				  </div>	
-				  <div class="col-lg-4 col-sm-12">
-					<label class="form-label">시작</label>
-					<input type="datetime-local" class="form-control">
-				  </div>
-				  <div class="col-lg-4 col-sm-12">
-					<label class="form-label">종료</label>
-					<input type="datetime-local" class="form-control">			
-				  </div>
-				</div>
-				        
-				<div class="start">   
-                  <button type="button" class="btn btn-primary btn-lg">시작하기</button>
-            	</div>
-           	  </div>
-            </div>
-        </div>
+                <table class="table table-hover">
+				    <thead>
+				      <tr>
+				        <th>번호</th>
+				        <th>방장</th>
+				        <th>방이름</th>
+				        <th>종목</th>
+				        <th>날짜</th>
+				        <th>참가</th>
+				      </tr>
+				    </thead>
+				    <tbody>
+				      <tr>
+				      	<th>1</th>
+				        <td>John</td>
+				        <td>드루와</td>
+				        <td>눈깜박</td>
+				        <td>2021-11-08 ~ 2021-12-08</td>
+				        <td><button type="button" class="btn btn-primary btn-sm" onclick="location.href='individual.do'">참가</button></td>
+				      </tr>
+				      <tr>
+				      	<th>2</th>
+				        <td>Mary</td>
+				        <td>탈거북을 위해</td>
+				        <td>거북목</td>
+				        <td>2021-12-01 ~ 2022-02-01</td>
+				        <td><button type="button" class="btn btn-primary btn-sm" onclick="location.href='individual.do'">참가</button></td>
+				      </tr>
+				      <tr>
+				      	<th>3</th>
+				        <td>July</td>
+				        <td>가즈아</td>
+				        <td>눈깜박+거북목</td>
+				        <td>2021-11-01 ~ 2022-05-01</td>
+				        <td><button type="button" class="btn btn-primary btn-sm" onclick="location.href='individual.do'">참가</button></td>
+				      </tr>
+				       <tr>
+				      	<th>4</th>
+				        <td>James</td>
+				        <td>모두 화이팅!</td>
+				        <td>거북목</td>
+				        <td>2021-12-01 ~ 2022-03-01</td>
+				        <td><button type="button" class="btn btn-primary btn-sm" onclick="location.href='individual.do'">참가</button></td>
+				      </tr>
+				      <tr>
+				      	<th>5</th>
+				        <td>Tom</td>
+				        <td>고쳐봅시다</td>
+				        <td>눈깜박+거북목</td>
+				        <td>2021-11-20 ~ 2022-03-20</td>
+				        <td><button type="button" class="btn btn-primary btn-sm" onclick="location.href='individual.do'">참가</button></td>
+				      </tr>
+				      <tr>
+				      	<th>6</th>
+				        <td>Drew</td>
+				        <td>안구건조증 퇴치</td>
+				        <td>눈깜박</td>
+				        <td>2022-01-01 ~ 2022-02-01</td>
+				        <td><button type="button" class="btn btn-primary btn-sm" onclick="location.href='individual.do'">참가</button></td>
+				      </tr>
+				    </tbody>
+				  </table>
+				  <div class="pt-5 pb-3 d-lg-flex align-items-center gx-5"></div>
+				  <ul id="nav3" class="nav justify-content-end">
+				  	<button type="button" class="btn btn-primary">방 만들기</button>
+				  </ul>
+        	</div>
+        	</div>
     </section>
     <!-- End Banner Hero -->
 
 
     <!-- Start Team Member -->
     <section class="container py-5">
-        <div class="pt-5 pb-3 d-lg-flex align-items-center gx-5">
-
-
-
-
-        </div>
-        
         <div class="container">
             <div class="row d-flex align-items-center py-5">
-                <div class="text-start">
-                    <h2 class="h2 py-5 typo-space-line">단체전</h2>					               
-                </div>
-                
-            <div class="col-lg-12 row">
-                <div class="team-member col-md-3">
-                    <img class="team-member-img img-fluid rounded-circle p-4" src="./resources/img/team-01.jpg" alt="Card image">
-                    <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                        <li>접시빌런</li>
-                        <li>Business Development</li>
-                    </ul>
-                </div>
-                <div class="team-member col-md-3">
-                    <img class="team-member-img img-fluid rounded-circle p-4" src="./resources/img/team-02.jpg" alt="Card image">
-                    <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                        <li>역베올인건다</li>
-                        <li>Media Development</li>
-                    </ul>
-                </div>
-                <div class="team-member col-md-3">
-                    <img class="team-member-img img-fluid rounded-circle p-4" src="./resources/img/team-03.jpg" alt="Card image">
-                    <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                        <li>새우잡이노예</li>
-                        <li>Developer</li>
-                    </ul>
-                </div>
-                <div class="team-member col-md-3">
-                    <img class="team-member-img img-fluid rounded-circle p-4" src="./resources/img/team-03.jpg" alt="Card image">
-                    <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                        <li>새우잡이노예2</li>
-                        <li>Developer</li>
-                    </ul>
-                </div>
-            </div>
-                
- 				<div class="form-group">			    				  
- 				  <div class="invite">
- 				    <button type="button" class="btn btn-primary">초대하기</button>
-				  </div>
-				  <div>
-					<table class="table table-hover">
-					  <thead>
-					    <tr>
-					      <th scope="col">User</th>
-					      <th scope="col">Betting</th>
-					    </tr>
-					  </thead>
-					  <tbody>
-					    <tr>
-					      <th scope="row">접시빌런</th>
-					      <td>스타벅스 아메리카노</td>
-					    </tr>
-					    <tr class="table-light">
-					      <th scope="row">새우잡이노예</th>
-					      <td>칙촉</td>
-					    </tr>
-					    <tr>
-					      <th scope="row">역베올인건다</th>
-					      <td>에어팟pro</td>
-					    </tr>					    
-					  </tbody>
-					</table>
- 				  </div>
- 				
-				  <div class="form-group betting">
-   				    <label class="form-label mt-4">베팅</label>
-				    <div class="input-group mb-3">
-				      <input type="text" class="form-control" placeholder="베팅할 상품을 등록하세요" aria-label="Recipient's username" aria-describedby="button-addon2">
-				      <button class="btn btn-primary" type="button" id="button-addon2">베팅하기</button>
-				    </div>
-				  </div>
+               <div class="text-start">
+					<h2 class="h2 py-5 text-primary typo-space-line">단체전</h2>
 				<div class="row">
-  				  <div class="col-lg-4 col-sm-12">					
-					  <label for="exampleSelect1" class="form-label">종목</label>
-					  <select class="form-select" id="exampleSelect1">
-					    <option>거북목+눈깜빡</option>
-					    <option>거북목</option>
-					    <option>눈깜빡</option>
-					  </select>
-				  </div>					
-				  <div class="col-lg-4 col-sm-12">
-					<label class="form-label">시작</label>
-					<input type="datetime-local" class="form-control">
-				  </div>
-				  <div class="col-lg-4 col-sm-12">
-					<label class="form-label">종료</label>
-					<input type="datetime-local" class="form-control">			
-				  </div>
-				</div>     
-				     
-				<div class = "start">   
-                  <button type="button" class="btn btn-primary btn-lg">시작하기</button>
-            	</div>
-              </div>
-            </div>
+				<ul id="nav3" class="nav justify-content-end">
+				<div class="col-lg-4 col-sm-12">
+					<div class="form-group classification">
+						<div class="input-group mb-3">
+							<select class="form-select" id="button-addon2">
+							    <option>방장</option>
+							    <option>방이름</option>
+							    <option>종목</option>
+							    <option>기간</option>
+							</select>
+						</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-sm-12">
+						<div class="form-group searching">
+							<div class="input-group mb-3">
+					      		<input type="text" class="form-control" placeholder="검색어" aria-label="Recipient's username" aria-describedby="button-addon2">
+					      		<button class="btn btn-primary" type="button" id="button-addon2">검색</button>
+					    	</div>
+               	 	  	</div>
+               	   	 </div>
+               	   	 </ul>
+               	 </div>
+               </div>  
+                <table class="table table-hover">
+				    <thead>
+				      <tr>
+				        <th>번호</th>
+				        <th>방장</th>
+				        <th>방이름</th>
+				        <th>종목</th>
+				        <th>날짜</th>
+				        <th>참가</th>
+				      </tr>
+				    </thead>
+				    <tbody>
+				      <tr>
+				      	<th>1</th>
+				        <td>John</td>
+				        <td>드루와</td>
+				        <td>눈깜박</td>
+				        <td>2021-11-08 ~ 2021-12-08</td>
+				        <td><button type="button" class="btn btn-primary btn-sm" onclick="location.href='Team.do'">참가</button></td>
+				      </tr>
+				      <tr>
+				      	<th>2</th>
+				        <td>Mary</td>
+				        <td>탈거북을 위해</td>
+				        <td>거북목</td>
+				        <td>2021-11-01 ~ 2022-02-01</td>
+				        <td><button type="button" class="btn btn-primary btn-sm" onclick="location.href='Team.do'">참가</button></td>
+				      </tr>
+				      <tr>
+				      	<th>3</th>
+				        <td>July</td>
+				        <td>가즈아</td>
+				        <td>눈깜박+거북목</td>
+				        <td>2021-11-01 ~ 2022-05-01</td>
+				        <td><button type="button" class="btn btn-primary btn-sm" onclick="location.href='Team.do'">참가</button></td>
+				      </tr>
+				      <tr>
+				      	<th>4</th>
+				        <td>James</td>
+				        <td>모두 화이팅!</td>
+				        <td>거북목</td>
+				        <td>2021-12-01 ~ 2022-03-01</td>
+				        <td><button type="button" class="btn btn-primary btn-sm" onclick="location.href='Team.do'">참가</button></td>
+				      </tr>
+				      <tr>
+				      	<th>5</th>
+				        <td>Tom</td>
+				        <td>고쳐봅시다</td>
+				        <td>눈깜박+거북목</td>
+				        <td>2021-11-20 ~ 2022-03-20</td>
+				        <td><button type="button" class="btn btn-primary btn-sm" onclick="location.href='Team.do'">참가</button></td>
+				      </tr>
+				      <tr>
+				      	<th>6</th>
+				        <td>Drew</td>
+				        <td>안구건조증 퇴치</td>
+				        <td>눈깜박</td>
+				        <td>2022-01-01 ~ 2022-02-01</td>
+				        <td><button type="button" class="btn btn-primary btn-sm" onclick="location.href='Team.do'">참가</button></td>
+				      </tr>
+				    </tbody>
+				  </table>
+				  <div class="pt-5 pb-3 d-lg-flex align-items-center gx-5"></div>
+				  <ul id="nav3" class="nav justify-content-end">
+				  	<button type="button" class="btn btn-primary">방 만들기</button>
+				  </ul>
+			</div>
         </div>        
     </section>
     <!-- End Team Member -->
