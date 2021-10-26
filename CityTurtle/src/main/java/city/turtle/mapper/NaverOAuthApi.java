@@ -2,17 +2,15 @@ package city.turtle.mapper;
 
 import com.github.scribejava.core.builder.api.DefaultApi20;
 
-public class NaverLoginApi extends DefaultApi20{
-
-    protected NaverLoginApi(){
+public class NaverOAuthApi extends DefaultApi20{
+    protected NaverOAuthApi(){
     }
 
     private static class InstanceHolder{
-        private static final NaverLoginApi INSTANCE = new NaverLoginApi();
+        private static final NaverOAuthApi INSTANCE = new NaverOAuthApi();
     }
 
-
-    public static NaverLoginApi instance(){
+    public static NaverOAuthApi instance(){
         return InstanceHolder.INSTANCE;
     }
 

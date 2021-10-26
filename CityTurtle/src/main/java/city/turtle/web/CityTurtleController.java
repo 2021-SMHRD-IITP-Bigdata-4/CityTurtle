@@ -1,10 +1,14 @@
 package city.turtle.web;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import java.io.IOException;
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.social.google.connect.GoogleConnectionFactory;
 import org.springframework.social.oauth2.GrantType;
@@ -17,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import city.turtle.mapper.KakaoLoginBO;
 import city.turtle.mapper.MembersMapper;
 import city.turtle.mapper.MembersVO;
 import city.turtle.mapper.NaverLoginBO;
@@ -39,12 +44,16 @@ public class CityTurtleController {
 		this.naverLoginBO = naverLoginBO;
 	}
 	
+	/* KakaoLogin */
+	@Autowired
+	private KakaoLoginBO kakaoLoginBO;	
+	
 	/* GoogleLogin */
 	@Autowired
 	private GoogleConnectionFactory googleConnectionFactory;
 	@Autowired
 	private OAuth2Parameters googleOAuth2Parameters;
-
+	
 	
 	// 로그인페이지
 	//로그인 첫 화면 요청 메소드
@@ -54,20 +63,19 @@ public class CityTurtleController {
 		
 		/* 네아로 인증 URL을 생성하기 위하여 naverLoginBO클래스의 getAuthorizationUrl메소드 호출 */
 		String naverAuthUrl = naverLoginBO.getAuthorizationUrl(session);		
-		//https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=2h3X9WHxJSgNBE7HJo3Q&
-		//redirect_uri=http%3A%2F%2Flocalhost%3A8081%2Fweb%2FcallbackNaver.do&state=791f3cbc-b99a-4ac7-9fb1-7c5b5132c23a
 		System.out.println("네이버:" + naverAuthUrl);		
+		model.addAttribute("urlNaver", naverAuthUrl);
+		
+		/* 카카오 URL */
+		String kakaoAuthUrl = kakaoLoginBO.getAuthorizationUrl(session);
+		System.out.println("카카오:" + kakaoAuthUrl);		
+		model.addAttribute("urlKakao", kakaoAuthUrl);		
 		
 		/* 구글code 발행 */
 		OAuth2Operations oauthOperations = googleConnectionFactory.getOAuthOperations();
 		String urlGoogle = oauthOperations.buildAuthorizeUrl(GrantType.AUTHORIZATION_CODE, googleOAuth2Parameters);
 		System.out.println("구글:" + urlGoogle);
-
-		//네이버 
-		model.addAttribute("urlNaver", naverAuthUrl);
-		//구글
-		model.addAttribute("urlGoogle", urlGoogle);
-		
+		model.addAttribute("urlGoogle", urlGoogle);		
 
 		/* 생성한 인증 URL을 View로 전달 */
 		return "login";
@@ -76,15 +84,56 @@ public class CityTurtleController {
 	//네이버 로그인 성공시 callback호출 메소드
 	@RequestMapping(value = "/callbackNaver.do", method = { RequestMethod.GET, RequestMethod.POST })
 	public String callbackNaver(Model model, @RequestParam String code, @RequestParam String state, HttpSession session)
-			throws IOException {
+			throws Exception {
 		System.out.println("로그인 성공 callbackNaver");
 		OAuth2AccessToken oauthToken;
         oauthToken = naverLoginBO.getAccessToken(session, code, state);
         //로그인 사용자 정보를 읽어온다.
 	    apiResult = naverLoginBO.getUserProfile(oauthToken);
-		model.addAttribute("result", apiResult);
+	    
+		JSONParser jsonParser = new JSONParser();
+		JSONObject jsonObj;
+		
+		jsonObj = (JSONObject) jsonParser.parse(apiResult);
+		JSONObject response_obj = (JSONObject) jsonObj.get("response");			
+		// 프로필 조회
+		String email = (String) response_obj.get("email");
+		String name = (String) response_obj.get("name");
+		// 세션에 사용자 정보 등록
+		// session.setAttribute("islogin_r", "Y");
 		session.setAttribute("signIn", apiResult);
+		session.setAttribute("email", email);
+		session.setAttribute("name", name);
+		
         /* 네이버 로그인 성공 페이지 View 호출 */
+		return "loginSuccess";
+	}
+
+	// 카카오 로그인 성공시 callback
+	@RequestMapping(value = "/callbackKakao.do", method = { RequestMethod.GET, RequestMethod.POST })
+	public String callbackKakao(Model model, @RequestParam String code, @RequestParam String state, HttpSession session) 
+			throws Exception {
+		System.out.println("로그인 성공 callbackKako");
+		OAuth2AccessToken oauthToken;
+		oauthToken = kakaoLoginBO.getAccessToken(session, code, state);	
+		// 로그인 사용자 정보를 읽어온다
+		apiResult = kakaoLoginBO.getUserProfile(oauthToken);
+		
+		JSONParser jsonParser = new JSONParser();
+		JSONObject jsonObj;
+		
+		jsonObj = (JSONObject) jsonParser.parse(apiResult);
+		JSONObject response_obj = (JSONObject) jsonObj.get("kakao_account");	
+		JSONObject response_obj2 = (JSONObject) response_obj.get("profile");
+		// 프로필 조회
+		String email = (String) response_obj.get("email");
+		String name = (String) response_obj2.get("nickname");
+		// 세션에 사용자 정보 등록
+		// session.setAttribute("islogin_r", "Y");
+		session.setAttribute("signIn", apiResult);
+		session.setAttribute("email", email);
+		session.setAttribute("name", name);
+
 		return "loginSuccess";
 	}
 	
@@ -96,9 +145,8 @@ public class CityTurtleController {
 		return "loginSuccess";
 	}
 
-
 	
-	// 로그인
+	// 사이트 내 로그인
 	@RequestMapping("/signIn.do")
 	public String signIn(MembersVO vo, HttpServletRequest request) {
 		MembersVO signIn = mapper.signIn(vo);
