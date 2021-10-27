@@ -1,14 +1,12 @@
 package city.turtle.web;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import java.io.IOException;
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.social.google.connect.GoogleConnectionFactory;
 import org.springframework.social.oauth2.GrantType;
@@ -106,7 +104,7 @@ public class CityTurtleController {
 		session.setAttribute("name", name);
 		
         /* 네이버 로그인 성공 페이지 View 호출 */
-		return "loginSuccess";
+		return "redirect:/loginSuccess.do";
 	}
 
 	// 카카오 로그인 성공시 callback
@@ -134,7 +132,7 @@ public class CityTurtleController {
 		session.setAttribute("email", email);
 		session.setAttribute("name", name);
 
-		return "loginSuccess";
+		return "redirect:/loginSuccess.do";
 	}
 	
 	// 구글 callback호출 메소드
@@ -142,20 +140,26 @@ public class CityTurtleController {
 	public String googleCallback(Model model, @RequestParam String code) throws IOException {
 		System.out.println("로그인 성공 callbackGoogle");
 
+		return "redirect:/loginSuccess.do";
+	}
+	
+	// 소셜 로그인 성공 페이지
+	@RequestMapping("/loginSuccess.do")
+	public String loginSuccess() {
 		return "loginSuccess";
 	}
-
 	
 	// 사이트 내 로그인
 	@RequestMapping("/signIn.do")
 	public String signIn(MembersVO vo, HttpServletRequest request) {
 		MembersVO signIn = mapper.signIn(vo);
-		HttpSession session =request.getSession();				
+		HttpSession session = request.getSession();				
 		if (signIn != null) {
 			session.setAttribute("signIn", signIn);
 			return "redirect:/index.do";
 		} else {
 			session.setAttribute("signIn", null);
+			session.setAttribute("errMsg", "errMsg");
 			return "redirect:/login.do";
 		}
 	}

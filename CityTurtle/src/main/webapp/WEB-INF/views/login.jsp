@@ -114,10 +114,10 @@ https://templatemo.com/tm-561-purple-buzz
           <c:if test="${signIn == null}">
             <form action="${cpath}/signIn.do" method="post">
                 <div class="form-group">
-                    <input type="text" class="form-control" name="mb_id" placeholder="아이디">
+                    <input type="text" class="form-control" name="mb_id" id="mb_id" placeholder="아이디">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" name="mb_pwd" placeholder="비밀번호">
+                    <input type="password" class="form-control" name="mb_pwd" id="mb_pwd" placeholder="비밀번호">
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -126,7 +126,7 @@ https://templatemo.com/tm-561-purple-buzz
                     </label>
                 </div>
                 <div class="d-grid gap-2">
-                    <button class="btn btn-primary btn-lg" type="submit">로그인</button>
+                    <button class="btn btn-primary btn-lg" id="login" type="submit">로그인</button>
                 </div>
             </form>
                 <div class="otherButton text-center">
@@ -249,9 +249,23 @@ https://templatemo.com/tm-561-purple-buzz
     <script src="resources/js/templatemo.js"></script>
     <!-- Custom -->
     <script src="resources/js/custom.js"></script>
+	<script>
+  	 
+	 $("#login").on("click",function(){
+    	 var errMsg = "${errMsg}";
+    	 var mb_id = $("#mb_id").val();
+    	 var mb_pwd = $("#mb_pwd").val();
+    	 
+		 if(mb_id == "" || mb_pwd == ""){
+			 alert("아이디 또는 비밀번호가 잘못 입력 되었습니다.\n아이디와 비밀번호를 정확히 입력해 주세요.");			 
+		 } else if (errMsg != null){
+			 alert("아이디 또는 비밀번호가 잘못 입력 되었습니다.\n아이디와 비밀번호를 정확히 입력해 주세요.");			 		 
+	 	 }
 
-
-
+     });
+	
+	
+	</script>
 </body>
 
 </html>
