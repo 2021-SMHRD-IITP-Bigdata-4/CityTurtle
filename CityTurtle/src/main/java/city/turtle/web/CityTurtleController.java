@@ -8,7 +8,13 @@ import java.io.IOException;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.social.connect.Connection;
+import org.springframework.social.google.api.Google;
+import org.springframework.social.google.api.impl.GoogleTemplate;
+import org.springframework.social.google.api.plus.Person;
+import org.springframework.social.google.api.plus.PlusOperations;
 import org.springframework.social.google.connect.GoogleConnectionFactory;
+import org.springframework.social.oauth2.AccessGrant;
 import org.springframework.social.oauth2.GrantType;
 import org.springframework.social.oauth2.OAuth2Operations;
 import org.springframework.social.oauth2.OAuth2Parameters;
@@ -25,7 +31,7 @@ import city.turtle.mapper.MembersVO;
 import city.turtle.mapper.NaverLoginBO;
 
 import com.github.scribejava.core.model.OAuth2AccessToken;
-
+import com.sun.istack.internal.logging.Logger;
 
 @Controller
 public class CityTurtleController {
@@ -51,8 +57,7 @@ public class CityTurtleController {
 	private GoogleConnectionFactory googleConnectionFactory;
 	@Autowired
 	private OAuth2Parameters googleOAuth2Parameters;
-	
-	
+		
 	// 로그인페이지
 	//로그인 첫 화면 요청 메소드
 	
@@ -137,8 +142,25 @@ public class CityTurtleController {
 	
 	// 구글 callback호출 메소드
 	@RequestMapping(value = "/callbackGoogle.do", method = { RequestMethod.GET, RequestMethod.POST })
-	public String googleCallback(Model model, @RequestParam String code) throws IOException {
+	public String googleCallback(Model model, @RequestParam String code, HttpSession session) throws Exception {
 		System.out.println("로그인 성공 callbackGoogle");
+		
+		OAuth2Operations oauthOperations = googleConnectionFactory.getOAuthOperations(); 
+		AccessGrant accessGrant = oauthOperations.exchangeForAccess(code, googleOAuth2Parameters.getRedirectUri(), null); 
+		String accessToken = accessGrant.getAccessToken(); 
+		Long expireTime = accessGrant.getExpireTime(); 
+		if (expireTime != null && expireTime < System.currentTimeMillis()) {
+			accessToken = accessGrant.getRefreshToken(); 			 
+		} 
+
+		Connection<Google>connection = googleConnectionFactory.createConnection(accessGrant); 
+		Google google = connection == null ? new GoogleTemplate(accessToken) : connection.getApi(); 
+
+		PlusOperations plusOperations = google.plusOperations(); 
+		Person person = plusOperations.getGoogleProfile();
+		
+		session.setAttribute("signIn",person);
+
 
 		return "redirect:/loginSuccess.do";
 	}
