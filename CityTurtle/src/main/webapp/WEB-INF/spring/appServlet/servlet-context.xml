@@ -27,18 +27,6 @@
 	<!-- KakaoLoginBO Class에 대한 Bean설정 추가 -->
 	<beans:bean id="kakaoLoginBO" class="city.turtle.mapper.KakaoLoginBO" />
 	
-	<!-- google Class Bean설정 추가 -->
-	<!-- 클라이언트ID와 보안비밀 세팅-->
-	<beans:bean id="googleConnectionFactory"
-		class="org.springframework.social.google.connect.GoogleConnectionFactory">
-		<beans:constructor-arg value="80396787821-o4lfgcmi7r7562k4i69h67g37okgp821.apps.googleusercontent.com" />
-		<beans:constructor-arg value="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" />
-	</beans:bean>
-	<!-- 승인된 자바스크립트 원본과 승인된 리디렉션 URI -->
-	<beans:bean id="googleOAuth2Parameters" class="org.springframework.social.oauth2.OAuth2Parameters">
-		<beans:property name="scope" value="https://www.googleapis.com/auth/plus.login" />
-		<beans:property name="redirectUri" value="http://localhost:8081/web/callbackGoogle.do" />
-	</beans:bean>
 
 	<context:component-scan base-package="city.turtle.web" />
 	

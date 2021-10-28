@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" integrity="sha384-tKLJeE1ALTUwtXlaGjJYM3sejfssWdAaWR2s97axw4xkiAdMzQjtOjgcyw0Y50KU" crossorigin="anonymous">
 	<script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.2.js" charset="utf-8"></script>
   	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  	<script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="80396787821-o4lfgcmi7r7562k4i69h67g37okgp821.apps.googleusercontent.com">  	
 <!--
     
 TemplateMo 561 Purple Buzz
@@ -61,6 +63,33 @@ https://templatemo.com/tm-561-purple-buzz
 	
 </style>
 
+
+<script>
+	function onSignIn(googleUser) {
+		  var profile = googleUser.getBasicProfile();
+		  
+		  var id_token = googleUser.getAuthResponse().id_token;
+		  var xhr = new XMLHttpRequest();
+		  xhr.open('POST', 'http://localhost:8081/web/callbackGoogle.do');
+		  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+		  xhr.onload = function() {
+		    console.log('Signed in as: ' + xhr.responseText);
+		  };
+		  xhr.send('idtoken=' + id_token);
+		  
+		  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+		  console.log('Name: ' + profile.getName());
+		  console.log('Image URL: ' + profile.getImageUrl());
+		  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+		}
+	
+	  function signOut() {
+		    var auth2 = gapi.auth2.getAuthInstance();
+		    auth2.signOut().then(function () {
+		      console.log('User signed out.');
+		    });
+		  }
+</script>
 
 </head>
 
@@ -133,8 +162,10 @@ https://templatemo.com/tm-561-purple-buzz
                     <span class="text-secondary">다른 계정으로 로그인</span>
                     <button type ="button" class = "btn" onclick="location.href='${urlNaver}'"><img src='./resources/img/logoNaver5.png'></button>
                     <button type ="button" class = "btn" onclick="location.href='${urlKakao}'"><img src='./resources/img/logoKakao5.png'></button>
-                    <button type ="button" class = "btn" onclick="location.href='${urlGoogle}'"><img src='./resources/img/logoGoogle4.png'></button>
+                    <button type ="button" class = "btn"><img src='./resources/img/logoGoogle4.png'></button>
                 </div>
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                <a href="#" onclick="signOut();">Sign out</a>
                 <div class="row">
                   <div class="col-lg-6 col-sm-12 text-lg-start text-center">
                       <button type="button" class="btn text-secondary" onclick="location.href='signUp.do'">회원가입</button>
