@@ -224,27 +224,46 @@ public class CityTurtleController {
 	public String EventClick() {
 		return "EventClick";
 	}
-	// 공지사항 목록 페이지
-	@RequestMapping("/boardList.do")
-	public String boardList() {
-		return "boardList";
-	}
-	// 공지사항 글쓰기 페이지
-	@RequestMapping("/boardWrite.do")
-	public String boardWrite() {
-		return "boardWrite";
-	}
 	
-	@RequestMapping("/boardDetails.do")
-	public String boardDetails() {
-		return "boardDetails";
-	}
-	
+	// 이벤트 페이지에서 클릭시 이동
+		@RequestMapping("/EventClick2.do")
+		public String EventClick2() {
+			return "EventClick2";
+		}
+
+		// 이벤트 페이지에서 클릭시 이동
+		@RequestMapping("/EventClick3.do")
+		public String EventClick3() {
+			return "EventClick3";
+		}
+		// 이벤트 페이지에서 클릭시 이동
+		@RequestMapping("/EventClick4.do")
+		public String EventClick4() {
+			return "EventClick4";
+		}
+		// 이벤트 페이지에서 클릭시 이동
+		@RequestMapping("/EventClick5.do")
+		public String EventClick5() {
+			return "EventClick5";
+		}
+		// 이벤트 페이지에서 클릭시 이동
+		@RequestMapping("/EventClick6.do")
+		public String EventClick6() {
+			return "EventClick6";
+		}
+
 	@RequestMapping("/service.do")
 	public String service() {
 		return "service";
 	}
 	
+
+	@RequestMapping("/boardComment.do")
+	public String boardComment() {
+		return "boardComment";
+	}
+	
+
 	@RequestMapping("/individual.do")
 	public String individual() {
 		return "individual";
@@ -253,4 +272,5 @@ public class CityTurtleController {
 	public String Team() {
 		return "Team";
 	}
+
 }

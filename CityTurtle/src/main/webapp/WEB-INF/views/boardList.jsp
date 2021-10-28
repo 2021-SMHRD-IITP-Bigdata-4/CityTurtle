@@ -1,5 +1,17 @@
+<%@page import="city.turtle.vo.boardVO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%// jsp는 taglib랑 c:set 코드를 먼저 하고 시작한다.!!!!!!!! %>    
+
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    
+    <%////톰캣 안에 sever.xml/web 가지고오기 왜? /web가 바뀌면 일일히 다 고칠수없으니 %>
+	<c:set var="cpath" value="${pageContext.request.contextPath}"> </c:set>
+    
+    
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,6 +47,7 @@ https://templatemo.com/tm-561-purple-buzz
 .innertext > td{
     font-size: 20px;
     text-align: center;
+    margin-left: 50%
 }
 
 .write{
@@ -57,9 +70,21 @@ a{
 		margin: 0 auto;
 		width : 553px;
 	}
+	
 
 
 </style>
+
+
+<script type="text/javascript">
+function goForm() {
+	// 글쓰기 화면좀 보여주세요라고 POJO로 요청 POJO = 메서드
+	location.href="${cpath}/boardWrite.do";   // ? --> web
+}
+
+
+
+</script>
 
 
 </head>
@@ -116,7 +141,7 @@ a{
                 
                     <select class="btn btn-outline-primary" style="width: 100px; height: 32.5px; margin-left: 20px; text-align: center;">
                         <option value=””>제목</option>
-                        <option value=”naver.com”>작성자</option>
+                        <option value=””>작성자</option>
 
 
                             <input class="btn btn-outline-primary" type="search" name="" id="" style="margin-left: 30px; block-size: 34px; width: 300px;">
@@ -124,7 +149,7 @@ a{
    
                       </select>
 
-                      <button class="btn btn-outline-primary" style="margin-left: 45%;"> <a href="file:///C:/Users/bigdata02/Desktop/js/templatemo_561_purple_buzz/Notice_Write.html">글쓰기</button>
+                      <button class="btn btn-outline-primary" style="margin-left: 45%;" onclick="goForm()"> 글쓰기</button>
 
                       
 
@@ -134,66 +159,38 @@ a{
             
             <div class="panel panel-default">
         
-              <div class="panel-body">
-                  <table class="table table-hover">
-                  
-                  
-                  <tr class='innertext'>
+              <div class="panel-body" style="height: 1000px">
+               
+     <table   class="table table-hover" style="text-align: center">
+	<thead>
+		<tr class='innertext'>
                       <td>번호</td>
                       <td>제목</td>
-                      <td>등록일</td>
                       <td>작성자</td>
-                      <td>조회수</td>
+                      <td>작성일</td>                  
                    </tr>
-                   
-                  
-                  
-                  <c:forEach var="vo" items="${list}">
-                      <tr class='innertext'>
-                          <td>1</td>
-                          <td>거북목 업데이트 안내</td>
-                          <td>2021-10-08</td>
-                          <td>관리자</td>
-                          <td>35</td>
-                      </tr>
+	</thead>
+	
+	<tbody>
+	
+		<c:forEach var="vo" items="${list}">
+    		<tr>
+		    	<td>${vo.not_seq}</td>
+		    	<td><a href="${cpath}/boardDetails.do?not_seq=${vo.not_seq}">${vo.not_title}</td>
+		    	<td>${vo.mb_id}</td>
+		    	<td>${vo.input_date}</td>
+		    	
+	    	</tr>
+	    	
+	    	
+	    	
+    	</c:forEach>
+	
+	</tbody>
 
-                      <tr class='innertext'>
-                        <td>2</td>
-                        <td>거북목 오류 수정 안내</td>
-                        <td>2021-10-07</td>
-                        <td>관리자</td>
-                        <td>40</td>
-                    </tr>
-
-                    <tr class='innertext'>
-                        <td>3</td>
-                        <td>거묵폭 다운로드 오류</td>
-                        <td>2021-10-06</td>
-                        <td>관리자</td>
-                        <td>55</td>
-                    </tr>
-
-                    <tr class='innertext'>
-                        <td>4</td>
-                        <td>거북목 점검 안내</td>
-                        <td>2021-10-05</td>
-                        <td>관리자</td>
-                        <td>70</td>
-                    </tr>
-
-                    <tr class='innertext'>
-                        <td>5</td>
-                        <td>거북목 시스템 오류 안내</td>
-                        <td>2021-10-03</td>
-                        <td>관리자</td>
-                        <td>22</td>
-                    </tr>
-                      
-                  </c:forEach>
-                      
-          
-                  </table>
-                  <div class="row" style="margin-top: 4%;">
+</table>
+    	
+    	 <div class="row" style="margin-top: 4%;">
                     <div class="btn-toolbar justify-content-center pb-4" role="toolbar" aria-label="Toolbar with button groups">
                         <div class="btn-group me-2" role="group" aria-label="First group">
                             <button type="button" class="btn btn-secondary text-white">Previous</button>
@@ -209,22 +206,10 @@ a{
                         </div>
                     </div>
                 </div>
-
-              </div>
-
-              <div>
-                 
-             </div>
-             
-            </div>
-          </div>
-
-   
-
-      
-
-
-       
+    	
+  </div>
+ </div>
+  </div>
 
        
     </section>

@@ -87,13 +87,13 @@
        
         
         <div class="row projects gx-lg-5">
-            <a href="work-single.html" class="col-sm-6 col-lg-4 text-decoration-none project marketing social business">
+            <a href="EventClick.do" class="col-sm-6 col-lg-4 text-decoration-none project marketing social business">
                 <div class="service-work overflow-hidden card mb-5 mx-5 m-sm-0">
-                    <img class="card-img-top" src="./resources/img/our-work-01.jpg" alt="...">
+                    <img class="card-img-top" src="./resources/img/image1.png" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title light-300 text-dark">거북목 사용자 100명달성 이벤트!!</h5>
+                        <h5 class="card-title light-300 text-dark">현충일 이벤트!!</h5>
                         <p class="card-text light-300 text-dark">
-                           이벤트 기간 2021-10-05 ~ 2021-10-15
+                           이벤트 기간 2021-06-01~ 2021-06-06
                         </p>
                         <span class="text-decoration-none text-primary light-300">
                               보러가기 <i class='bx bxs-hand-right ms-1'></i>
@@ -101,9 +101,9 @@
                     </div>
                 </div>
             </a>
-            <a href="work-single.html" class="col-sm-6 col-lg-4 text-decoration-none project graphic social">
+            <a href="EventClick2.do" class="col-sm-6 col-lg-4 text-decoration-none project graphic social">
                 <div class="service-work overflow-hidden card mx-5 mx-sm-0 mb-5">
-                    <img class="card-img-top" src="./resources/img/our-work-02.jpg" alt="...">
+                    <img class="card-img-top" src="./resources/img/image2.png" alt="...">
                     <div class="card-body">
                         <h5 class="card-title light-300 text-dark">거북목 서비스 1주년 감사 이벤트!!</h5>
                         <p class="card-text light-300 text-dark">
@@ -115,13 +115,13 @@
                     </div>
                 </div>
             </a>
-            <a href="work-single.html" class="col-sm-6 col-lg-4 text-decoration-none project marketing graphic business">
+            <a href="EventClick3.do" class="col-sm-6 col-lg-4 text-decoration-none project marketing graphic business">
                 <div class="service-work overflow-hidden card mx-5 mx-sm-0 mb-5">
-                    <img class="card-img-top" src="./resources/img/our-work-03.jpg" alt="...">
+                    <img class="card-img-top" src="./resources/img/image3.png" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title light-300 text-dark">친구 초대하고 보상 받자!!</h5>
+                        <h5 class="card-title light-300 text-dark">할로윈 이벤트</h5>
                         <p class="card-text light-300 text-dark">
-                            이벤트 기간 2021-10-15 ~ 2021-10-19
+                            이벤트 기간 2021-10-25 ~ 2021-10-30
                         </p>
                         <span class="text-decoration-none text-primary light-300">
                             보러가기 <i class='bx bxs-hand-right ms-1'></i>
@@ -129,13 +129,13 @@
                     </div>
                 </div>
             </a>
-            <a href="work-single.html" class="col-sm-6 col-lg-4 text-decoration-none project social business">
+            <a href="EventClick4.do" class="col-sm-6 col-lg-4 text-decoration-none project social business">
                 <div class="service-work overflow-hidden card mx-5 mx-sm-0 mb-5">
-                    <img class="card-img-top" src="./resources/img/our-work-04.jpg" alt="...">
+                    <img class="card-img-top" src="./resources/img/image4.png" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title light-300 text-dark">10월 푸짐한 이벤트!!</h5>
+                        <h5 class="card-title light-300 text-dark">사용자 50명 이벤트!!</h5>
                         <p class="card-text light-300 text-dark">
-                            이벤트 기간 2021-10-18 ~ 2021-10-24
+                            이벤트 기간 2021-10-18 ~ 2021-12-31
                         </p>
                         <span class="text-decoration-none text-primary light-300">
                             보러가기 <i class='bx bxs-hand-right ms-1'></i>
@@ -143,13 +143,13 @@
                     </div>
                 </div>
             </a>
-            <a href="work-single.html" class="col-sm-6 col-lg-4 text-decoration-none project marketing">
+            <a href="EventClick5.do" class="col-sm-6 col-lg-4 text-decoration-none project marketing">
                 <div class="service-work overflow-hidden card mx-5 mx-sm-0 mb-5">
-                    <img class="card-img-top" src="./resources/img/our-work-05.jpg" alt="...">
+                    <img class="card-img-top" src="./resources/img/image5.png" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title light-300 text-dark">랭킹 이벤트!!</h5>
+                        <h5 class="card-title light-300 text-dark">빼뺴로 데이 이벤트!!</h5>
                         <p class="card-text light-300 text-dark">
-                            이벤트 기간 2021-10-20 ~ 2021-10-27
+                            이벤트 기간 2021-11-11 ~ 2021-11-11
                         </p>
                         <span class="text-decoration-none text-primary light-300">
                             보러가기 <i class='bx bxs-hand-right ms-1'></i>
@@ -157,13 +157,13 @@
                     </div>
                 </div>
             </a>
-            <a href="work-single.html" class="col-sm-6 col-lg-4 text-decoration-none project marketing graphic">
+            <a href="EventClick6.do" class="col-sm-6 col-lg-4 text-decoration-none project marketing graphic">
                 <div class="service-work overflow-hidden card mx-5 mx-sm-0 mb-5">
-                    <img class="card-img-top" src="./resources/img/our-work-06.jpg" alt="...">
+                    <img class="card-img-top" src="./resources/img/image6.png" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title light-300 text-dark">누적 사용자 200명 달성 이벤트!!</h5>
+                        <h5 class="card-title light-300 text-dark">크리스마스 이벤트!!</h5>
                         <p class="card-text light-300 text-dark">
-                            이벤트 기간 2021-10-23 ~ 2021-10-30
+                            이벤트 기간 2021-12-23 ~ 2021-12-30
                         </p>
                         <span class="text-decoration-none text-primary light-300">
                             보러가기 <i class='bx bxs-hand-right ms-1'></i>
