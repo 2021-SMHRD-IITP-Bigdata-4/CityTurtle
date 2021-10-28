@@ -27,5 +27,8 @@
    </bean>
    
 	<mybatis-spring:scan base-package="city.turtle.mapper"/>
+	<mybatis-spring:scan base-package="city.turtle.vo"/>
+	<mybatis-spring:scan base-package="city.turtle.service"/>
+	<mybatis-spring:scan base-package="city.turtle.dao"/>
 	
 </beans>

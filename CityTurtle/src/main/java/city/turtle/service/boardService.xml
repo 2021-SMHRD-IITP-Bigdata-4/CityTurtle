@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="city.turtle.service.boardService">
+
+    <select id="boardList" resultType="city.turtle.vo.boardVO">
+    select * from notices order by not_seq asc
+    </select>
+    
+    
+    <!-- 공지사항 삽입 -->
+    <insert id="boardInsert" parameterType="city.turtle.vo.boardVO">
+        insert into notices(not_title,not_contents,mb_id)
+        values(#{not_title},#{not_contents},#{mb_id})
+    </insert>
+    
+    <!-- 상세보기 -->
+    <select id="boardDetails" resultType="city.turtle.vo.boardVO" parameterType="int"> 
+        select * from notices where not_seq=#{not_seq}
+
+    </select>
+    
+    <!-- 수정 -->
+    <update id="boardUpdate" parameterType="city.turtle.vo.boardVO">
+        update notices set not_title = #{not_title}, not_contents = #{not_contents} where not_seq = #{not_seq}    
+    </update>
+    
+     <!-- 삭제 -->
+     <delete id="boardDelete" parameterType="int">
+        delete from notices where not_seq=#{not_seq}
+     </delete>
+ 
+	
+     <!-- 게시물 총 갯수 -->
+	<select id="count" resultType="int">
+	 select count(not_seq) from notices
+	</select>
+
+	<!-- 게시물 목록 + 페이징 -->
+	<select id="listPage" parameterType="hashMap" resultType="city.turtle.vo.boardVO">
+	 select
+	 		not_seq,not_title,not_contents,mb_id,input_date
+		 from notices
+		 order by not_seq desc
+		  limit #{displayPost}, #{postNum}
+	</select>
+	
+		
+
+
+     
+     
+
+     
+     
+</mapper>

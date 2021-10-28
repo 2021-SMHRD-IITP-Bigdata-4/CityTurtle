@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>이벤트 클릭</title>
+<html lang="en">
 
+<head>
+    <title>이벤트페이지1</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="resources/img/apple-icon.png">
     <link rel="shortcut icon" type="image/x-icon" href="resources/img/favicon.ico">
@@ -19,8 +19,9 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="resources/css/custom.css">
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" integrity="sha384-tKLJeE1ALTUwtXlaGjJYM3sejfssWdAaWR2s97axw4xkiAdMzQjtOjgcyw0Y50KU" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" integrity="sha384-tKLJeE1ALTUwtXlaGjJYM3sejfssWdAaWR2s97axw4xkiAdMzQjtOjgcyw0Y50KU" crossorigin="anonymous">
    
+    
 <!--
     
 TemplateMo 561 Purple Buzz
@@ -33,28 +34,33 @@ https://templatemo.com/tm-561-purple-buzz
 
     <style>
         .contents_bg{
-            background-color: tomato;
-      }
-            
-          
-		.flex-fill.mx-xl-5.mb-2{
+        background-image: url('./resources/img/image1.png')
+    
+        }
+        
+        .flex-fill.mx-xl-5.mb-2{
 		margin: 0 auto;
 		width : 700px;
 		padding-right: 7rem;
 		padding-left: 7rem;
 	}
-		.container.py-4{
+	.container.py-4{
 		margin: 0 auto;
 		width : 553px;
 	}
+	
+
+     
+        
 
     </style>
+
 
 
 </head>
 
 <body>
-    <!-- Header -->
+   <!-- Header -->
     <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
         <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand h1" href="index.do">
@@ -83,7 +89,7 @@ https://templatemo.com/tm-561-purple-buzz
                     </ul>
                 </div>
                 <div class="navbar align-self-center d-flex">
-                    <a class="nav-link" href="#">다운로드&nbsp<i class='bx bx-downvote bx-sm bx-fade-down-hover text-primary'></i></a>                   
+                    <a class="nav-link" href="#">다운로드&nbsp<i class='bx bx-downvote bx-sm bx-fade-down-hover text-primary'></i></a>
                     <a class="nav-link" href="login.do"><i class='bx bx-user-circle bx-sm text-primary'></i></a>
                 </div>
             </div>
@@ -92,78 +98,28 @@ https://templatemo.com/tm-561-purple-buzz
     <!-- Close Header -->
 
 
-    <div class="wrap" style="width: 100%; height: 1300px;">      
-        <div class="contents_bg" style="width: 60%; height: 1200px;  margin-left: 20%; margin-top: 10%;">
-           <div class="contents_title"style="width: 100%; height: 250px; margin-top: 20%; font-size: 50px; text-align: center;">
-            <br><br>   
-            <p>거묵목 감사 이벤트</p><br>
-            <p> !! Event !! </p>
-            <p>1주년</p>
+    <div class="wrap" style="width: 71%; height: 900px; margin-left: 16%">      
+        <div class="contents_bg" style="width: 60%; height: 800px;  margin-left: 20%; margin-top: 10%; );">
 
-           </div>
-           <div class="contents_content" style="width: 100%; height: 250px; margin-top: 20%; font-size: 25px; text-align: center;">
-            <br>
-                <button class="btn btn-outline-primary">이벤트 기간</button> : 2021-10-15 ~ 2021-10-20
-            
-
-
-                    <!-- Start Team Member -->
-    <section class="container py-5" style="margin-left: 13%;">
-        <div class="pt-5 pb-3 d-lg-flex align-items-center gx-5"> 
-            <div class="col-lg-9 row">
-                <div class="team-member col-md-4">
-                    <img class="team-member-img img-fluid rounded-circle p-4" src="./resources/img/team-01.jpg" alt="Card image">
-                    <ul class="team-member-caption list-unstyled text-center">
-                        <li>첫째</li>
-                        <li>선물증정</li>
-                    </ul>
-                </div>
-                <div class="team-member col-md-4">
-                    <img class="team-member-img img-fluid rounded-circle p-4" src="./resources/img/team-02.jpg" alt="Card image">
-                    <ul class="team-member-caption list-unstyled text-center ">
-                        <li>둘째</li>
-                        <li>선물증정</li>
-                    </ul>
-                </div>
-                <div class="team-member col-md-4">
-                    <img class="team-member-img img-fluid rounded-circle p-4" src="./resources/img/team-03.jpg" alt="Card image">
-                    <ul class="team-member-caption list-unstyled text-center">
-                        <li>셋째</li>
-                        <li>기프티콘증정</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <!-- End Team Member -->
-           </div>
-
-        
-
-        
-           
-
-           <div class="contents_footer" style="width: 100%; height: 250px; margin-top: 33%; font-size: 40px; margin-left: 83%;">
-            도시거북
-           </div>
- 
-        </div>
-        
-
-        
-
+</div>
     </div>
+    
+    
+    
+    
+    
+    
+    
 
 
-   <!-- Start Footer -->
+
+    <!-- Start Footer -->
     <footer class="bg-secondary pt-4">
         <div class="container">
             <div class="row py-4">
 
                 <div class="col-lg-3 col-12 align-left">
                     <a class="navbar-brand" href="index.do">
-                        
                         <span class="text-light h5">도시</span> <span class="text-light h5 semi-bold-600">거북</span>
                     </a>
                     <p class="text-light my-lg-4 my-2">

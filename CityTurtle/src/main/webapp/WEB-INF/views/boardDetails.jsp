@@ -1,5 +1,16 @@
+<%@page import="city.turtle.vo.boardVO"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%// jsp는 taglib랑 c:set 코드를 먼저 하고 시작한다.!!!!!!!! %>    
+
+	<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    
+    <%////톰캣 안에 sever.xml/web 가지고오기 왜? /web가 바뀌면 일일히 다 고칠수없으니 %>
+	<c:set var="cpath" value="${pageContext.request.contextPath}"> </c:set>
+    
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,6 +54,23 @@ https://templatemo.com/tm-561-purple-buzz
 
 
 </style>
+
+<%//삭제버튼 눌렀을때 이벤트  %>
+	<script type="text/javascript">
+	function goDel(not_seq) {
+		location.href="${cpath}/boardDelete.do?not_seq="+not_seq;
+	}
+	<%//목록버튼 눌렀을때 이벤트  %>
+	function goList() {
+		location.href="${cpath}/boardList.do";
+	}
+	
+	<%//댓글쓰기 이벤트  %>
+	function gocomment() {
+		location.href="${cpath}/boardComment.do";
+	}
+
+</script>
 
 
 
@@ -93,44 +121,41 @@ https://templatemo.com/tm-561-purple-buzz
 
     <div class="container" style="width: 1000px; height: 700px;">
         <br><br><br><br><br><br>
-        <h1 style="margin-left: 35%;">글 상 세 보 기</h1>
+        <h1 style="margin-left: 42%;">글 상 세 보 기</h1>
         <br><br>
         <div class="panel panel-default" style="text-align: center;">
          
           <div class="panel-body">
           
           <table class="table table-bordered table-hover" style="text-align: center;">
-          <form action="" method="post">
+          <form action="/web/boardUpdate.do" method="post">
           
-          <input type="hidden" name="idx" value="">
+          <input type="hidden" name="not_seq" value="${vo.not_seq}">
                  <tr>
                    <td>번호</td>
-                   <td>1</td>
+                   <td>${vo.not_seq}</td>
                  </tr>
                  
                  <tr>
                    <td>제목</td>
-                   <td><input type="text" name="title" class="form-control" value="2021-10-05 업데이트 안내" style="text-align: center;"> </td>
+                   <td><input type="text" name="not_title" class="form-control" value="${vo.not_title}" style="text-align: center;"> </td>
                  </tr>
                  
                  <tr>
-                    <td>내용</td>
-                    <td><textarea rows="5" name="contents" class="form-control"> 
-                    거북목 업데이트 안내입니다.2021-10-07 새로운 버전이 나왔습니다.
-                    기존에 있던 기능을 다른 기능으로 바꿔서 했어요~ 업데이트 부탁 합니다~~ 
-                    사용하시는 분들 모두 감사합니다.  </textarea> </td>
-                  </tr> 
+             		<td>내용</td>
+             		<td><textarea rows="5" name="not_contents" class="form-control" style="text-align: center;"> ${vo.not_contents} </textarea> </td>
+           		</tr> 
                   
                    <td>작성자</td>
-                   <td>관리자</td>
+                   <td>${vo.mb_id}</td>
                  </tr>
               </table>    
 
               <div class="contents_list" style="margin-left: 72%">
                 <button type="submit" class="btn btn-outline-primary">수정</button>
                 <button type="reset" class="btn btn-outline-primary">취소</button>
-                <button type="button" class="btn btn-outline-primary">삭제</button>
-                <button type="button" class="btn btn-outline-primary">목록</button>
+                <button type="button" class="btn btn-outline-primary" onclick="goDel(${vo.not_seq})">삭제</button>
+                <button type="button" class="btn btn-outline-primary" onclick="goList()">목록</button>
               </div>
           
           </div>
@@ -143,13 +168,13 @@ https://templatemo.com/tm-561-purple-buzz
 
       
       </form>
-
-
-        <!-- Start Comment -->
+      
+      
+      <!-- Start Comment -->
         <div class="row justify-content-center" style="margin-left: 9%;">
             <div class="worksingle-comment-heading col-8 m-auto pb-3" >
                 <br><br><br><br><br>
-                <h4 class="h5">댓글쓰기</h4>
+                <button class="btn btn-outline-primary" style="margin-left: 2%" onclick="gocomment()">댓글 쓰기</button>
             </div>
         </div>
 
@@ -157,12 +182,11 @@ https://templatemo.com/tm-561-purple-buzz
             <div class="worksingle-comment-body col-md-8 m-auto">
                 <div class="d-flex">
                     <div>
-                        <img class="rounded-circle" src="./resources/img/team-05.jpg" style="width: 50px;">
                     </div>
                     <div class="comment-body">
                         <div class="comment-header d-flex justify-content-between ms-3">
                             <div class="header text-start">
-                                <h5 class="h6">박지훈</h5>
+                                <h5 class="h6">wlgns5121 님</h5>
                               
                             </div>
                         
@@ -171,7 +195,7 @@ https://templatemo.com/tm-561-purple-buzz
                             <div class="card-body border ms-3 light-300" style="height: 150px; width: 900px;">
                                 <div class="contents">
                                     <div class="contents_text">                               
-                                            <span>거북목 업데이트는 언제 끝나나요??</span>
+                                            <span>!할로윈!</span>
                                             <br>
                                            
                                     </div>
@@ -192,7 +216,7 @@ https://templatemo.com/tm-561-purple-buzz
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
                                                             <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
                                                           </svg>
-                                                        <span>10</span>
+                                                        <span>2</span>
                                                     </button>
                                                             
                                                 </a>
@@ -214,7 +238,6 @@ https://templatemo.com/tm-561-purple-buzz
         <div class="row justify-content-center" style="margin-left: 9%;">
             <div class="worksingle-comment-heading col-8 m-auto pb-3" >
                 <br><br><br><br><br>
-                <h4 class="h5">댓글쓰기</h4>
             </div>
         </div>
 
@@ -222,12 +245,12 @@ https://templatemo.com/tm-561-purple-buzz
             <div class="worksingle-comment-body col-md-8 m-auto">
                 <div class="d-flex">
                     <div>
-                        <img class="rounded-circle" src="./resources/img/team-05.jpg" style="width: 50px;">
+                        
                     </div>
                     <div class="comment-body">
                         <div class="comment-header d-flex justify-content-between ms-3">
                             <div class="header text-start">
-                                <h5 class="h6">박슬암</h5>
+                                <h5 class="h6">tmfdka12 님</h5>
                               
                             </div>
                         
@@ -236,7 +259,7 @@ https://templatemo.com/tm-561-purple-buzz
                             <div class="card-body border ms-3 light-300" style="height: 150px; width: 900px;">
                                 <div class="contents">
                                     <div class="contents_text">                               
-                                            <span>고생많으십니다.</span>
+                                            <span>할로윈!</span>
                                             <br>
                                            
                                     </div>
@@ -257,7 +280,7 @@ https://templatemo.com/tm-561-purple-buzz
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
                                                             <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
                                                           </svg>
-                                                        <span>10</span>
+                                                        <span>12</span>
                                                     </button>
                                                             
                                                 </a>
@@ -280,7 +303,6 @@ https://templatemo.com/tm-561-purple-buzz
         <div class="row justify-content-center" style="margin-left: 9%;">
             <div class="worksingle-comment-heading col-8 m-auto pb-3" >
                 <br><br><br><br><br>
-                <h4 class="h5">댓글쓰기</h4>
             </div>
         </div>
 
@@ -288,12 +310,12 @@ https://templatemo.com/tm-561-purple-buzz
             <div class="worksingle-comment-body col-md-8 m-auto">
                 <div class="d-flex">
                     <div>
-                        <img class="rounded-circle" src="./resources/img/team-05.jpg" style="width: 50px;">
+                       
                     </div>
                     <div class="comment-body">
                         <div class="comment-header d-flex justify-content-between ms-3">
                             <div class="header text-start">
-                                <h5 class="h6">김봉현</h5>
+                                <h5 class="h6">qhdgus11 님</h5>
                               
                             </div>
                         
@@ -302,7 +324,7 @@ https://templatemo.com/tm-561-purple-buzz
                             <div class="card-body border ms-3 light-300" style="height: 150px; width: 900px;">
                                 <div class="contents">
                                     <div class="contents_text">                               
-                                            <span>유용한 정보 감사합니다.</span>
+                                            <span>할로윈!!</span>
                                             <br>
                                            
                                     </div>
@@ -323,7 +345,7 @@ https://templatemo.com/tm-561-purple-buzz
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
                                                             <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
                                                           </svg>
-                                                        <span>10</span>
+                                                        <span>4</span>
                                                     </button>
                                                             
                                                 </a>
@@ -346,7 +368,6 @@ https://templatemo.com/tm-561-purple-buzz
         <div class="row justify-content-center" style="margin-left: 9%;">
             <div class="worksingle-comment-heading col-8 m-auto pb-3" >
                 <br><br><br><br><br>
-                <h4 class="h5">댓글쓰기</h4>
             </div>
         </div>
 
@@ -354,12 +375,12 @@ https://templatemo.com/tm-561-purple-buzz
             <div class="worksingle-comment-body col-md-8 m-auto">
                 <div class="d-flex">
                     <div>
-                        <img class="rounded-circle" src="./resources/img/team-05.jpg" style="width: 50px;">
+                     
                     </div>
                     <div class="comment-body">
                         <div class="comment-header d-flex justify-content-between ms-3">
                             <div class="header text-start">
-                                <h5 class="h6">김성훈</h5>
+                                <h5 class="h6">tjdgns56 님</h5>
                               
                             </div>
                         
@@ -368,7 +389,7 @@ https://templatemo.com/tm-561-purple-buzz
                             <div class="card-body border ms-3 light-300" style="height: 150px; width: 900px;">
                                 <div class="contents">
                                     <div class="contents_text">                               
-                                            <span>감사합니다.</span>
+                                            <span>할로윈!!</span>
                                             <br>
                                            
                                     </div>
@@ -389,7 +410,73 @@ https://templatemo.com/tm-561-purple-buzz
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
                                                             <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
                                                           </svg>
-                                                        <span>10</span>
+                                                        <span>7</span>
+                                                    </button>
+                                                            
+                                                </a>
+                                           
+                                            
+                                        </div>
+
+                                    
+                                   
+                                </div>                            
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End Comment -->
+        
+        
+        
+        <div class="row justify-content-center" style="margin-left: 9%;">
+            <div class="worksingle-comment-heading col-8 m-auto pb-3" >
+                <br><br><br><br><br>
+            </div>
+        </div>
+
+        <div class="row pb-4"  style="margin-left: 10%;">
+            <div class="worksingle-comment-body col-md-8 m-auto">
+                <div class="d-flex">
+                    <div>
+                     
+                    </div>
+                    <div class="comment-body">
+                        <div class="comment-header d-flex justify-content-between ms-3">
+                            <div class="header text-start">
+                                <h5 class="h6">admin 님</h5>
+                              
+                            </div>
+                        
+                        </div>
+                        <div class="footer">
+                            <div class="card-body border ms-3 light-300" style="height: 150px; width: 900px;">
+                                <div class="contents">
+                                    <div class="contents_text">                               
+                                            <span>할로윈!</span>
+                                            <br>
+                                           
+                                    </div>
+
+                                            <br> 
+                                        <div class="contents_date">
+                                            <span>2021-11-05</span>
+                                            <br>                                                                            
+                                        </div>
+
+                                        <div class="contents_footer">
+                                            
+                                           
+                                            
+                                            
+                                                <a href="#" class="" style="margin-left: 93%;">
+                                                    <button type="submit" class="btn btn-outline-primary">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                                                            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                                                          </svg>
+                                                        <span>0</span>
                                                     </button>
                                                             
                                                 </a>
@@ -408,6 +495,8 @@ https://templatemo.com/tm-561-purple-buzz
             </div>
         </div><!-- End Comment -->
 
+
+       
 
         <div style="height: 200px;"></div>
       
