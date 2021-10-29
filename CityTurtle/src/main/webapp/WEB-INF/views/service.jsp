@@ -40,7 +40,7 @@ https://templatemo.com/tm-561-purple-buzz
 	}
 
 </style>
-
+		
 </head>
 
 <body>
@@ -86,15 +86,35 @@ https://templatemo.com/tm-561-purple-buzz
     <section class="bg-light w-100">
         <div class="container">
             <div class="row d-flex align-items-center py-5">
-                <div class="col-lg-6 text-start">
-                    <h1 class="h2 py-5 text-primary typo-space-line">About Us</h1>
-                    <p class="light-300">
-                        Vector illustration credit goes to <a rel="nofollow" href="http://freepik.com/" target="_blank">FreePik</a> website. Purple Buzz is provided by TemplateMo. Lorem ipsum dolor sit amet, consectetur.
-                    </p>
+					
+            <div class="col-lg-12 row">
+                <div class="team-member col-md-6">
+
                 </div>
-                <div class="col-lg-6">
-                    <img src="./resources/img/banner-img-02.svg">
+                <div class="team-member col-md-6">
+                    
+                    
                 </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Banner Hero -->
+    
+    <!-- Start Banner Hero -->
+    <section class="bg-white w-100">
+        <div class="container">
+            <div class="row d-flex align-items-center py-5">
+					
+            <div class="col-lg-12 row">
+                <div class="team-member col-md-6">
+					<canvas id="line-chart" width="300" height="250"></canvas>
+                </div>
+                <div class="team-member col-md-6">
+                    <canvas id="pie-chart" width="20" height="20"></canvas>
+                    
+                </div>
+            </div>
             </div>
         </div>
     </section>
@@ -102,41 +122,20 @@ https://templatemo.com/tm-561-purple-buzz
 
 
     <!-- Start Team Member -->
-    <section class="container py-5">
-        <div class="pt-5 pb-3 d-lg-flex align-items-center gx-5">
-
-            <div class="col-lg-3">
-                <h2 class="h2 py-5 typo-space-line">Our Team</h2>
-                <p class="text-muted light-300">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-            </div>
-
-            <div class="col-lg-9 row">
-                <div class="team-member col-md-4">
-                    <img class="team-member-img img-fluid rounded-circle p-4" src="./resources/img/team-01.jpg" alt="Card image">
-                    <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                        <li>John Doe</li>
-                        <li>Business Development</li>
-                    </ul>
+    <section class="bg-light w-100">
+        <div class="container">
+            <div class="row d-flex align-items-center py-5">
+					
+            <div class="col-lg-12 row">
+                <div class="team-member col-md-6">
+					<canvas id="line-chart2" width="300" height="250"></canvas>
                 </div>
-                <div class="team-member col-md-4">
-                    <img class="team-member-img img-fluid rounded-circle p-4" src="./resources/img/team-02.jpg" alt="Card image">
-                    <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                        <li>Jane Doe</li>
-                        <li>Media Development</li>
-                    </ul>
-                </div>
-                <div class="team-member col-md-4">
-                    <img class="team-member-img img-fluid rounded-circle p-4" src="./resources/img/team-03.jpg" alt="Card image">
-                    <ul class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
-                        <li>Sam</li>
-                        <li>Developer</li>
-                    </ul>
+                <div class="team-member col-md-6">
+                    <canvas id="pie-chart2" width="20" height="20"></canvas>
+                    
                 </div>
             </div>
-
+            </div>
         </div>
     </section>
     <!-- End Team Member -->
@@ -144,29 +143,7 @@ https://templatemo.com/tm-561-purple-buzz
     <!-- Start Our Partner -->
     <section class="bg-secondary py-3">
         <div class="container py-5">
-            <h2 class="h2 text-white text-center py-5">Our Partner</h2>
-            <div class="row text-center">
-                <div class="col-md-3 mb-3">
-                    <div class="card partner-wap py-5">
-                        <a href="#"><i class='display-1 text-white bx bxs-buildings'></i></a>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-3">
-                    <div class="card partner-wap py-5">
-                        <a href="#"><i class='display-1 bx text-white bxs-check-shield bx-lg'></i></a>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-3">
-                    <div class="card partner-wap py-5">
-                        <a href="#"><i class='display-1 text-white bx bxs-bolt-circle'></i></a>
-                    </div>
-                </div>
-                <div class="col-md-3 mb-3">
-                    <div class="card partner-wap py-5">
-                        <a href="#"><i class='display-1 text-white bx bxs-spa'></i></a>
-                    </div>
-                </div>
-            </div>
+            <h2 class="h2 text-white text-center py-5">종합 통계</h2>
         </div>
     </section>
     <!--End Our Partner-->
@@ -174,131 +151,127 @@ https://templatemo.com/tm-561-purple-buzz
     <!-- Start Progress -->
     <section class="bg-white py-5">
         <div class="container my-4">
-
-            <h1 class="creative-heading h2 pb-3">Creative & Make Perfect</h1>
-
-            <div class="creative-content row py-3">
-                <div class="col-md-5">
-                    <p class="text-muted col-lg-8 light-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida Risus.
-                    </p>
+            <div class="col-lg-12 row">
+                <div class="team-member col-md-6">
+					<canvas id="bar-chart" width="300" height="230"></canvas>
                 </div>
-                <div class="creative-progress col-md-7">
-
-                    <div class="row mt-4 mt-sm-2">
-                        <div class="col-6">
-                            <h4 class="h5">Development</h4>
-                        </div>
-                        <div class="col-6 text-right">66%</div>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
-                    <div class="row mt-4 mt-sm-2">
-                        <div class="col-6">
-                            <h4 class="h5">Design</h4>
-                        </div>
-                        <div class="col-6 text-right">90%</div>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
-
-                    <div class="row mt-4 mt-sm-2">
-                        <div class="col-6">
-                            <h4 class="h5">Marketing</h4>
-                        </div>
-                        <div class="col-6 text-right">74%</div>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: 74%" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-
+                <div class="team-member col-md-6">
+                    <canvas id="bar-chart-horizontal" width="600" height="250"></canvas>
+                    <canvas id="bar-chart-horizontal2" width="600" height="250"></canvas>
                 </div>
             </div>
+
         </div>
     </section>
     <!-- End Progress -->
 
-    <!-- Start Choice -->
-    <section class="why-us banner-bg bg-light">
-        <div class="container my-4">
-            <div class="row">
-                <div class="banner-img col-lg-5">
-                    <img src="./resources/img/work.svg" class="rounded img-fluid" alt="">
-                </div>
-                <div class="banner-content col-lg-7 align-self-end">
-                    <h2 class="h2 pb-3">Why you choose us?</h2>
-                    <p class="text-muted pb-5 light-300">
-                    You are allowed to download and use this Purple Buzz template for your websites. You are <strong>not allowed</strong> to re-distribute this template ZIP file on other template websites. It is quite easy to simply copy and repost the ZIP file on any <a rel="nofollow" href="https://www.google.com/search?q=free+css" target="_blank">Free CSS collection</a> websites.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Choice -->
 
     <!-- Start Aim -->
-    <section class="banner-bg bg-white py-5">
+    <section class="banner-bg bg-light py-5">
         <div class="container my-4">
+            <h2 class="h2 text-primary text-center py-5">이달의 거북랭킹 TOP5</h2>    	
             <div class="row text-center">
-
                 <div class="objective col-lg-4">
-                    <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-secondary shadow-lg">
-                        <i class="display-4 bx bxs-bulb text-light"></i>
-                    </div>
-                    <h2 class="objective-heading h3 mb-2 mb-sm-4 light-300">Our Vision</h2>
-                    <p class="light-300">
-                        Incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse commodo viverra.
-                    </p>
+					<div class="card bg-light mb-3" style="max-width: 20rem;">
+					  <div class="card-header">탈거북 (종합 순위)</div>
+					  <div class="card-body">
+	                    <dl>
+							<div>
+						  		<dd>
+						  		  <span>새우잡이노예</span> 
+						  		  <span>78%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>이리와늑대</span>
+						  		  <span>62%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>접시빌런</span>
+						  		  <span>59%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>26971578</span>
+						  		  <span>58%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>그거참나이스</span>
+						  		  <span>57%</span>
+						  		</dd>						  		
+							</div>
+						</dl>
+					  </div>
+					</div>
+                </div>
+                
+
+                <div class="objective col-lg-4 mt-sm-0 mt-4">
+					<div class="card bg-light mb-3" style="max-width: 20rem;">
+					  <div class="card-header">인간화 (거북목 역순위)</div>
+					  <div class="card-body">
+	                    <dl>
+							<div>
+						  		<dd>
+						  		  <span>새우잡이노예</span> 
+						  		  <span>78%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>이리와늑대</span>
+						  		  <span>62%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>접시빌런</span>
+						  		  <span>59%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>26971578</span>
+						  		  <span>58%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>그거참나이스</span>
+						  		  <span>57%</span>
+						  		</dd>
+						  		
+							</div>
+						</dl>
+					  </div>
+					</div>
                 </div>
 
                 <div class="objective col-lg-4 mt-sm-0 mt-4">
-                    <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-secondary shadow-lg">
-                        <i class='display-4 bx bx-revision text-light'></i>
-                    </div>
-                    <h2 class="objective-heading h3 mb-2 mb-sm-4 light-300">Our Mission</h2>
-                    <p class="light-300">
-                        Eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam quis.
-                    </p>
-                </div>
-
-                <div class="objective col-lg-4 mt-sm-0 mt-4">
-                    <div class="objective-icon card m-auto py-4 mb-2 mb-sm-4 bg-secondary shadow-lg">
-                        <i class="display-4 bx bxs-select-multiple text-light"></i>
-                    </div>
-                    <h2 class="objective-heading h3 mb-2 mb-sm-4 light-300">Our Goal</h2>
-                    <p class="light-300">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor.
-                    </p>
-                </div>
-
-            </div>
-        </div>
+					<div class="card bg-light mb-3" style="max-width: 20rem;">
+					  <div class="card-header">깜빡왕 (눈깜빡 순위)</div>
+					  <div class="card-body">
+	                    <dl>
+							<div>
+						  		<dd>
+						  		  <span>새우잡이노예</span> 
+						  		  <span>78%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>이리와늑대</span>
+						  		  <span>62%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>접시빌런</span>
+						  		  <span>59%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>26971578</span>
+						  		  <span>58%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>그거참나이스</span>
+						  		  <span>57%</span>
+						  		</dd>						  		
+							</div>
+						</dl>
+					  </div>
+					</div>
+           		</div>
+      		</div>
+      </div>  
     </section>
     <!-- End Aim -->
-
-    <!-- Start Contact -->
-    <section class="banner-bg bg-light py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 mx-auto my-4 p-3">
-                    <form action="#" method="get"><h1 class="h2 text-center">Stay up to date with us</h1>
-                    <div class="input-group py-3">
-                    
-                        <input name="email" type="text" class="form-control form-control-lg rounded-pill rounded-end" id="email" placeholder="Your Email" aria-label="Your Email">
-                        <button class="btn btn-secondary text-white btn-lg rounded-pill rounded-start px-lg-4" type="submit">Subsribe</button>
-                    </div>
-                    <p class="text-center light-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt labore et dolore magna aliqua.</p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Contact -->
-
 
     <!-- Start Footer -->
     <footer class="bg-secondary pt-4">
@@ -402,6 +375,190 @@ https://templatemo.com/tm-561-purple-buzz
     <script src="resources/js/templatemo.js"></script>
     <!-- Custom -->
     <script src="resources/js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+	<script type="text/javascript">
+       const canvas = document.querySelector("#pie-chart");
+       canvas.width = 5;
+       canvas.height = 5;
+   
+      new Chart(document.getElementById("pie-chart"), {
+       type: 'pie',
+       data: {
+         labels: ["박지훈 님", "김성훈 님", "김봉현 님", "박슬암 님", "정세연 님"],
+         datasets: [{
+           label: "Population (millions)",
+           backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+           data: [50,30,25,44,77]
+         }]
+       },
+       options: {
+         title: {
+           display: true,
+           text: '거북목 순위'
+         }
+       }
+   });
+      
+      new Chart(document.getElementById("line-chart"), {
+    	  type: 'line',
+    	  data: {
+    	    labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
+    	    datasets: [{ 
+    	        data: [86,114,106,106,107,111,133,221,783,2478],
+    	        label: "Africa",
+    	        borderColor: "#3e95cd",
+    	        fill: false
+    	      }, { 
+    	        data: [282,350,411,502,635,809,947,1402,3700,5267],
+    	        label: "Asia",
+    	        borderColor: "#8e5ea2",
+    	        fill: false
+    	      }, { 
+    	        data: [168,170,178,190,203,276,408,547,675,734],
+    	        label: "Europe",
+    	        borderColor: "#3cba9f",
+    	        fill: false
+    	      }, { 
+    	        data: [40,20,10,16,24,38,74,167,508,784],
+    	        label: "Latin America",
+    	        borderColor: "#e8c3b9",
+    	        fill: false
+    	      }, { 
+    	        data: [6,3,2,2,7,26,82,172,312,433],
+    	        label: "North America",
+    	        borderColor: "#c45850",
+    	        fill: false
+    	      }
+    	    ]
+    	  },
+    	  options: {
+    	    title: {
+    	      display: true,
+    	      text: 'World population per region (in millions)'
+    	    }
+    	  }
+    	}); 
+      new Chart(document.getElementById("pie-chart2"), {
+       type: 'pie',
+       data: {
+         labels: ["박지훈 님", "김성훈 님", "김봉현 님", "박슬암 님", "정세연 님"],
+         datasets: [{
+           label: "Population (millions)",
+           backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+           data: [50,30,25,44,77]
+         }]
+       },
+       options: {
+         title: {
+           display: true,
+           text: '거북목 순위'
+         }
+       }
+   });
+      
+      new Chart(document.getElementById("line-chart2"), {
+    	  type: 'line',
+    	  data: {
+    	    labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
+    	    datasets: [{ 
+    	        data: [86,114,106,106,107,111,133,221,783,2478],
+    	        label: "Africa",
+    	        borderColor: "#3e95cd",
+    	        fill: false
+    	      }, { 
+    	        data: [282,350,411,502,635,809,947,1402,3700,5267],
+    	        label: "Asia",
+    	        borderColor: "#8e5ea2",
+    	        fill: false
+    	      }, { 
+    	        data: [168,170,178,190,203,276,408,547,675,734],
+    	        label: "Europe",
+    	        borderColor: "#3cba9f",
+    	        fill: false
+    	      }, { 
+    	        data: [40,20,10,16,24,38,74,167,508,784],
+    	        label: "Latin America",
+    	        borderColor: "#e8c3b9",
+    	        fill: false
+    	      }, { 
+    	        data: [6,3,2,2,7,26,82,172,312,433],
+    	        label: "North America",
+    	        borderColor: "#c45850",
+    	        fill: false
+    	      }
+    	    ]
+    	  },
+    	  options: {
+    	    title: {
+    	      display: true,
+    	      text: 'World population per region (in millions)'
+    	    }
+    	  }
+    	}); 
+
+      new Chart(document.getElementById("bar-chart"), {
+    	    type: 'bar',
+    	    data: {
+    	      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+    	      datasets: [
+    	        {
+    	          label: "Population (millions)",
+    	          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+    	          data: [2478,5267,734,784,433]
+    	        }
+    	      ]
+    	    },
+    	    options: {
+    	      legend: { display: false },
+    	      title: {
+    	        display: true,
+    	        text: 'Predicted world population (millions) in 2050'
+    	      }
+    	    }
+    	});
+      new Chart(document.getElementById("bar-chart-horizontal"), {
+    	    type: 'horizontalBar',
+    	    data: {
+    	      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+    	      datasets: [
+    	        {
+    	          label: "Population (millions)",
+    	          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+    	          data: [2478,5267,734,784,433]
+    	        }
+    	      ]
+    	    },
+    	    options: {
+    	      legend: { display: false },
+    	      title: {
+    	        display: true,
+    	        text: 'Predicted world population (millions) in 2050'
+    	      }
+    	    }
+    	});
+      new Chart(document.getElementById("bar-chart-horizontal2"), {
+    	    type: 'horizontalBar',
+    	    data: {
+    	      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+    	      datasets: [
+    	        {
+    	          label: "Population (millions)",
+    	          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+    	          data: [2478,5267,734,784,433]
+    	        }
+    	      ]
+    	    },
+    	    options: {
+    	      legend: { display: false },
+    	      title: {
+    	        display: true,
+    	        text: 'Predicted world population (millions) in 2050'
+    	      }
+    	    }
+    	});
+
+      </script>
+    
 
 </body>
 
