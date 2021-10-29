@@ -282,20 +282,19 @@ https://templatemo.com/tm-561-purple-buzz
     <script src="resources/js/custom.js"></script>
 	<script>
   	 
-	 $("#login").on("click",function(){
-    	 var errMsg = "${errMsg}";
-    	 var mb_id = $("#mb_id").val();
-    	 var mb_pwd = $("#mb_pwd").val();
+	// 아이디 비밀번호 입력 안 한 경우
+	$("#login").on("click",function(){
+    	let mb_id = $("#mb_id").val();
+    	let mb_pwd = $("#mb_pwd").val();
     	 
-		 if(mb_id == "" || mb_pwd == ""){
-			 alert("아이디 또는 비밀번호가 잘못 입력 되었습니다.\n아이디와 비밀번호를 정확히 입력해 주세요.");			 
-		 } else if (errMsg != null){
-			 alert("아이디 또는 비밀번호가 잘못 입력 되었습니다.\n아이디와 비밀번호를 정확히 입력해 주세요.");			 		 
-	 	 }
+		if(mb_id == ""){
+			alert("아이디를 입력해주세요.");			 
+		} else if (mb_pwd == ""){
+			alert("비밀번호를 입력해주세요.");			 		 
+	 	}
 
-     });
-	
-	
+    });
+
 	</script>
 </body>
 

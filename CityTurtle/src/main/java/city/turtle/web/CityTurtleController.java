@@ -126,7 +126,6 @@ public class CityTurtleController {
 	}
 
 
-	
 	// 소셜 로그인 성공 페이지
 	@RequestMapping("/loginSuccess.do")
 	public String loginSuccess() {
@@ -143,10 +142,10 @@ public class CityTurtleController {
 			return "redirect:/index.do";
 		} else {
 			session.setAttribute("signIn", null);
-			session.setAttribute("errMsg", "errMsg");
 			return "redirect:/login.do";
 		}
 	}
+	
 	// 로그아웃
 	@RequestMapping("/logout.do")
 	public String logout(HttpSession session) {
