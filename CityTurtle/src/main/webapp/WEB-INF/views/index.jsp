@@ -92,7 +92,7 @@ https://templatemo.com/tm-561-purple-buzz
                     <a class="nav-link" href="login.do"><i class='bx bx-user-circle bx-sm text-primary'></i></a>
                   </c:if>
                   <c:if test="${signIn != null}">
-                  	<a class="nav-link" href="logout.do">로그아웃</a>
+                  	<a class="nav-link" href="logout.do">${signIn.mb_id} 로그아웃</a>
                   </c:if>
                 </div>
             </div>

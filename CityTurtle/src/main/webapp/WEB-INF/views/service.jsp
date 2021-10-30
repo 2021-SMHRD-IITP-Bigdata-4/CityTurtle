@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cpath" value="${pageContext.request.contextPath}"> </c:set>
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,7 +76,7 @@ https://templatemo.com/tm-561-purple-buzz
                 </div>
                 <div class="navbar align-self-center d-flex">
                     <a class="nav-link text-primary" href="#">다운로드&nbsp<i class='bx bx-downvote bx-sm bx-fade-down-hover text-primary'></i></a>
-                    <a class="nav-link" href="login.do"><i class='bx bx-user-circle bx-sm text-primary'></i></a>
+                    <a class="nav-link" href="login.do">${signIn.mb_id}</a>
                 </div>
             </div>
         </div>
@@ -143,7 +145,7 @@ https://templatemo.com/tm-561-purple-buzz
     <!-- Start Our Partner -->
     <section class="bg-secondary py-3">
         <div class="container py-5">
-            <h2 class="h2 text-white text-center py-5">종합 통계</h2>
+            <h2 class="h2 text-white text-center">종합 통계</h2>
         </div>
     </section>
     <!--End Our Partner-->
@@ -376,17 +378,19 @@ https://templatemo.com/tm-561-purple-buzz
     <!-- Custom -->
     <script src="resources/js/custom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script type="text/javascript">
        const canvas = document.querySelector("#pie-chart");
        canvas.width = 5;
        canvas.height = 5;
    
+       
       new Chart(document.getElementById("pie-chart"), {
        type: 'pie',
        data: {
-         labels: ["박지훈 님", "김성훈 님", "김봉현 님", "박슬암 님", "정세연 님"],
+         labels: ["거북목1", "거북목2", "거북목3", "거북목4", "거북목5"],
          datasets: [{
-           label: "Population (millions)",
+           label: "거북목 비율",
            backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
            data: [50,30,25,44,77]
          }]
@@ -394,56 +398,69 @@ https://templatemo.com/tm-561-purple-buzz
        options: {
          title: {
            display: true,
-           text: '거북목 순위'
+           text: '거북목 비율'
          }
        }
    });
+          
+      $(document).ready(function(){ 
+    		getGraph();
+    	});
       
-      new Chart(document.getElementById("line-chart"), {
-    	  type: 'line',
-    	  data: {
-    	    labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
-    	    datasets: [{ 
-    	        data: [86,114,106,106,107,111,133,221,783,2478],
-    	        label: "Africa",
-    	        borderColor: "#3e95cd",
-    	        fill: false
-    	      }, { 
-    	        data: [282,350,411,502,635,809,947,1402,3700,5267],
-    	        label: "Asia",
-    	        borderColor: "#8e5ea2",
-    	        fill: false
-    	      }, { 
-    	        data: [168,170,178,190,203,276,408,547,675,734],
-    	        label: "Europe",
-    	        borderColor: "#3cba9f",
-    	        fill: false
-    	      }, { 
-    	        data: [40,20,10,16,24,38,74,167,508,784],
-    	        label: "Latin America",
-    	        borderColor: "#e8c3b9",
-    	        fill: false
-    	      }, { 
-    	        data: [6,3,2,2,7,26,82,172,312,433],
-    	        label: "North America",
-    	        borderColor: "#c45850",
-    	        fill: false
-    	      }
-    	    ]
-    	  },
-    	  options: {
-    	    title: {
-    	      display: true,
-    	      text: 'World population per region (in millions)'
-    	    }
-    	  }
-    	}); 
+      function getGraph(){
+       	  let timeList = [];
+    	  let posList = [];
+    	  
+    	  $.ajax({
+    		  url:"${cpath}/countTurtle.do",
+    		  type:"get",
+    		  data:{mb_id:"${signIn.mb_id}", pos_type:"거북목"},
+    		  dataType:"json",
+    		  success:function(data){
+    			  // console.log(data[0].pos_count);
+    			  // 그래프로 나타낼 자료 리스트에 담기
+    			  for (let i = 0; i<data.length;i++){    				  
+						timeList.push(data[i].pos_time);    				  
+						posList.push(data[i].pos_count);    				  
+    			  }
+    			  // console.log(timeList);
+    			  // console.log(posList);  	
+				  // 그래프
+    			  new Chart(document.getElementById("line-chart"), {
+    		    	  type: 'line',
+    		    	  data: {
+    		    	    labels: timeList,
+    		    	    datasets: [{ 
+    		    	        data: posList,
+    		    	        label: "거북목",
+    		    	        borderColor: "#3e95cd",
+    		    	        fill: false
+    		    	      }
+    		    	    ]
+    		    	  },
+    		    	  options: {
+    		    	    title: {
+    		    	      display: true,
+    		    	      text: '주간 거북목'
+    		    	    }
+    		    	  }
+    		    	}); //그래프
+    		  },
+    		  error:function(){
+    			  alert("실패");
+    		  }  
+	     		  
+    	  }) // ajax	  
+      } // getGraph    	  
+      
+      
+      
       new Chart(document.getElementById("pie-chart2"), {
        type: 'pie',
        data: {
-         labels: ["박지훈 님", "김성훈 님", "김봉현 님", "박슬암 님", "정세연 님"],
+         labels: ["눈깜빡1", "눈깜빡2", "눈깜빡3", "눈깜빡4", "눈깜빡5"],
          datasets: [{
-           label: "Population (millions)",
+           label: "눈깜빡 비율",
            backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
            data: [50,30,25,44,77]
          }]
@@ -451,7 +468,7 @@ https://templatemo.com/tm-561-purple-buzz
        options: {
          title: {
            display: true,
-           text: '거북목 순위'
+           text: '눈깜빡 비율'
          }
        }
    });
@@ -536,6 +553,7 @@ https://templatemo.com/tm-561-purple-buzz
     	      }
     	    }
     	});
+      
       new Chart(document.getElementById("bar-chart-horizontal2"), {
     	    type: 'horizontalBar',
     	    data: {

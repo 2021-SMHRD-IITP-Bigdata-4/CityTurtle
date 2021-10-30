@@ -3,30 +3,30 @@
 <mapper namespace="city.turtle.service.boardService">
 
     <select id="boardList" resultType="city.turtle.vo.boardVO">
-    select * from notices order by not_seq asc
+    select * from NOTICES order by not_seq asc
     </select>
     
     
     <!-- 공지사항 삽입 -->
     <insert id="boardInsert" parameterType="city.turtle.vo.boardVO">
-        insert into notices(not_title,not_contents,mb_id)
+        insert into NOTICES(not_title,not_contents,mb_id)
         values(#{not_title},#{not_contents},#{mb_id})
     </insert>
     
     <!-- 상세보기 -->
     <select id="boardDetails" resultType="city.turtle.vo.boardVO" parameterType="int"> 
-        select * from notices where not_seq=#{not_seq}
+        select * from NOTICES where not_seq=#{not_seq}
 
     </select>
     
     <!-- 수정 -->
     <update id="boardUpdate" parameterType="city.turtle.vo.boardVO">
-        update notices set not_title = #{not_title}, not_contents = #{not_contents} where not_seq = #{not_seq}    
+        update NOTICES set not_title = #{not_title}, not_contents = #{not_contents} where not_seq = #{not_seq}    
     </update>
     
      <!-- 삭제 -->
      <delete id="boardDelete" parameterType="int">
-        delete from notices where not_seq=#{not_seq}
+        delete from NOTICES where not_seq=#{not_seq}
      </delete>
  
 	
