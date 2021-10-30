@@ -108,12 +108,14 @@ https://templatemo.com/tm-561-purple-buzz
           </div>
         </div>
         
-        <div class="form-group">
-          <label class="control-label col-sm-2" for="email">사진첨부:</label><br><br>
+        <label class="control-label col-sm-2">작성자:</label><br><br>
           <div class="col-sm-10">
-            <input type="file" class="form-control" name="files">
+            <input type="text" class="form-control" name="mb_id" placeholder="Enter id"><br><br>
           </div>
         </div>
+        
+        <div class="form-group"> 
+
         
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10"><br>
