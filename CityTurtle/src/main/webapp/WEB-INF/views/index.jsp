@@ -76,9 +76,6 @@ https://templatemo.com/tm-561-purple-buzz
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="service.do">서비스</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="competition.do">경쟁</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="Event.do">이벤트</a>
                         </li>
                         <li class="nav-item">
@@ -88,11 +85,12 @@ https://templatemo.com/tm-561-purple-buzz
                 </div>
                 <div class="navbar align-self-center d-flex">
                     <a class="nav-link" href="#">다운로드&nbsp<i class='bx bx-downvote bx-sm bx-fade-down-hover text-primary'></i></a>
+                    <a class="nav-link" href="#"><i class='bx bx-cog bx-sm text-primary'></i></a>
                   <c:if test="${signIn == null}">
                     <a class="nav-link" href="login.do"><i class='bx bx-user-circle bx-sm text-primary'></i></a>
                   </c:if>
                   <c:if test="${signIn != null}">
-                  	<a class="nav-link" href="logout.do">${signIn.mb_id} 로그아웃</a>
+                  	<a class="nav-link" href="logout.do">로그아웃</a>
                   </c:if>
                 </div>
             </div>
@@ -109,7 +107,7 @@ https://templatemo.com/tm-561-purple-buzz
 
                 <!-- Start Recent Work -->
                 <div class="col-md-4 mb-3">
-                    <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
+                    <a href="EventClick.do" class="recent-work card border-0 shadow-lg overflow-hidden">
                         <img class="recent-work-img card-img" src="./resources/img/image1.png" alt="Card image">
                         <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                             <div class="recent-work-content text-start mb-3 ml-3 text-dark">
@@ -122,7 +120,7 @@ https://templatemo.com/tm-561-purple-buzz
 
                 <!-- Start Recent Work -->
                 <div class="col-md-4 mb-3">
-                    <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
+                    <a href="EventClick2.do" class="recent-work card border-0 shadow-lg overflow-hidden">
                         <img class="recent-work-img card-img" src="./resources/img/image2.png" alt="Card image">
                         <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                             <div class="recent-work-content text-start mb-3 ml-3 text-dark">
@@ -135,7 +133,7 @@ https://templatemo.com/tm-561-purple-buzz
 
                 <!-- Start Recent Work -->
                 <div class="col-md-4 mb-3">
-                    <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
+                    <a href="EventClick3.do" class="recent-work card border-0 shadow-lg overflow-hidden">
                         <img class="recent-work-img card-img" src="./resources/img/image3.png" alt="Card image">
                         <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                             <div class="recent-work-content text-start mb-3 ml-3 text-dark">
@@ -148,7 +146,7 @@ https://templatemo.com/tm-561-purple-buzz
 
                 <!-- Start Recent Work -->
                 <div class="col-md-4 mb-3">
-                    <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
+                    <a href="EventClick4.do" class="recent-work card border-0 shadow-lg overflow-hidden">
                         <img class="recent-work-img card-img" src="./resources/img/image4.png" alt="Card image">
                         <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                             <div class="recent-work-content text-start mb-3 ml-3 text-dark">
@@ -161,7 +159,7 @@ https://templatemo.com/tm-561-purple-buzz
 
                 <!-- Start Recent Work -->
                 <div class="col-md-4 mb-3">
-                    <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
+                    <a href="EventClick5.do" class="recent-work card border-0 shadow-lg overflow-hidden">
                         <img class="recent-work-img card-img" src="./resources/img/image5.png" alt="Card image">
                         <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                             <div class="recent-work-content text-start mb-3 ml-3 text-dark">
@@ -174,7 +172,7 @@ https://templatemo.com/tm-561-purple-buzz
 
                 <!-- Start Recent Work -->
                 <div class="col-md-4 mb-3">
-                    <a href="#" class="recent-work card border-0 shadow-lg overflow-hidden">
+                    <a href="EventClick6.do" class="recent-work card border-0 shadow-lg overflow-hidden">
                         <img class="recent-work-img card-img" src="./resources/img/image6.png" alt="Card image">
                         <div class="recent-work-vertical card-img-overlay d-flex align-items-end">
                             <div class="recent-work-content text-start mb-3 ml-3 text-dark">
@@ -206,9 +204,9 @@ https://templatemo.com/tm-561-purple-buzz
         <div class="container">
             <div class="row d-flex align-items-center py-5">
                 <div class="col-lg-6 text-start">
-                    <h1 class="h2 py-5 text-primary typo-space-line">거북목 교정 서비스</h1>
+                    <h1 class="h2 py-5 text-primary typo-space-line">10초 단위로<br>영상을 분석하여 <br>거북목 교정</h1>
                     <p class="light-300">
-                        Vector illustration credit goes to <a rel="nofollow" href="http://freepik.com/" target="_blank">FreePik</a> website. Purple Buzz is provided by TemplateMo. Lorem ipsum dolor sit amet, consectetur.
+				 	  거북목이 되면 알림이 시작됩니다.<br> 거북목 알림 서비스와 함께 거북목을 교정해보세요.
                     </p>
                 </div>
                 <div class="col-lg-6">
@@ -227,9 +225,9 @@ https://templatemo.com/tm-561-purple-buzz
                     <img src="./resources/img/banner-img-02.svg">
                 </div>
                 <div class="col-lg-6 text-start">
-                    <h1 class="h2 py-5 text-primary typo-space-line">마!! 눈 안 깜빡이나</h1>
+                    <h1 class="h2 py-5 text-primary typo-space-line">1분 평균 <br> 눈 깜빡임 수 측정<br></h1>
                     <p class="light-300">
-                        Vector illustration credit goes to <a rel="nofollow" href="http://freepik.com/" target="_blank">FreePik</a> website. Purple Buzz is provided by TemplateMo. Lorem ipsum dolor sit amet, consectetur.
+                  	      눈 깜빡임 수가 평균보다 부족하면 알림이 시작됩니다. <br> 건강하고 촉촉한 눈을 유지해보세요.
                     </p>
                 </div>
             </div>
@@ -242,142 +240,120 @@ https://templatemo.com/tm-561-purple-buzz
         <div class="container-fluid pb-3">
             <div class="row">
                 <h2 class="h2 text-center col-12 py-5 semi-bold-600">
-                	다 장난인거 아시죠?<br> 서비스 시작합니다.<br><br>
-                	<button class="btn btn-primary">서비스 페이지로 이동</button>
+                	목건강과 눈건강을 향한<br>건강한 삶의 시작, 도시 거북 <br><br>
+                	<button class="btn btn-primary">서비스 다운로드</button>
                 </h2>
             </div>
         </div>
     </section>
-
-        <div class="service-tag py-5 bg-secondary">
-            <div class="col-md-12">
-                <ul class="nav d-flex justify-content-center">
-                    <li class="nav-item mx-lg-4">
-                        <a class="filter-btn nav-link btn-outline-primary active shadow rounded-pill text-light px-4 light-300" href="#" data-filter=".project">All</a>
-                    </li>
-                    <li class="nav-item mx-lg-4">
-                        <a class="filter-btn nav-link btn-outline-primary rounded-pill text-light px-4 light-300" href="#" data-filter=".graphic">Graphics</a>
-                    </li>
-                    <li class="filter-btn nav-item mx-lg-4">
-                        <a class="filter-btn nav-link btn-outline-primary rounded-pill text-light px-4 light-300" href="#" data-filter=".ui">UI/UX</a>
-                    </li>
-                    <li class="nav-item mx-lg-4">
-                        <a class="filter-btn nav-link btn-outline-primary rounded-pill text-light px-4 light-300" href="#" data-filter=".branding">Branding</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        
-    <section class="container overflow-hidden py-5">
-        <div class="row gx-5 gx-sm-3 gx-lg-5 gy-lg-5 gy-3 pb-3 projects">
-
-            <!-- Start Recent Work -->
-            <div class="col-xl-3 col-md-4 col-sm-6 project ui branding">
-                <a href="#" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                    <img class="service card-img" src="./resources/img/services-01.jpg" alt="Card image">
-                    <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                        <div class="service-work-content text-left text-light">
-                            <span class="btn btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">UI/UX design</span>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- End Recent Work -->
-
-            <!-- Start Recent Work -->
-            <div class="col-xl-3 col-md-4 col-sm-6 project ui graphic">
-                <a href="#" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                    <img class="card-img" src="./resources/img/image1.png" alt="Card image">
-                    <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                        <div class="service-work-content text-left text-light">
-                            <span class="btn btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Social Media</span>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- End Recent Work -->
-
-            <!-- Start Recent Work -->
-            <div class="col-xl-3 col-md-4 col-sm-6 project branding">
-                <a href="#" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                    <img class="card-img" src="./resources/img/services-03.jpg" alt="Card image">
-                    <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                        <div class="service-work-content text-left text-light">
-                            <span class="btn btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Marketing</span>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- End Recent Work -->
-
-            <!-- Start Recent Work -->
-            <div class="col-xl-3 col-md-4 col-sm-6 project ui graphic">
-                <a href="#" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                    <img class="card-img" src="./resources/img/services-04.jpg" alt="Card image">
-                    <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                        <div class="service-work-content text-left text-light">
-                            <span class="btn btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Graphic</span>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- End Recent Work -->
-
-            <!-- Start Recent Work -->
-            <div class="col-xl-3 col-md-4 col-sm-6 project ui graphic">
-                <a href="#" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                    <img class="card-img" src="./resources/img/services-05.jpg" alt="Card image">
-                    <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                        <div class="service-work-content text-left text-light">
-                            <span class="btn btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Digtal Marketing</span>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- End Recent Work -->
-
-            <!-- Start Recent Work -->
-            <div class="col-xl-3 col-md-4 col-sm-6 project branding">
-                <a href="#" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                    <img class="card-img" src="./resources/img/services-06.jpg" alt="Card image">
-                    <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                        <div class="service-work-content text-left text-light">
-                            <span class="btn btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Market Research</span>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- End Recent Work -->
-
-            <!-- Start Recent Work -->
-            <div class="col-xl-3 col-md-4 col-sm-6 project branding">
-                <a href="#" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                    <img class="card-img" src="./resources/img/services-07.jpg" alt="Card image">
-                    <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                        <div class="service-work-content text-left text-light">
-                            <span class="btn btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Business</span>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- End Recent Work -->
-
-            <!-- Start Recent Work -->
-            <div class="col-xl-3 col-md-4 col-sm-6 project ui graphic branding">
-                <a href="#" class="service-work card border-0 text-white shadow-sm overflow-hidden mx-5 m-sm-0">
-                    <img class="card-img" src="./resources/img/services-08.jpg" alt="Card image">
-                    <div class="service-work-vertical card-img-overlay d-flex align-items-end">
-                        <div class="service-work-content text-left text-light">
-                            <span class="btn btn-outline-light rounded-pill mb-lg-3 px-lg-4 light-300">Branding</span>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing</p>
-                        </div>
-                    </div>
-                </a>
-            </div><!-- End Recent Work -->
-
-        </div>
-    </section>
     <!-- End Service -->
+
+     <!-- Start Aim -->
+    <section class="banner-bg bg-light py-5">
+        <div class="container my-4">
+            <h2 class="h2 text-primary text-center py-5">이달의 거북랭킹 TOP5</h2>    	
+            <div class="row text-center">
+                <div class="objective col-lg-4">
+					<div class="card bg-light mb-3" style="max-width: 20rem;">
+					  <div class="card-header">탈거북 (종합 순위)</div>
+					  <div class="card-body">
+	                    <dl>
+							<div>
+						  		<dd>
+						  		  <span>새우잡이노예</span> 
+						  		  <span>78%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>이리와늑대</span>
+						  		  <span>62%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>접시빌런</span>
+						  		  <span>59%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>26971578</span>
+						  		  <span>58%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>그거참나이스</span>
+						  		  <span>57%</span>
+						  		</dd>						  		
+							</div>
+						</dl>
+					  </div>
+					</div>
+                </div>
+                
+
+                <div class="objective col-lg-4 mt-sm-0 mt-4">
+					<div class="card bg-light mb-3" style="max-width: 20rem;">
+					  <div class="card-header">인간화 (거북목 역순위)</div>
+					  <div class="card-body">
+	                    <dl>
+							<div>
+						  		<dd>
+						  		  <span>새우잡이노예</span> 
+						  		  <span>78%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>이리와늑대</span>
+						  		  <span>62%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>접시빌런</span>
+						  		  <span>59%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>26971578</span>
+						  		  <span>58%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>그거참나이스</span>
+						  		  <span>57%</span>
+						  		</dd>
+						  		
+							</div>
+						</dl>
+					  </div>
+					</div>
+                </div>
+
+                <div class="objective col-lg-4 mt-sm-0 mt-4">
+					<div class="card bg-light mb-3" style="max-width: 20rem;">
+					  <div class="card-header">깜빡왕 (눈깜빡 순위)</div>
+					  <div class="card-body">
+	                    <dl>
+							<div>
+						  		<dd>
+						  		  <span>새우잡이노예</span> 
+						  		  <span>78%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>이리와늑대</span>
+						  		  <span>62%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>접시빌런</span>
+						  		  <span>59%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>26971578</span>
+						  		  <span>58%</span>
+						  		</dd>
+						  		<dd>
+						  		  <span>그거참나이스</span>
+						  		  <span>57%</span>
+						  		</dd>						  		
+							</div>
+						</dl>
+					  </div>
+					</div>
+           		</div>
+      		</div>
+      </div>  
+    </section>
+    <!-- End Aim -->
 
 
 

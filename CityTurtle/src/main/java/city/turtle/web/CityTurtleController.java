@@ -1,7 +1,5 @@
 package city.turtle.web;
 
-import java.util.Collections;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -19,7 +17,6 @@ import city.turtle.mapper.KakaoLoginBO;
 import city.turtle.mapper.MembersMapper;
 import city.turtle.mapper.MembersVO;
 import city.turtle.mapper.NaverLoginBO;
-
 
 import com.github.scribejava.core.model.OAuth2AccessToken;
 
@@ -183,36 +180,13 @@ public class CityTurtleController {
 	public String userUpdate() {
 		return "userUpdate";
 	}
-
-	@RequestMapping("/competition.do")
-	public String competition() {
-		return "competition";
-	}
 	
+	// 메인 페이지
 	@RequestMapping("/index.do")
 	public String index() {
 		return "index";
 	}
 	
-	@RequestMapping("/about.do")
-	public String about() {
-		return "about";
-	}
-	
-	@RequestMapping("/contact.do")
-	public String contact() {
-		return "contact";
-	}
-	
-	@RequestMapping("/pricing.do")
-	public String pricing() {
-		return "pricing";
-	}
-	
-	@RequestMapping("/work.do")
-	public String work() {
-		return "work";
-	}
 	// 이벤트 페이지
 	@RequestMapping("/Event.do")
 	public String Event() {
@@ -250,26 +224,18 @@ public class CityTurtleController {
 		public String EventClick6() {
 			return "EventClick6";
 		}
-
+	
+	// 그래프 페이지
 	@RequestMapping("/service.do")
 	public String service() {
 		return "service";
 	}
 	
-
+	// 댓글 페이지
 	@RequestMapping("/boardComment.do")
 	public String boardComment() {
 		return "boardComment";
 	}
 	
-
-	@RequestMapping("/individual.do")
-	public String individual() {
-		return "individual";
-	}
-	@RequestMapping("/Team.do")
-	public String Team() {
-		return "Team";
-	}
 
 }

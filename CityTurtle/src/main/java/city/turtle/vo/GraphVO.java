@@ -16,5 +16,6 @@ public class GraphVO {
 	private String mb_id;
 	private String pos_time2;
 	
+	
 
 }

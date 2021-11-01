@@ -3,17 +3,48 @@
 <mapper namespace="city.turtle.service.GraphService">
  
     <select id="countTurtle" resultType="city.turtle.vo.GraphVO">
-        select mb_id, pos_type, pos_count, date_format(pos_time,'%m-%d') as pos_time, case weekday(pos_time) when '0' then '월요일'
-    when '1' then '화'
-    when '2' then '수'
-    when '3' then '목'
-    when '4' then '금'
-    when '5' then '토'
-    when '6' then '일'
-    end as pos_time2 from POSTURE where mb_id=#{mb_id} and pos_type=#{pos_type} and pos_time between DATE_SUB(NOW(), INTERVAL 7 DAY) and NOW() order by pos_time;
+        select mb_id, pos_type, pos_count, date_format(pos_time,'%m-%d') as pos_time, case weekday(pos_time) 
+        when '0' then '월요일'
+	    when '1' then '화'
+	    when '2' then '수'
+	    when '3' then '목'
+	    when '4' then '금'
+	    when '5' then '토'
+	    when '6' then '일'
+    	end as pos_time2 from POSTURE 
+    	where mb_id=#{mb_id} and pos_type=#{pos_type} 
+    	and pos_time between DATE_SUB(NOW(), INTERVAL 7 DAY) and NOW() order by pos_time;
     </select>
 <!-- select * from POSTURE where mb_id=#{mb_id} and pos_type=#{pos_type} and pos_time between DATE_SUB(NOW(), INTERVAL 7 DAY) and NOW() order by pos_time; -->
    
+   	<select id="countSum" resultType="int">
+   	    select sum(pos_count) as pos_sum 
+   	    from POSTURE 
+   	    where mb_id=#{mb_id} and pos_type=#{pos_type}
+   	    and pos_time between DATE_SUB(NOW(), INTERVAL 7 DAY) and DATE_SUB(NOW(), INTERVAL 0 DAY) 
+   	    order by pos_time;
+   	</select>
+   	<select id="countSum2" resultType="int">
+   	    select sum(pos_count) as pos_sum 
+   	    from POSTURE 
+   	    where mb_id=#{mb_id} and pos_type=#{pos_type}
+   	    and pos_time between DATE_SUB(NOW(), INTERVAL 14 DAY) and DATE_SUB(NOW(), INTERVAL 7 DAY) 
+   	    order by pos_time;
+   	</select>
+   	<select id="countSum3" resultType="int">
+   	    select sum(pos_count) as pos_sum 
+   	    from POSTURE 
+   	    where mb_id=#{mb_id} and pos_type=#{pos_type}
+   	    and pos_time between DATE_SUB(NOW(), INTERVAL 21 DAY) and DATE_SUB(NOW(), INTERVAL 14 DAY) 
+   	    order by pos_time;
+   	</select>
+   	<select id="countSum4" resultType="int">
+   	    select sum(pos_count) as pos_sum 
+   	    from POSTURE 
+   	    where mb_id=#{mb_id} and pos_type=#{pos_type}
+   	    and pos_time between DATE_SUB(NOW(), INTERVAL 28 DAY) and DATE_SUB(NOW(), INTERVAL 21 DAY) 
+   	    order by pos_time;
+   	</select>
 </mapper>
 
     

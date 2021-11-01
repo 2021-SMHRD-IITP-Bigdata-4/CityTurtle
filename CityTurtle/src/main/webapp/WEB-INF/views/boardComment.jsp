@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cpath" value ="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,7 +42,7 @@ https://templatemo.com/tm-561-purple-buzz
 
 <body>
       <!-- Header -->
-      <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
+    <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
         <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand h1" href="index.do">
                 <img src="resources/img/logoCTCT4.png"/>
@@ -57,21 +59,21 @@ https://templatemo.com/tm-561-purple-buzz
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="service.do">서비스</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="competition.do">랭킹</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="Event.do">이벤트</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="boardList.do">공지</a>
                         </li>
-                       
                     </ul>
                 </div>
                 <div class="navbar align-self-center d-flex">
-                    <a class="nav-link" href="#"><i class='bx bx-bell bx-sm bx-tada-hover text-primary'></i></a>
-                    <a class="nav-link" href="#"><i class='bx bx-cog bx-sm text-primary'></i></a>
-                    <a class="nav-link" href="#"><i class='bx bx-user-circle bx-sm text-primary'></i></a>
+                    <a class="nav-link" href="#">다운로드&nbsp<i class='bx bx-downvote bx-sm bx-fade-down-hover text-primary'></i></a>
+                  <c:if test="${signIn == null}">
+                    <a class="nav-link" href="login.do"><i class='bx bx-user-circle bx-sm text-primary'></i></a>
+                  </c:if>
+                  <c:if test="${signIn != null}">
+                  	<a class="nav-link" href="logout.do">로그아웃</a>
+                  </c:if>
                 </div>
             </div>
         </div>

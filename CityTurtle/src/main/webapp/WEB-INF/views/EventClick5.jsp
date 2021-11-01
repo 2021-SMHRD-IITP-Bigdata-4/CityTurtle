@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cpath" value ="${pageContext.request.contextPath}"/>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,9 +80,6 @@ https://templatemo.com/tm-561-purple-buzz
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="service.do">서비스</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="competition.do">경쟁</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="Event.do">이벤트</a>
                         </li>
                         <li class="nav-item">
@@ -90,7 +89,12 @@ https://templatemo.com/tm-561-purple-buzz
                 </div>
                 <div class="navbar align-self-center d-flex">
                     <a class="nav-link" href="#">다운로드&nbsp<i class='bx bx-downvote bx-sm bx-fade-down-hover text-primary'></i></a>
+                  <c:if test="${signIn == null}">
                     <a class="nav-link" href="login.do"><i class='bx bx-user-circle bx-sm text-primary'></i></a>
+                  </c:if>
+                  <c:if test="${signIn != null}">
+                  	<a class="nav-link" href="logout.do">로그아웃</a>
+                  </c:if>
                 </div>
             </div>
         </div>

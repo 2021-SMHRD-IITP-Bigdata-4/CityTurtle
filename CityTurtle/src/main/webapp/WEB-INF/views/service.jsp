@@ -72,8 +72,13 @@ https://templatemo.com/tm-561-purple-buzz
                     </ul>
                 </div>
                 <div class="navbar align-self-center d-flex">
-                    <a class="nav-link text-primary" href="#">다운로드&nbsp<i class='bx bx-downvote bx-sm bx-fade-down-hover text-primary'></i></a>
-                    <a class="nav-link" href="login.do">${signIn.mb_id}</a>
+                    <a class="nav-link" href="#">다운로드&nbsp<i class='bx bx-downvote bx-sm bx-fade-down-hover text-primary'></i></a>
+                  <c:if test="${signIn == null}">
+                    <a class="nav-link" href="login.do"><i class='bx bx-user-circle bx-sm text-primary'></i></a>
+                  </c:if>
+                  <c:if test="${signIn != null}">
+                  	<a class="nav-link" href="logout.do">로그아웃</a>
+                  </c:if>
                 </div>
             </div>
         </div>
@@ -109,8 +114,8 @@ https://templatemo.com/tm-561-purple-buzz
                 <div class="team-member col-md-6">
 					<canvas id="line-chart" width="300" height="250"></canvas>
                 </div>
-                <div class="team-member col-md-6">
-                    <canvas id="pie-chart" width="20" height="20"></canvas>
+                <div class="team-member col-md-6 py-5">
+                    <canvas id="bar-chart" width="300" height="230"></canvas>  
                     
                 </div>
             </div>
@@ -129,8 +134,8 @@ https://templatemo.com/tm-561-purple-buzz
                 <div class="team-member col-md-6">
 					<canvas id="line-chart2" width="300" height="250"></canvas>
                 </div>
-                <div class="team-member col-md-6">
-                	<canvas id="bar-chart" width="300" height="230"></canvas>                   
+                <div class="team-member col-md-6 py-5">
+                	<canvas id="bar-chart2" width="300" height="230"></canvas>                   
                     
                 </div>
             </div>
@@ -138,139 +143,6 @@ https://templatemo.com/tm-561-purple-buzz
         </div>
     </section>
     <!-- End Team Member -->
-
-    <!-- Start Our Partner -->
-    <section class="bg-secondary py-3">
-        <div class="container py-5">
-            <h2 class="h2 text-white text-center">종합 통계</h2>
-        </div>
-    </section>
-    <!--End Our Partner-->
-
-    <!-- Start Progress -->
-    <section class="bg-white py-5">
-        <div class="container my-4">
-            <div class="col-lg-12 row">
-                <div class="team-member col-md-6">
-					<canvas id="pie-chart2" width="20" height="20"></canvas>
-                </div>
-                <div class="team-member col-md-6">
-                    <canvas id="bar-chart-horizontal" width="600" height="250"></canvas>
-                    <canvas id="bar-chart-horizontal2" width="600" height="250"></canvas>
-                </div>
-            </div>
-
-        </div>
-    </section>
-    <!-- End Progress -->
-
-
-    <!-- Start Aim -->
-    <section class="banner-bg bg-light py-5">
-        <div class="container my-4">
-            <h2 class="h2 text-primary text-center py-5">이달의 거북랭킹 TOP5</h2>    	
-            <div class="row text-center">
-                <div class="objective col-lg-4">
-					<div class="card bg-light mb-3" style="max-width: 20rem;">
-					  <div class="card-header">탈거북 (종합 순위)</div>
-					  <div class="card-body">
-	                    <dl>
-							<div>
-						  		<dd>
-						  		  <span>새우잡이노예</span> 
-						  		  <span>78%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>이리와늑대</span>
-						  		  <span>62%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>접시빌런</span>
-						  		  <span>59%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>26971578</span>
-						  		  <span>58%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>그거참나이스</span>
-						  		  <span>57%</span>
-						  		</dd>						  		
-							</div>
-						</dl>
-					  </div>
-					</div>
-                </div>
-                
-
-                <div class="objective col-lg-4 mt-sm-0 mt-4">
-					<div class="card bg-light mb-3" style="max-width: 20rem;">
-					  <div class="card-header">인간화 (거북목 역순위)</div>
-					  <div class="card-body">
-	                    <dl>
-							<div>
-						  		<dd>
-						  		  <span>새우잡이노예</span> 
-						  		  <span>78%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>이리와늑대</span>
-						  		  <span>62%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>접시빌런</span>
-						  		  <span>59%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>26971578</span>
-						  		  <span>58%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>그거참나이스</span>
-						  		  <span>57%</span>
-						  		</dd>
-						  		
-							</div>
-						</dl>
-					  </div>
-					</div>
-                </div>
-
-                <div class="objective col-lg-4 mt-sm-0 mt-4">
-					<div class="card bg-light mb-3" style="max-width: 20rem;">
-					  <div class="card-header">깜빡왕 (눈깜빡 순위)</div>
-					  <div class="card-body">
-	                    <dl>
-							<div>
-						  		<dd>
-						  		  <span>새우잡이노예</span> 
-						  		  <span>78%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>이리와늑대</span>
-						  		  <span>62%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>접시빌런</span>
-						  		  <span>59%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>26971578</span>
-						  		  <span>58%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>그거참나이스</span>
-						  		  <span>57%</span>
-						  		</dd>						  		
-							</div>
-						</dl>
-					  </div>
-					</div>
-           		</div>
-      		</div>
-      </div>  
-    </section>
-    <!-- End Aim -->
 
     <!-- Start Footer -->
     <footer class="bg-secondary pt-4">
@@ -377,33 +249,15 @@ https://templatemo.com/tm-561-purple-buzz
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script type="text/javascript">
-       const canvas = document.querySelector("#pie-chart");
-       canvas.width = 5;
-       canvas.height = 5;
-   
-       
-      new Chart(document.getElementById("pie-chart"), {
-       type: 'pie',
-       data: {
-         labels: ["거북목1", "거북목2", "거북목3", "거북목4", "거북목5"],
-         datasets: [{
-           label: "거북목 비율",
-           backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-           data: [50,30,25,44,77]
-         }]
-       },
-       options: {
-         title: {
-           display: true,
-           text: '거북목 비율'
-         }
-       }
-   });
+
       // 페이지 시작할 때 차트 함수 
       $(document).ready(function(){ 
     		getGraph();
-    		getGraph2();
+    		getGraph2();    		
+    		getSumGraph();
+    		getSumGraph2();
     	});
+      
       // 거북목 라인 차트 그리기
       function getGraph(){
        	  let timeList = [];
@@ -421,6 +275,7 @@ https://templatemo.com/tm-561-purple-buzz
 						timeList.push(data[i].pos_time + " (" +data[i].pos_time2 + ")");    				  
 						posList.push(data[i].pos_count);
     			  }
+    			 
     			  // console.log(timeList);
     			  // console.log(posList);  	
 				  // 그래프
@@ -451,25 +306,6 @@ https://templatemo.com/tm-561-purple-buzz
     	  }) // ajax	  
       } // getGraph    	  
       
-      
-      
-      new Chart(document.getElementById("pie-chart2"), {
-       type: 'pie',
-       data: {
-         labels: ["눈깜빡1", "눈깜빡2", "눈깜빡3", "눈깜빡4", "눈깜빡5"],
-         datasets: [{
-           label: "눈깜빡 비율",
-           backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-           data: [50,30,25,44,77]
-         }]
-       },
-       options: {
-         title: {
-           display: true,
-           text: '눈깜빡 비율'
-         }
-       }
-   });
       // 눈깜빡 라인 차트 그리기
       function getGraph2(){
        	  let timeList = [];
@@ -512,73 +348,135 @@ https://templatemo.com/tm-561-purple-buzz
     		  },
     		  error:function(){
     			  alert("실패");
-    		  }  
-	     		  
+    		  }      		  
     	  }) // ajax	  
-      } // getGraph         
-
-
-      new Chart(document.getElementById("bar-chart"), {
-    	    type: 'bar',
-    	    data: {
-    	      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
-    	      datasets: [
-    	        {
-    	          label: "Population (millions)",
-    	          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-    	          data: [2478,5267,734,784,433]
-    	        }
-    	      ]
-    	    },
-    	    options: {
-    	      legend: { display: false },
-    	      title: {
-    	        display: true,
-    	        text: 'Predicted world population (millions) in 2050'
-    	      }
-    	    }
-    	});
-      new Chart(document.getElementById("bar-chart-horizontal"), {
-    	    type: 'horizontalBar',
-    	    data: {
-    	      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
-    	      datasets: [
-    	        {
-    	          label: "Population (millions)",
-    	          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-    	          data: [2478,5267,734,784,433]
-    	        }
-    	      ]
-    	    },
-    	    options: {
-    	      legend: { display: false },
-    	      title: {
-    	        display: true,
-    	        text: 'Predicted world population (millions) in 2050'
-    	      }
-    	    }
-    	});
+      } // getGraph      
       
-      new Chart(document.getElementById("bar-chart-horizontal2"), {
-    	    type: 'horizontalBar',
-    	    data: {
-    	      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
-    	      datasets: [
-    	        {
-    	          label: "Population (millions)",
-    	          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-    	          data: [2478,5267,734,784,433]
-    	        }
-    	      ]
-    	    },
-    	    options: {
-    	      legend: { display: false },
-    	      title: {
-    	        display: true,
-    	        text: 'Predicted world population (millions) in 2050'
-    	      }
-    	    }
-    	});
+      // 거북목 주간 합 그래프
+      function getSumGraph(){
+    	  let sumList = [];
+    	  
+    	  $.ajax({
+    		  url: "${cpath}/countSum.do",
+    		  type : "get",
+    		  data : {mb_id:"${signIn.mb_id}", pos_type:"거북목"},
+    		  dataType : "json",
+    		  success: function(data){
+/*     			  console.log(data);
+    			  console.log(data[0]);
+    			  console.log(data[1]); */
+    			  for (let i =0; i<data.length; i++){
+    				  sumList.push(data[i]);
+    			  }
+    			  /* console.log(sumList); */
+    			  
+    		      new Chart(document.getElementById("bar-chart"), {
+    		    	    type: 'bar',
+    		    	    data: {
+    		    	      labels: ["4주 전","3주 전","2주 전","1주 전"],
+    		    	      datasets: [
+    		    	        {
+    		    	          label: "월간 거북목",
+                              backgroundColor: [
+                                  //색상
+                                  'rgba(255, 99, 132, 0.4)',
+                                  'rgba(54, 162, 235, 0.4)', // 파란색
+                                  /* 'rgba(255, 206, 86, 0.4)', */ // 노란색
+                                  'rgba(255, 159, 64, 0.4)', // 주황색
+                                  'rgba(153, 102, 255, 0.4)',
+                                  'rgba(75, 192, 192, 0.4)' // 초록색
+                              ],
+                              borderColor: [
+                                  //경계선 색상
+                                  'rgba(255, 99, 132, 1)',
+                                  'rgba(54, 162, 235, 1)', // 파란색
+                                  /* 'rgba(255, 206, 86, 1)', */ // 노란색
+                                  'rgba(255, 159, 64, 1)', // 주황색
+                                  'rgba(153, 102, 255, 1)',
+                                  'rgba(75, 192, 192, 1)' // 초록색
+                              ],
+                              borderWidth: 1, //경계선 굵기
+    		    	          data: sumList
+    		    	        }
+    		    	      ]
+    		    	    },
+    		    	    options: {
+    		    	      legend: { display: false },
+    		    	      title: {
+    		    	        display: true,
+    		    	        text: '월간 거북목'
+    		    	      }
+    		    	    }
+    		    	});
+    		  },
+    		  error:function(){
+    			  alert("실패");
+    		  } 			  
+    	  }) // ajax
+      } // getSumGraph
+      
+      // 눈깜빡 주간 합 그래프
+      function getSumGraph2(){
+    	  let sumList = [];
+    	  
+    	  $.ajax({
+    		  url: "${cpath}/countSum.do",
+    		  type : "get",
+    		  data : {mb_id:"${signIn.mb_id}", pos_type:"눈깜빡임"},
+    		  dataType : "json",
+    		  success: function(data){
+/*     			  console.log(data);
+    			  console.log(data[0]);
+    			  console.log(data[1]); */
+    			  for (let i =0; i<data.length; i++){
+    				  sumList.push(data[i]);
+    			  }
+    			  /* console.log(sumList); */
+    			  
+    		      new Chart(document.getElementById("bar-chart2"), {
+    		    	    type: 'bar',
+    		    	    data: {
+    		    	      labels: ["4주 전","3주 전","2주 전","1주 전"],
+    		    	      datasets: [
+    		    	        {
+    		    	          label: "월간 눈깜빡임",
+                              backgroundColor: [
+                                  //색상
+                                  /* 'rgba(255, 99, 132, 0.4)', */ // 빨간색
+                                  'rgba(54, 162, 235, 0.4)',
+                                  'rgba(153, 102, 255, 0.4)', // 보라색
+                                  'rgba(255, 206, 86, 0.4)', 
+                                  'rgba(75, 192, 192, 0.4)',
+                                  'rgba(255, 159, 64, 0.4)' // 주황색
+                              ],
+                              borderColor: [
+                                  //경계선 색상
+                                  /* 'rgba(255, 99, 132, 1)', */ // 빨간색
+                                  'rgba(54, 162, 235, 1)',
+                                  'rgba(153, 102, 255, 1)', // 보라색
+                                  'rgba(255, 206, 86, 1)',
+                                  'rgba(75, 192, 192, 1)',
+                                  'rgba(255, 159, 64, 1)' // 주황색
+                              ],
+                              borderWidth: 1, //경계선 굵기
+    		    	          data: sumList
+    		    	        }
+    		    	      ]
+    		    	    },
+    		    	    options: {
+    		    	      legend: { display: false },
+    		    	      title: {
+    		    	        display: true,
+    		    	        text: '월간 눈깜빡임'
+    		    	      }
+    		    	    }
+    		    	});			  
+    		  },
+    		  error:function(){
+    			  alert("실패");
+    		  }	  
+    	  }) // ajax
+      } // getSumGraph
 
       </script>
     
