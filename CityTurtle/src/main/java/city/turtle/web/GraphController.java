@@ -24,12 +24,4 @@ public class GraphController {
 		return turtle;
 	}
 	
-	@RequestMapping("/countEyes.do")
-	public @ResponseBody List<GraphVO> countEyes(Model model, GraphVO vo) throws Exception {
-		List<GraphVO> eyes = mapper.countEyes(vo);
-		model.addAttribute("eyes", eyes);
-		return eyes;
-	}
-	
-	
 }

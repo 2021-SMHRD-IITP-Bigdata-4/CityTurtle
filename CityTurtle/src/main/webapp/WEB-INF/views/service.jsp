@@ -64,9 +64,6 @@ https://templatemo.com/tm-561-purple-buzz
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="service.do">서비스</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="competition.do">경쟁</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="Event.do">이벤트</a>
                         </li>
                         <li class="nav-item">
@@ -133,7 +130,7 @@ https://templatemo.com/tm-561-purple-buzz
 					<canvas id="line-chart2" width="300" height="250"></canvas>
                 </div>
                 <div class="team-member col-md-6">
-                    <canvas id="pie-chart2" width="20" height="20"></canvas>
+                	<canvas id="bar-chart" width="300" height="230"></canvas>                   
                     
                 </div>
             </div>
@@ -155,7 +152,7 @@ https://templatemo.com/tm-561-purple-buzz
         <div class="container my-4">
             <div class="col-lg-12 row">
                 <div class="team-member col-md-6">
-					<canvas id="bar-chart" width="300" height="230"></canvas>
+					<canvas id="pie-chart2" width="20" height="20"></canvas>
                 </div>
                 <div class="team-member col-md-6">
                     <canvas id="bar-chart-horizontal" width="600" height="250"></canvas>
@@ -402,11 +399,12 @@ https://templatemo.com/tm-561-purple-buzz
          }
        }
    });
-          
+      // 페이지 시작할 때 차트 함수 
       $(document).ready(function(){ 
     		getGraph();
+    		getGraph2();
     	});
-      
+      // 거북목 라인 차트 그리기
       function getGraph(){
        	  let timeList = [];
     	  let posList = [];
@@ -420,8 +418,8 @@ https://templatemo.com/tm-561-purple-buzz
     			  // console.log(data[0].pos_count);
     			  // 그래프로 나타낼 자료 리스트에 담기
     			  for (let i = 0; i<data.length;i++){    				  
-						timeList.push(data[i].pos_time);    				  
-						posList.push(data[i].pos_count);    				  
+						timeList.push(data[i].pos_time + " (" +data[i].pos_time2 + ")");    				  
+						posList.push(data[i].pos_count);
     			  }
     			  // console.log(timeList);
     			  // console.log(posList);  	
@@ -472,46 +470,53 @@ https://templatemo.com/tm-561-purple-buzz
          }
        }
    });
-      
-      new Chart(document.getElementById("line-chart2"), {
-    	  type: 'line',
-    	  data: {
-    	    labels: [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050],
-    	    datasets: [{ 
-    	        data: [86,114,106,106,107,111,133,221,783,2478],
-    	        label: "Africa",
-    	        borderColor: "#3e95cd",
-    	        fill: false
-    	      }, { 
-    	        data: [282,350,411,502,635,809,947,1402,3700,5267],
-    	        label: "Asia",
-    	        borderColor: "#8e5ea2",
-    	        fill: false
-    	      }, { 
-    	        data: [168,170,178,190,203,276,408,547,675,734],
-    	        label: "Europe",
-    	        borderColor: "#3cba9f",
-    	        fill: false
-    	      }, { 
-    	        data: [40,20,10,16,24,38,74,167,508,784],
-    	        label: "Latin America",
-    	        borderColor: "#e8c3b9",
-    	        fill: false
-    	      }, { 
-    	        data: [6,3,2,2,7,26,82,172,312,433],
-    	        label: "North America",
-    	        borderColor: "#c45850",
-    	        fill: false
-    	      }
-    	    ]
-    	  },
-    	  options: {
-    	    title: {
-    	      display: true,
-    	      text: 'World population per region (in millions)'
-    	    }
-    	  }
-    	}); 
+      // 눈깜빡 라인 차트 그리기
+      function getGraph2(){
+       	  let timeList = [];
+    	  let posList = [];
+    	  
+    	  $.ajax({
+    		  url:"${cpath}/countTurtle.do",
+    		  type:"get",
+    		  data:{mb_id:"${signIn.mb_id}", pos_type:"눈깜빡임"},
+    		  dataType:"json",
+    		  success:function(data){
+    			  // console.log(data[0].pos_count);
+    			  // 그래프로 나타낼 자료 리스트에 담기
+    			  for (let i = 0; i<data.length;i++){    				  
+						timeList.push(data[i].pos_time + " (" +data[i].pos_time2 + ")");    				  
+						posList.push(data[i].pos_count);    				  
+    			  }
+    			  // console.log(timeList);
+    			  // console.log(posList);  	
+				  // 그래프
+    			  new Chart(document.getElementById("line-chart2"), {
+    		    	  type: 'line',
+    		    	  data: {
+    		    	    labels: timeList,
+    		    	    datasets: [{ 
+    		    	        data: posList,
+    		    	        label: "눈깜빡임",
+    		    	        borderColor: "#c45850",
+    		    	        fill: false
+    		    	      }
+    		    	    ]
+    		    	  },
+    		    	  options: {
+    		    	    title: {
+    		    	      display: true,
+    		    	      text: '주간 눈깜빡임'
+    		    	    }
+    		    	  }
+    		    	}); //그래프
+    		  },
+    		  error:function(){
+    			  alert("실패");
+    		  }  
+	     		  
+    	  }) // ajax	  
+      } // getGraph         
+
 
       new Chart(document.getElementById("bar-chart"), {
     	    type: 'bar',
