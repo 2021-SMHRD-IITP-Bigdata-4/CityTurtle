@@ -6,7 +6,7 @@
 <mapper namespace="city.turtle.mapper.MembersMapper">
     <!-- 회원가입 -->
     <insert id="insertMembers" parameterType="city.turtle.mapper.MembersVO">
-        insert into MEMBERS(mb_id, mb_nick, mb_pwd, mb_name, mb_birthdate, mb_sex, mb_email, admin_yn)
+        insert into MEMBERS(mb_id, mb_nick, mb_pwd, mb_name, mb_birth, mb_gender, mb_email, mb_admin)
         values(#{mb_id},#{mb_nick},#{mb_pwd},#{mb_name},concat(#{mb_yy}, #{mb_mm}, #{mb_dd}),#{mb_sex},#{mb_email}, 0)
     </insert>
     
