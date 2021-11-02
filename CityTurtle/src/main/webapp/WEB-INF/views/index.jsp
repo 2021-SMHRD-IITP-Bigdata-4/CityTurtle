@@ -34,23 +34,10 @@ https://templatemo.com/tm-561-purple-buzz
 <style>
 	.flex-fill.mx-xl-5.mb-2{
 		margin: 0 auto;
-		width : 700px;
+		width : 500px;
 		padding-right: 7rem;
 		padding-left: 7rem;
 	}
-	.container.py-4{
-		margin: 0 auto;
-		width : 553px;
-	}
-	#index_banner{
-		  background-image: url('');
-		  background-position: center center; background-size: cover;
-		  height: 100%;
-		  min-height: 60vh;
-		  width: 100%;
-	}
-	
-
 
 </style>
 
@@ -73,7 +60,7 @@ https://templatemo.com/tm-561-purple-buzz
                 <div class="flex-fill mx-xl-5 mb-2">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="service.do">서비스</a>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" onclick="service()">서비스</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="Event.do">이벤트</a>
@@ -84,8 +71,8 @@ https://templatemo.com/tm-561-purple-buzz
                     </ul>
                 </div>
                 <div class="navbar align-self-center d-flex">
-                    <a class="nav-link" href="#">다운로드&nbsp<i class='bx bx-downvote bx-sm bx-fade-down-hover text-primary'></i></a>
-                    <a class="nav-link" href="#"><i class='bx bx-cog bx-sm text-primary'></i></a>
+                    <a class="nav-link" href="download.do">다운로드&nbsp<i class='bx bx-downvote bx-sm bx-fade-down-hover text-primary'></i></a>
+                    <a class="nav-link" href="userUpdate.do"><i class='bx bx-cog bx-sm text-primary'></i></a>
                   <c:if test="${signIn == null}">
                     <a class="nav-link" href="login.do"><i class='bx bx-user-circle bx-sm text-primary'></i></a>
                   </c:if>
@@ -241,120 +228,12 @@ https://templatemo.com/tm-561-purple-buzz
             <div class="row">
                 <h2 class="h2 text-center col-12 py-5 semi-bold-600">
                 	목건강과 눈건강을 향한<br>건강한 삶의 시작, 도시 거북 <br><br>
-                	<button class="btn btn-primary">서비스 다운로드</button>
+                	<button class="btn btn-primary" onclick="location.href='download.do'" >서비스 다운로드</button>
                 </h2>
             </div>
         </div>
     </section>
     <!-- End Service -->
-
-     <!-- Start Aim -->
-    <section class="banner-bg bg-light py-5">
-        <div class="container my-4">
-            <h2 class="h2 text-primary text-center py-5">이달의 거북랭킹 TOP5</h2>    	
-            <div class="row text-center">
-                <div class="objective col-lg-4">
-					<div class="card bg-light mb-3" style="max-width: 20rem;">
-					  <div class="card-header">탈거북 (종합 순위)</div>
-					  <div class="card-body">
-	                    <dl>
-							<div>
-						  		<dd>
-						  		  <span>새우잡이노예</span> 
-						  		  <span>78%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>이리와늑대</span>
-						  		  <span>62%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>접시빌런</span>
-						  		  <span>59%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>26971578</span>
-						  		  <span>58%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>그거참나이스</span>
-						  		  <span>57%</span>
-						  		</dd>						  		
-							</div>
-						</dl>
-					  </div>
-					</div>
-                </div>
-                
-
-                <div class="objective col-lg-4 mt-sm-0 mt-4">
-					<div class="card bg-light mb-3" style="max-width: 20rem;">
-					  <div class="card-header">인간화 (거북목 역순위)</div>
-					  <div class="card-body">
-	                    <dl>
-							<div>
-						  		<dd>
-						  		  <span>새우잡이노예</span> 
-						  		  <span>78%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>이리와늑대</span>
-						  		  <span>62%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>접시빌런</span>
-						  		  <span>59%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>26971578</span>
-						  		  <span>58%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>그거참나이스</span>
-						  		  <span>57%</span>
-						  		</dd>
-						  		
-							</div>
-						</dl>
-					  </div>
-					</div>
-                </div>
-
-                <div class="objective col-lg-4 mt-sm-0 mt-4">
-					<div class="card bg-light mb-3" style="max-width: 20rem;">
-					  <div class="card-header">깜빡왕 (눈깜빡 순위)</div>
-					  <div class="card-body">
-	                    <dl>
-							<div>
-						  		<dd>
-						  		  <span>새우잡이노예</span> 
-						  		  <span>78%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>이리와늑대</span>
-						  		  <span>62%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>접시빌런</span>
-						  		  <span>59%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>26971578</span>
-						  		  <span>58%</span>
-						  		</dd>
-						  		<dd>
-						  		  <span>그거참나이스</span>
-						  		  <span>57%</span>
-						  		</dd>						  		
-							</div>
-						</dl>
-					  </div>
-					</div>
-           		</div>
-      		</div>
-      </div>  
-    </section>
-    <!-- End Aim -->
-
 
 
    <!-- Start Footer -->
@@ -484,6 +363,18 @@ https://templatemo.com/tm-561-purple-buzz
     <script src="resources/js/templatemo.js"></script>
     <!-- Custom -->
     <script src="resources/js/custom.js"></script>
+    <script>
+    	// 서비스 페이지 알림
+    	function service(){
+    		let signIn = "${signIn}";
+    		if (signIn == ""){
+    			alert("서비스 페이지는 로그인 후 사용하실 수 있습니다.");
+    			location.href="${cpath}/login.do";
+    		} else {
+    			location.href="${cpath}/service.do"
+    		}
+    	}
+    </script>
 
 </body>
 

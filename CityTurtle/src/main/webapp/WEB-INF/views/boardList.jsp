@@ -60,9 +60,9 @@ a{
     text-decoration: none;
 }
 
-.flex-fill.mx-xl-5.mb-2{
+	.flex-fill.mx-xl-5.mb-2{
 		margin: 0 auto;
-		width : 700px;
+		width : 500px;
 		padding-right: 7rem;
 		padding-left: 7rem;
 	}
@@ -105,7 +105,7 @@ function goForm() {
                 <div class="flex-fill mx-xl-5 mb-2">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="service.do">서비스</a>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" onclick="service()">서비스</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="Event.do">이벤트</a>
@@ -116,7 +116,8 @@ function goForm() {
                     </ul>
                 </div>
                 <div class="navbar align-self-center d-flex">
-                    <a class="nav-link" href="#">다운로드&nbsp<i class='bx bx-downvote bx-sm bx-fade-down-hover text-primary'></i></a>
+                    <a class="nav-link" href="download.do">다운로드&nbsp<i class='bx bx-downvote bx-sm bx-fade-down-hover text-primary'></i></a>
+                    <a class="nav-link" href="userUpdate.do"><i class='bx bx-cog bx-sm text-primary'></i></a>
                   <c:if test="${signIn == null}">
                     <a class="nav-link" href="login.do"><i class='bx bx-user-circle bx-sm text-primary'></i></a>
                   </c:if>
@@ -336,6 +337,17 @@ function goForm() {
     <script src="resources/js/templatemo.js"></script>
     <!-- Custom -->
     <script src="resources/js/custom.js"></script>
+    <script>
+    	function service(){
+    		let signIn = "${signIn}";
+    		if (signIn == ""){
+    			alert("서비스 페이지는 로그인 후 사용하실 수 있습니다.");
+    			location.href="${cpath}/login.do";
+    		} else {
+    			location.href="${cpath}/service.do"
+    		}
+    	}
+    </script>
 
 </body>
 
