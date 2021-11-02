@@ -8,5 +8,6 @@ public interface MembersMapper {
 	public void insertMembers(MembersVO vo);
 	public int mbidCheck(String mb_id);
 	public MembersVO signIn(MembersVO vo);
+	public void updateMembers(MembersVO vo);
 }
 

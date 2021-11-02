@@ -134,7 +134,8 @@ https://templatemo.com/tm-561-purple-buzz
                 </div>
 			    <div class="form-group">
 			      <label for="mb_sex" class="form-label mt-4">성별</label>
-			      <select class="form-select" name="mb_sex">
+			      <select class="form-select" name="mb_gender">
+			        <option value="" selected disabled hidden>성별</option>
 			        <option value="남자">남자</option>
 			        <option value="여자">여자</option>
 			        <option value="거북">거북</option>
