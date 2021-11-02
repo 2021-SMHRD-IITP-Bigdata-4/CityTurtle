@@ -3,7 +3,7 @@
 <mapper namespace="city.turtle.service.ReplyService">
    
 
-	<!-- 댓글 조회 -->
+	<!-- 댓글 조회 !-->
 	<select id="readReply" parameterType="int" resultType="city.turtle.vo.ReplyVO">
 		select
 			com_seq, com_content, com_date, mb_id, com_like
@@ -13,7 +13,7 @@
 	
 	
     
-	<!-- 댓글 삽입 -->
+	<!-- 댓글 삽입 !-->
     <insert id="replyInsert" parameterType="city.turtle.vo.ReplyVO">
         insert into COMMENT(not_seq,com_content,mb_id)
         values(#{not_seq},#{com_content},#{mb_id})

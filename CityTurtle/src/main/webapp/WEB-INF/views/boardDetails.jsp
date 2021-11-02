@@ -66,8 +66,8 @@ https://templatemo.com/tm-561-purple-buzz
 	}
 	
 	<%//댓글쓰기 이벤트  %>
-	function gocomment() {
-		location.href="${cpath}/boardComment.do";
+	function gocomment(not_seq) {
+		location.href="${cpath}/boardComment.do?not_seq="+not_seq;
 	}
 
 </script>
@@ -177,7 +177,7 @@ https://templatemo.com/tm-561-purple-buzz
         <div class="row justify-content-center" style="margin-left: 9%;">
             <div class="worksingle-comment-heading col-8 m-auto pb-3" >
                 <br><br><br><br><br>
-                <button class="btn btn-outline-primary" style="margin-left: 2%" onclick="gocomment()">댓글 쓰기</button>
+                <button class="btn btn-outline-primary" style="margin-left: 2%" onclick="gocomment(${vo.not_seq})">댓글 쓰기</button>
             </div>
         </div>
         <div class="row pb-4"  style="margin-left: 10%;">

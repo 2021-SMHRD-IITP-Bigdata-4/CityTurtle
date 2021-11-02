@@ -57,7 +57,10 @@ public class boardController {
 	
 	// 댓글 페이지
 		@RequestMapping("/boardComment.do")
-		public void boardComment() {
+		public void boardComment(int not_seq, Model model) throws Exception {
+			boardVO vo = service.boardDetails(not_seq);
+			model.addAttribute("vo",vo); 
+			
 			// return "boardComment";
 		}
 	
@@ -181,10 +184,7 @@ public class boardController {
 	
 	@RequestMapping("/replyInsert.do")
 	public String replyInsert(ReplyVO VO, Model model, int not_seq) throws Exception { // BoardVO = New BoardVO();
-		
-		boardVO vo = service.boardDetails(not_seq);
-		model.addAttribute("VO",vo); // 객체 바운딩 중요!!
-		
+
 		replyService.replyInsert(VO);
 		model.addAttribute("VO",VO);
 		

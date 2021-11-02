@@ -113,11 +113,11 @@ https://templatemo.com/tm-561-purple-buzz
           <var="replyList">
           
         <div class="form-group">
-          <label class="control-label col-sm-2" for="pwd">글번호:</label><br><br>
+          <label class="control-label col-sm-2" for="pwd"></label><br><br>
           <div class="col-sm-10">
           	
-              <input type="text" class="form-control" name="not_seq" value= 1 ><br><br>
-               
+              <input type="hidden" class="form-control" name="not_seq" value= "${vo.not_seq}" ><br><br>
+              
           </div>
         </div>  
         
