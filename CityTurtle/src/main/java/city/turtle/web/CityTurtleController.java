@@ -180,11 +180,18 @@ public class CityTurtleController {
 	public String signUpSuccess() {
 		return "signUpSuccess";
 	}
-
+	// 회원 정보 수정 페이지
 	@RequestMapping("/userUpdate.do")
 	public String userUpdate() {
 		return "userUpdate";
 	}
+	// 회원 정보 수정
+	@RequestMapping("/updateMembers.do")
+	public String updateMembers(MembersVO vo) {
+		mapper.updateMembers(vo);
+		return "redirect:/index.do";
+	}	
+	
 	
 	// 메인 페이지
 	@RequestMapping("/index.do")

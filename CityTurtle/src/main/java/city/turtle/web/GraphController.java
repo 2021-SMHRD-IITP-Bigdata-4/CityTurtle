@@ -27,15 +27,12 @@ public class GraphController {
 	
 	@RequestMapping("/countSum.do")
 	public @ResponseBody List<Integer> countSum(GraphVO vo) throws Exception{
-		int sum = mapper.countSum(vo);
-		int sum2 = mapper.countSum2(vo);
-		int sum3 = mapper.countSum3(vo);
-		int sum4 = mapper.countSum4(vo);
+
 		List<Integer> sumSum = new ArrayList<>();
-		sumSum.add(sum4);
-		sumSum.add(sum3);
-		sumSum.add(sum2);
-		sumSum.add(sum);
+		for(int i =0; i <22;i+=7) {
+			sumSum.add(0, mapper.countSum(vo, i));
+		}
+		
 		return sumSum;
 	}
 	

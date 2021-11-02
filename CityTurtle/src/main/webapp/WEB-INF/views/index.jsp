@@ -191,7 +191,7 @@ https://templatemo.com/tm-561-purple-buzz
         <div class="container">
             <div class="row d-flex align-items-center py-5">
                 <div class="col-lg-6 text-start">
-                    <h1 class="h2 py-5 text-primary typo-space-line">10초 단위로<br>영상을 분석하여 <br>거북목 교정</h1>
+                    <h1 class="h2 py-5 text-primary typo-space-line">5초 단위로<br>영상을 분석하여 <br>거북목 교정</h1>
                     <p class="light-300">
 				 	  거북목이 되면 알림이 시작됩니다.<br> 거북목 알림 서비스와 함께 거북목을 교정해보세요.
                     </p>

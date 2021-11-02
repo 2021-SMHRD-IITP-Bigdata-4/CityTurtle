@@ -286,7 +286,7 @@ https://templatemo.com/tm-561-purple-buzz
     		    	    labels: timeList,
     		    	    datasets: [{ 
     		    	        data: posList,
-    		    	        label: "거북목",
+    		    	        label: "거북목 수치",
     		    	        borderColor: "#3e95cd",
     		    	        fill: false
     		    	      }
@@ -295,7 +295,7 @@ https://templatemo.com/tm-561-purple-buzz
     		    	  options: {
     		    	    title: {
     		    	      display: true,
-    		    	      text: '주간 거북목'
+    		    	      text: '거북목 수치'
     		    	    }
     		    	  }
     		    	}); //그래프
@@ -333,7 +333,7 @@ https://templatemo.com/tm-561-purple-buzz
     		    	    labels: timeList,
     		    	    datasets: [{ 
     		    	        data: posList,
-    		    	        label: "눈깜빡임",
+    		    	        label: "눈깜빡임 수",
     		    	        borderColor: "#c45850",
     		    	        fill: false
     		    	      }
@@ -342,7 +342,7 @@ https://templatemo.com/tm-561-purple-buzz
     		    	  options: {
     		    	    title: {
     		    	      display: true,
-    		    	      text: '주간 눈깜빡임'
+    		    	      text: '눈깜빡임 수'
     		    	    }
     		    	  }
     		    	}); //그래프
@@ -377,7 +377,7 @@ https://templatemo.com/tm-561-purple-buzz
     		    	      labels: ["4주 전","3주 전","2주 전","1주 전"],
     		    	      datasets: [
     		    	        {
-    		    	          label: "월간 거북목",
+    		    	          label: "주간 거북목",
                               backgroundColor: [
                                   //색상
                                   'rgba(255, 99, 132, 0.4)',
@@ -405,7 +405,7 @@ https://templatemo.com/tm-561-purple-buzz
     		    	      legend: { display: false },
     		    	      title: {
     		    	        display: true,
-    		    	        text: '월간 거북목'
+    		    	        text: '주간 거북목'
     		    	      }
     		    	    }
     		    	});
@@ -440,7 +440,7 @@ https://templatemo.com/tm-561-purple-buzz
     		    	      labels: ["4주 전","3주 전","2주 전","1주 전"],
     		    	      datasets: [
     		    	        {
-    		    	          label: "월간 눈깜빡임",
+    		    	          label: "주간 눈깜빡임",
                               backgroundColor: [
                                   //색상
                                   /* 'rgba(255, 99, 132, 0.4)', */ // 빨간색
@@ -468,7 +468,7 @@ https://templatemo.com/tm-561-purple-buzz
     		    	      legend: { display: false },
     		    	      title: {
     		    	        display: true,
-    		    	        text: '월간 눈깜빡임'
+    		    	        text: '주간 눈깜빡임'
     		    	      }
     		    	    }
     		    	});			  

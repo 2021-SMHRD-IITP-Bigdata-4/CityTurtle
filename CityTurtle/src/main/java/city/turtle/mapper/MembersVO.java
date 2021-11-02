@@ -15,7 +15,7 @@ public class MembersVO {
 	private String mb_birthdate;
 	private String join_date;
 	private String admin_yn;
-	private String mb_sex;
+	private String mb_gender;
 	private String mb_email;
 	private String mb_nick;
 	private String mb_yy;
