@@ -105,14 +105,14 @@ https://templatemo.com/tm-561-purple-buzz
         <div class="form-group">
           <label class="control-label col-sm-2" for="email">제목:</label><br><br>
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="title" placeholder="Enter title"><br><br>
+            <input type="text" class="form-control" name="not_title" placeholder="Enter title"><br><br>
           </div>
         </div>
         
         <div class="form-group">
           <label class="control-label col-sm-2" for="pwd">내용:</label><br><br>
           <div class="col-sm-10">
-              <textarea rows="5"class="form-control" name="contents" placeholder="Enter Content"></textarea><br><br>
+              <textarea rows="5"class="form-control" name="not_contents" placeholder="Enter Content"></textarea><br><br>
           </div>
         </div>
         
@@ -124,10 +124,9 @@ https://templatemo.com/tm-561-purple-buzz
         
         <div class="form-group"> 
 
-        
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10"><br>
-            <button type="submit" class="btn btn-outline-primary"> <a href="file:///C:/Users/bigdata02/Desktop/js/templatemo_561_purple_buzz/Notice.html" >저장</a></button>
+            <button type="submit" class="btn btn-outline-primary">저장</button>
             <button type="reset" class="btn btn-outline-primary" style="margin-left: 3%;">취소</button>
           </div>
         </div>

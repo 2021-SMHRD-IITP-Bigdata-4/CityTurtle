@@ -12,8 +12,9 @@ public class boardVO {
 	private int not_seq;
 	private String not_title;
 	private String not_contents;
+	private String not_date;
 	private String mb_id;
-	private String input_date;
+	
 	
 
 }

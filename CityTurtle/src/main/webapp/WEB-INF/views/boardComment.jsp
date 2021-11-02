@@ -2,11 +2,15 @@
     pageEncoding="UTF-8"%>
  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="cpath" value ="${pageContext.request.contextPath}"/>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>공지사항 글쓰기</title>
+<title>댓글 글쓰기</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="resources/img/apple-icon.png">
@@ -37,6 +41,8 @@ a{
 	}
 
 </style>
+
+
 
 <!--
     
@@ -102,29 +108,39 @@ https://templatemo.com/tm-561-purple-buzz
           
           <div class="panel-body">
           
-          <form class="form-horizontal" action="${cpath}/boardInsert.do" method="post">
+          <form class="form-horizontal" action="${cpath}/replyInsert.do" method="post">
           
+          <var="replyList">
+          
+        <div class="form-group">
+          <label class="control-label col-sm-2" for="pwd">글번호:</label><br><br>
+          <div class="col-sm-10">
+          	
+              <input type="text" class="form-control" name="not_seq" value= 1 ><br><br>
+               
+          </div>
+        </div>  
         
-        
+
         <div class="form-group">
           <label class="control-label col-sm-2" for="pwd">내용:</label><br><br>
           <div class="col-sm-10">
-              <textarea rows="5"class="form-control" placeholder="Enter Content"></textarea><br><br>
+              <textarea rows="5"class="form-control" name="com_content" placeholder="Enter Content"></textarea><br><br>
           </div>
         </div>
         
         <div class="form-group">
           <label class="control-label col-sm-2" for="email">작성자:</label><br><br>
           <div class="col-sm-10">
-            <input type="text" class="form-control" placeholder="Enter Writer"><br><br>
+            <input type="text" class="form-control" name="mb_id" placeholder="Enter id"><br><br>
+   
           </div>
         </div>
-        
-        
-        
+
+    
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10"><br>
-            <button type="submit" class="btn btn-outline-primary"> <a href="http://localhost:8081/web/boardDetails.do?not_seq=3" >저장</a></button>
+            <button type="submit" class="btn btn-outline-primary">저장</button>
             <button type="reset" class="btn btn-outline-primary" style="margin-left: 3%;">취소</button>
           </div>
         </div>

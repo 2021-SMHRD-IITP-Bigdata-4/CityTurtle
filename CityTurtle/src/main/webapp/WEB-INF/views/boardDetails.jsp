@@ -173,39 +173,40 @@ https://templatemo.com/tm-561-purple-buzz
       </form>
       
       
-      <!-- Start Comment -->
+       <!-- Start Comment -->
         <div class="row justify-content-center" style="margin-left: 9%;">
             <div class="worksingle-comment-heading col-8 m-auto pb-3" >
                 <br><br><br><br><br>
                 <button class="btn btn-outline-primary" style="margin-left: 2%" onclick="gocomment()">댓글 쓰기</button>
             </div>
         </div>
-
         <div class="row pb-4"  style="margin-left: 10%;">
             <div class="worksingle-comment-body col-md-8 m-auto">
-                <div class="d-flex">
-                    <div>
-                    </div>
+                <div class="d-flex">            
                     <div class="comment-body">
-                        <div class="comment-header d-flex justify-content-between ms-3">
+                    
+                    <c:forEach items="${replyList}" var="replyList">
+                    <!-- 아이디 출력 -->
+		     <div class="comment-header d-flex justify-content-between ms-3">
                             <div class="header text-start">
-                                <h5 class="h6">wlgns5121 님</h5>
+                                <h5 class="h6">${replyList.mb_id} 님</h5>
                               
-                            </div>
-                        
+                            </div>                   
                         </div>
-                        <div class="footer">
+                        <!-- 내용 출력 -->
+                         <div class="footer">
                             <div class="card-body border ms-3 light-300" style="height: 150px; width: 900px;">
                                 <div class="contents">
                                     <div class="contents_text">                               
-                                            <span>!할로윈!</span>
+                                            <span>${replyList.com_content}</span>
                                             <br>
                                            
                                     </div>
 
                                             <br> 
+                                            <!-- 날짜 출력 -->
                                         <div class="contents_date">
-                                            <span>2021-10-07</span>
+                                            <span>${replyList.com_date}</span>
                                             <br>                                                                            
                                         </div>
 
@@ -219,7 +220,7 @@ https://templatemo.com/tm-561-purple-buzz
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
                                                             <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
                                                           </svg>
-                                                        <span>2</span>
+                                                        <span>${replyList.com_like}</span>
                                                     </button>
                                                             
                                                 </a>
@@ -233,275 +234,12 @@ https://templatemo.com/tm-561-purple-buzz
                                 
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- End Comment -->
-
-        <div class="row justify-content-center" style="margin-left: 9%;">
-            <div class="worksingle-comment-heading col-8 m-auto pb-3" >
-                <br><br><br><br><br>
-            </div>
-        </div>
-
-        <div class="row pb-4"  style="margin-left: 10%;">
-            <div class="worksingle-comment-body col-md-8 m-auto">
-                <div class="d-flex">
-                    <div>
-                        
-                    </div>
-                    <div class="comment-body">
-                        <div class="comment-header d-flex justify-content-between ms-3">
-                            <div class="header text-start">
-                                <h5 class="h6">tmfdka12 님</h5>
-                              
-                            </div>
-                        
-                        </div>
-                        <div class="footer">
-                            <div class="card-body border ms-3 light-300" style="height: 150px; width: 900px;">
-                                <div class="contents">
-                                    <div class="contents_text">                               
-                                            <span>할로윈!</span>
-                                            <br>
-                                           
-                                    </div>
-
-                                            <br> 
-                                        <div class="contents_date">
-                                            <span>2021-10-09</span>
-                                            <br>                                                                            
-                                        </div>
-
-                                        <div class="contents_footer">
-                                            
-                                           
-                                            
-                                            
-                                                <a href="#" class="" style="margin-left: 93%;">
-                                                    <button type="submit" class="btn btn-outline-primary">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-                                                            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
-                                                          </svg>
-                                                        <span>12</span>
-                                                    </button>
-                                                            
-                                                </a>
-                                           
-                                            
-                                        </div>
-
-                                    
-                                   
-                                </div>                            
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- End Comment -->
-
-
-        <div class="row justify-content-center" style="margin-left: 9%;">
-            <div class="worksingle-comment-heading col-8 m-auto pb-3" >
-                <br><br><br><br><br>
-            </div>
-        </div>
-
-        <div class="row pb-4"  style="margin-left: 10%;">
-            <div class="worksingle-comment-body col-md-8 m-auto">
-                <div class="d-flex">
-                    <div>
-                       
-                    </div>
-                    <div class="comment-body">
-                        <div class="comment-header d-flex justify-content-between ms-3">
-                            <div class="header text-start">
-                                <h5 class="h6">qhdgus11 님</h5>
-                              
-                            </div>
-                        
-                        </div>
-                        <div class="footer">
-                            <div class="card-body border ms-3 light-300" style="height: 150px; width: 900px;">
-                                <div class="contents">
-                                    <div class="contents_text">                               
-                                            <span>할로윈!!</span>
-                                            <br>
-                                           
-                                    </div>
-
-                                            <br> 
-                                        <div class="contents_date">
-                                            <span>2021-10-10</span>
-                                            <br>                                                                            
-                                        </div>
-
-                                        <div class="contents_footer">
-                                            
-                                           
-                                            
-                                            
-                                                <a href="#" class="" style="margin-left: 93%;">
-                                                    <button type="submit" class="btn btn-outline-primary">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-                                                            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
-                                                          </svg>
-                                                        <span>4</span>
-                                                    </button>
-                                                            
-                                                </a>
-                                           
-                                            
-                                        </div>
-
-                                    
-                                   
-                                </div>                            
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- End Comment -->
-
-
-        <div class="row justify-content-center" style="margin-left: 9%;">
-            <div class="worksingle-comment-heading col-8 m-auto pb-3" >
-                <br><br><br><br><br>
-            </div>
-        </div>
-
-        <div class="row pb-4"  style="margin-left: 10%;">
-            <div class="worksingle-comment-body col-md-8 m-auto">
-                <div class="d-flex">
-                    <div>
-                     
-                    </div>
-                    <div class="comment-body">
-                        <div class="comment-header d-flex justify-content-between ms-3">
-                            <div class="header text-start">
-                                <h5 class="h6">tjdgns56 님</h5>
-                              
-                            </div>
-                        
-                        </div>
-                        <div class="footer">
-                            <div class="card-body border ms-3 light-300" style="height: 150px; width: 900px;">
-                                <div class="contents">
-                                    <div class="contents_text">                               
-                                            <span>할로윈!!</span>
-                                            <br>
-                                           
-                                    </div>
-
-                                            <br> 
-                                        <div class="contents_date">
-                                            <span>2021-10-12</span>
-                                            <br>                                                                            
-                                        </div>
-
-                                        <div class="contents_footer">
-                                            
-                                           
-                                            
-                                            
-                                                <a href="#" class="" style="margin-left: 93%;">
-                                                    <button type="submit" class="btn btn-outline-primary">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-                                                            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
-                                                          </svg>
-                                                        <span>7</span>
-                                                    </button>
-                                                            
-                                                </a>
-                                           
-                                            
-                                        </div>
-
-                                    
-                                   
-                                </div>                            
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- End Comment -->
-        
-        
-        
-        <div class="row justify-content-center" style="margin-left: 9%;">
-            <div class="worksingle-comment-heading col-8 m-auto pb-3" >
-                <br><br><br><br><br>
-            </div>
-        </div>
-
-        <div class="row pb-4"  style="margin-left: 10%;">
-            <div class="worksingle-comment-body col-md-8 m-auto">
-                <div class="d-flex">
-                    <div>
-                     
-                    </div>
-                    <div class="comment-body">
-                        <div class="comment-header d-flex justify-content-between ms-3">
-                            <div class="header text-start">
-                                <h5 class="h6">admin 님</h5>
-                              
-                            </div>
-                        
-                        </div>
-                        <div class="footer">
-                            <div class="card-body border ms-3 light-300" style="height: 150px; width: 900px;">
-                                <div class="contents">
-                                    <div class="contents_text">                               
-                                            <span>할로윈!</span>
-                                            <br>
-                                           
-                                    </div>
-
-                                            <br> 
-                                        <div class="contents_date">
-                                            <span>2021-11-05</span>
-                                            <br>                                                                            
-                                        </div>
-
-                                        <div class="contents_footer">
-                                            
-                                           
-                                            
-                                            
-                                                <a href="#" class="" style="margin-left: 93%;">
-                                                    <button type="submit" class="btn btn-outline-primary">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
-                                                            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
-                                                          </svg>
-                                                        <span>0</span>
-                                                    </button>
-                                                            
-                                                </a>
-                                           
-                                            
-                                        </div>
-
-                                    
-                                   
-                                </div>                            
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- End Comment -->
-
-
        
-
-        <div style="height: 200px;"></div>
+		    </c:forEach>         
+                    </div>
+                </div>
+            </div>
+        </div><!-- End Comment -->
       
 
 

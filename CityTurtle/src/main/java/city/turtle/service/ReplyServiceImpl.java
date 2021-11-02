@@ -18,9 +18,17 @@ public class ReplyServiceImpl implements ReplyService{
 
 	// 댓글 조회
 	@Override
-	public List<ReplyVO> getReplyList(int comm_seq) throws Exception {
-		return dao.getReplyList(comm_seq);
+	public List<ReplyVO> readReply(int not_seq) throws Exception {
+		return dao.readReply(not_seq);
 	}
+
+	@Override
+	public void replyInsert(ReplyVO VO) throws Exception {
+		dao.replyInsert(VO);
+		
+	}
+
+	
 
 	
 }

@@ -10,6 +10,8 @@
     <%////톰캣 안에 sever.xml/web 가지고오기 왜? /web가 바뀌면 일일히 다 고칠수없으니 %>
 	<c:set var="cpath" value="${pageContext.request.contextPath}"> </c:set>
     
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt"  prefix="fmt"%>
+    
     
     
 <!DOCTYPE html>
@@ -179,9 +181,9 @@ function goForm() {
 		<c:forEach var="vo" items="${list}">
     		<tr>
 		    	<td>${vo.not_seq}</td>
-		    	<td><a href="${cpath}/boardDetails.do?not_seq=${vo.not_seq}">${vo.not_title}</td>
+		    	<td><a href="${cpath}/boardDetails.do?not_seq= ${vo.not_seq}">${vo.not_title}</td>
 		    	<td>${vo.mb_id}</td>
-		    	<td>${vo.input_date}</td>
+		    	<td>${vo.not_date}</td>
 		    	
 	    	</tr>
 	    	

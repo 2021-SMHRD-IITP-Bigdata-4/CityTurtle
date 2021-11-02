@@ -7,7 +7,10 @@ import city.turtle.vo.ReplyVO;
 public interface ReplyService {
 	
 	// 댓글 조회
-	public List<ReplyVO> getReplyList(int comm_seq) throws Exception;
+	public List<ReplyVO> readReply(int not_seq) throws Exception;
+	
+	// 댓글 작성
+	public void replyInsert(ReplyVO VO) throws Exception;
 		
 		
 }

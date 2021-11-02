@@ -36,7 +36,6 @@ import lombok.extern.log4j.Log4j;
 
 
 @Controller
-@RequestMapping("/board*")
 public class boardController {
 
 	
@@ -56,6 +55,12 @@ public class boardController {
 
 	}
 	
+	// 댓글 페이지
+		@RequestMapping("/boardComment.do")
+		public void boardComment() {
+			// return "boardComment";
+		}
+	
 	@RequestMapping("/boardWrite.do")
 	public void boardWrite() {
 		// return "boardWrite";		
@@ -73,8 +78,10 @@ public class boardController {
 	public void boardDetails(int not_seq,Model model) throws Exception { // BoardVO = New BoardVO();
 		boardVO vo = service.boardDetails(not_seq);
 		model.addAttribute("vo",vo); // 객체 바운딩 중요!!
-		model.addAttribute("replyVO", new ReplyVO());
-		// return "boardDetails";
+		
+		List<ReplyVO> replyList = replyService.readReply(not_seq);
+		model.addAttribute("replyList", replyList);
+		 // return "boardDetails.do";
 
 	}
 
@@ -171,6 +178,23 @@ public class boardController {
 		*/
 		
 	}
+	
+	@RequestMapping("/replyInsert.do")
+	public String replyInsert(ReplyVO VO, Model model, int not_seq) throws Exception { // BoardVO = New BoardVO();
+		
+		boardVO vo = service.boardDetails(not_seq);
+		model.addAttribute("VO",vo); // 객체 바운딩 중요!!
+		
+		replyService.replyInsert(VO);
+		model.addAttribute("VO",VO);
+		
+		//저장이 성공후에는
+		return "redirect:/boardDetails.do?not_seq="+VO.getNot_seq();
+
+	}
+	
+	
+	
 	
 	
 

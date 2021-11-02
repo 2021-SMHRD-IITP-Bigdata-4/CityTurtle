@@ -4,13 +4,23 @@
    
 
 	<!-- 댓글 조회 -->
-	<select id="getReplyList" parameterType="int" resultType="city.turtle.vo.ReplyVO">
+	<select id="readReply" parameterType="int" resultType="city.turtle.vo.ReplyVO">
 		select
-			*
-		from comments
-			where COMM_SEQ = #{COMM_SEQ}		
+			com_seq, com_content, com_date, mb_id, com_like
+		from COMMENT
+			where not_seq = #{not_seq}		
 	</select>
+	
+	
     
+	<!-- 댓글 삽입 -->
+    <insert id="replyInsert" parameterType="city.turtle.vo.ReplyVO">
+        insert into COMMENT(not_seq,com_content,mb_id)
+        values(#{not_seq},#{com_content},#{mb_id})
+    </insert>
+	
+ 
+	
  
     
 </mapper>

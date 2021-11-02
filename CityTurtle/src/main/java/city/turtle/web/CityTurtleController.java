@@ -236,11 +236,7 @@ public class CityTurtleController {
 		return "service";
 	}
 	
-	// 댓글 페이지
-	@RequestMapping("/boardComment.do")
-	public String boardComment() {
-		return "boardComment";
-	}
+	
 	
 	// 파일 다운로드
 	@RequestMapping("/download.do")

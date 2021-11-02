@@ -9,11 +9,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ReplyVO {
 
-	private int rep_seq; //댓글 순번
-	private int comm_seq; //원글 순번
-	private String rep_content;
-	private String mb_id;
-	private String reg_date;
-	private int like_count;
+	private int com_seq; //댓글 순번
+	private int not_seq; //원글 순번
+	private String com_content; // 댓글 내용
+	private String com_date; // 댓글 날짜
+	private String mb_id; // 댓글 쓴 아이디
+	private int com_like; // 좋아요 수
 
 }
