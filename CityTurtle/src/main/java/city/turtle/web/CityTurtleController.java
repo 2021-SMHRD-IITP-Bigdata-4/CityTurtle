@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.OutputStream;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -22,6 +23,8 @@ import city.turtle.mapper.KakaoLoginBO;
 import city.turtle.mapper.MembersMapper;
 import city.turtle.mapper.MembersVO;
 import city.turtle.mapper.NaverLoginBO;
+import city.turtle.service.CountService;
+import city.turtle.vo.CountVO;
 
 import com.github.scribejava.core.model.OAuth2AccessToken;
 
@@ -30,10 +33,14 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken.Payload;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
 import com.google.api.client.http.HttpTransport;
 import com.google.api.client.json.JsonFactory;
+import com.google.gson.JsonObject;
 
 
 @Controller
 public class CityTurtleController {
+	
+	@Inject
+	CountService service;
 	
 	@Autowired 
 	private MembersMapper mapper;
@@ -268,6 +275,17 @@ public class CityTurtleController {
         } 
     } // https://jforj.tistory.com/134
 
-
+	@ResponseBody
+	@RequestMapping(value = "/testData.do", method = RequestMethod.GET)
+	public String test(String mb_id, Model model) throws Exception{
+		JsonObject json = new JsonObject();
+		CountVO vo = service.neckCount(mb_id);
+		CountVO vo2 = service.eyeCount(mb_id);
+		json.addProperty("pos_count", vo.getPos_count());
+		json.addProperty("pos_count2", vo2.getPos_count());
+		//model.addAttribute("vo",vo); 
+		//model.addAttribute("vo2",vo2);
+		return json.toString();
+	}
 
 }

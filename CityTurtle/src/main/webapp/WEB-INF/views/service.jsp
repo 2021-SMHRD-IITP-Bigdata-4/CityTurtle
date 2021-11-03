@@ -22,6 +22,9 @@
     
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" integrity="sha384-tKLJeE1ALTUwtXlaGjJYM3sejfssWdAaWR2s97axw4xkiAdMzQjtOjgcyw0Y50KU" crossorigin="anonymous">
    
+    <!-- ajax -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
 <!--
     
 TemplateMo 561 Purple Buzz
@@ -42,6 +45,36 @@ https://templatemo.com/tm-561-purple-buzz
 	}
 
 </style>
+
+<!-- 카운트 업 -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+    jQuery(document).ready(function( $ ) {
+        $('.counter').counterUp({
+            delay: 10,
+            time: 1000
+        });
+    });
+  </script>
+   <script type="text/javascript">
+	$.ajax({ 
+		type: "GET", 
+		url: "testData.do", 
+		data: {mb_id : "${signIn.mb_id}"},
+		dataType:'json',
+		success: function (data) { 
+			// alert("success");
+			console.log(data.pos_count); // 눈
+			console.log(data.pos_count2); // 목
+
+			$("#tCount").html(data.pos_count2);
+			$("#eCount").html(data.pos_count);
+			},
+		error : function () {
+			// alert("error"); 
+			}
+	});
+  </script>
 		
 </head>
 
@@ -88,23 +121,51 @@ https://templatemo.com/tm-561-purple-buzz
 
 
     <!-- Start Banner Hero -->
-    <section class="bg-light w-100">
-        <div class="container">
-            <div class="row d-flex align-items-center py-5">
-					
-            <div class="col-lg-12 row">
-                <div class="team-member col-md-6">
-
-                </div>
-                <div class="team-member col-md-6">
-                    
-                    
-                </div>
-            </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Banner Hero -->
+	<section class="bg-light py-5">
+		<div class="container" style="margin-top: 70px">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="row justify-content-center" style="margin-top: 50px">
+						<div class="col-sm-4">
+							<h1 class="display-1 text-center">
+								<span class="counter" id="tCount">0</span>
+							</h1>
+						</div>
+						<div class="col-sm-4">
+							<h1 class="display-1 text-center">
+								<span class="counter" id ="eCount">0</span>
+							</h1>
+						</div>
+					</div>
+					<div class="row justify-content-center" style="margin-top: 50px">
+						<div class="col-sm-4">
+							<p class="text-center">오늘 거북목 누적 횟수</p>
+						</div>
+						<div class="col-sm-4">
+							<p class="text-center">분당 눈 깜박임 횟수 </p>
+						</div>
+					</div>
+					<ul id="nav3" class="nav justify-content-center" style="margin-top: 70px">
+						<button class="btn btn-primary" onclick="">기록 시작</button>
+					</ul>
+				</div>
+				<div class="col-sm-6 ">
+					<div class="creative-content row py-3 justify-content-center">
+						<div class="col-md-7">
+							<img class="team-member-img img-fluid rounded-circle p-4"
+								id="rankId" src="./resources/img/IU.jpg" alt="Card image">
+							<ul
+								class="team-member-caption list-unstyled text-center pt-4 text-muted light-300">
+								<li>접시빌런</li>
+								<li><span>다이아</span> <i class="bx bx-diamond"></i></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Banner Hero -->
     
     <!-- Start Banner Hero -->
     <section class="bg-white w-100">
@@ -240,7 +301,9 @@ https://templatemo.com/tm-561-purple-buzz
     </footer>
     <!-- End Footer -->
 
-
+	<!-- 카운트 업 -->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+	<script src="resources/js/jquery.counterup.min.js"></script>
     <!-- Bootstrap -->
     <script src="resources/js/bootstrap.bundle.min.js"></script>
     <!-- Templatemo -->
