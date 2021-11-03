@@ -144,7 +144,7 @@ https://templatemo.com/tm-561-purple-buzz
                 </a>
             </div>
           <c:if test="${signIn == null}">
-            <form action="${cpath}/signIn.do" method="post">
+            <form name="loginForm" action="${cpath}/signIn.do" method="post">
                 <div class="form-group">
                     <input type="text" class="form-control" name="mb_id" id="mb_id" placeholder="아이디">
                 </div>
@@ -158,7 +158,7 @@ https://templatemo.com/tm-561-purple-buzz
                     </label>
                 </div>
                 <div class="d-grid gap-2">
-                    <button class="btn btn-primary btn-lg" id="login" type="submit">로그인</button>
+                    <button class="btn btn-primary btn-lg" id="login" type="button" onclick="loginCheck()">로그인</button>
                 </div>
             </form>
                 <div class="otherButton text-center">
@@ -286,8 +286,8 @@ https://templatemo.com/tm-561-purple-buzz
 	<script>
   	 
 	// 아이디 비밀번호 입력 안 한 경우
-	$("#login").on("click",function(){
-    	let mb_id = $("#mb_id").val();
+/* 	$("#login").on("click",function(){
+     	let mb_id = $("#mb_id").val();
     	let mb_pwd = $("#mb_pwd").val();
     	 
 		if(mb_id == ""){
@@ -296,7 +296,21 @@ https://templatemo.com/tm-561-purple-buzz
 			alert("비밀번호를 입력해주세요.");			 		 
 	 	}
 
-    });
+    }); */
+    
+    function loginCheck(){
+    	let loginForm = document.loginForm;
+    	let mb_id = document.getElementById('mb_id').value;
+    	let mb_pwd = document.getElementById('mb_pwd').value;
+    	
+    	if(mb_id == ""){
+    		alert("아이디를 입력해주세요.");
+    	} else if (mb_pwd == ""){
+    		alert("비밀번호를 입력해주세요.");
+    	} else {
+    		loginForm.submit();
+    	}
+    }
 	
 	// 서비스 페이지 알림
 	function service(){

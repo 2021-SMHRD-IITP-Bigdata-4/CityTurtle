@@ -198,8 +198,8 @@ https://templatemo.com/tm-561-purple-buzz
 	<script type ="text/javascript">
 
 		$('#mb_pwd2').keyup(function(){
-			let pass1 = $("#mb_pwd1").val();
-		    let pass2 = $("#mb_pwd2").val();
+			let pass1 = document.getElementById('mb_pwd1').value;
+		    let pass2 = document.getElementById('mb_pwd2').value;
 		    
 		    if (pass1 != "" || pass2 != ""){
 		    	if (pass1 == pass2){
