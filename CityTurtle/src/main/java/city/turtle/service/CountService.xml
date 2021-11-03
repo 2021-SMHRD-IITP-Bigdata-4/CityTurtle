@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="city.turtle.service.CountService">
+    
+    <!-- 거북목 횟수 -->
+    <select id="neckCount" resultType="city.turtle.vo.CountVO" parameterType="String">
+        select pos_count from POSTURE where mb_id = #{mb_id} and POS_TYPE = '눈깜빡임' and pos_time = curdate();
+    </select>
+    
+    <!-- 눈깜박임 횟수 -->
+    <select id="eyeCount" resultType="city.turtle.vo.CountVO" parameterType="String">
+        select pos_count from POSTURE where mb_id = #{mb_id} and POS_TYPE = '거북목' and pos_time = curdate();
+	</select> 
+	
+</mapper>
