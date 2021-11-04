@@ -149,7 +149,7 @@ function goForm() {
                         <option value=””>작성자</option>
 
 
-                            <input class="btn btn-outline-primary" type="search" name="" id="" style="margin-left: 30px; block-size: 34px; width: 300px;">
+                            <input class="btn btn-outline-primary" type="search" name="" id="myInput" style="margin-left: 30px; block-size: 34px; width: 300px;">
                             <button class="btn btn-outline-primary" style="margin-left: 1%;"><i class="bi bi-search"></i></button>
    
                       </select>
@@ -176,7 +176,7 @@ function goForm() {
                    </tr>
 	</thead>
 	
-	<tbody>
+	<tbody id="myTable">
 	
 		<c:forEach var="vo" items="${list}">
     		<tr>
@@ -350,6 +350,16 @@ function goForm() {
     		}
     	}
     </script>
+<script>
+	$(document).ready(function(){
+	  $("#myInput").on("keyup", function() {
+	    var value = $(this).val().toLowerCase();
+	    $("#myTable tr").filter(function() {
+	      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+	    });
+	  });
+	});
+</script>
 
 </body>
 
