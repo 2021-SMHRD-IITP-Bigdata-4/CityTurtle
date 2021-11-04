@@ -49,7 +49,7 @@ https://templatemo.com/tm-561-purple-buzz
 	}
 </style>
 
-<!-- 카운트 업 -->
+<!-- 카운트 업 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script>
     jQuery(document).ready(function( $ ) {
@@ -59,6 +59,7 @@ https://templatemo.com/tm-561-purple-buzz
         });
     });
   </script>
+-->
    <script type="text/javascript">
 	$.ajax({ 
 		type: "GET", 
@@ -307,9 +308,10 @@ https://templatemo.com/tm-561-purple-buzz
     </footer>
     <!-- End Footer -->
 
-	<!-- 카운트 업 -->
+	<!-- 카운트 업
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
 	<script src="resources/js/jquery.counterup.min.js"></script>
+	-->
     <!-- Bootstrap -->
     <script src="resources/js/bootstrap.bundle.min.js"></script>
     <!-- Templatemo -->
