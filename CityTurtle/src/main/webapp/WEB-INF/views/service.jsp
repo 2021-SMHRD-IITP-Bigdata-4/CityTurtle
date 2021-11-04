@@ -43,7 +43,10 @@ https://templatemo.com/tm-561-purple-buzz
 		margin: 0 auto;
 		width : 553px;
 	}
-
+	.bg-light.py-5.count{
+	    padding-top: 0.01rem!important;
+	    padding-bottom: 1rem!important;
+	}
 </style>
 
 <!-- 카운트 업 -->
@@ -121,10 +124,11 @@ https://templatemo.com/tm-561-purple-buzz
 
 
     <!-- Start Banner Hero -->
-	<section class="bg-light py-5">
+	<section class="bg-light py-5 count">
 		<div class="container" style="margin-top: 70px">
 			<div class="row">
-				<div class="col-sm-6">
+				<!-- <div class="col-sm-6"> -->
+				<div>
 					<div class="row justify-content-center" style="margin-top: 50px">
 						<div class="col-sm-4">
 							<h1 class="display-1 text-center">
@@ -139,17 +143,19 @@ https://templatemo.com/tm-561-purple-buzz
 					</div>
 					<div class="row justify-content-center" style="margin-top: 50px">
 						<div class="col-sm-4">
-							<p class="text-center">오늘 거북목 누적 횟수</p>
+							<p class="text-center">거북목 누적 횟수</p>
 						</div>
 						<div class="col-sm-4">
 							<p class="text-center">분당 눈 깜박임 횟수 </p>
 						</div>
 					</div>
-					<ul id="nav3" class="nav justify-content-center" style="margin-top: 70px">
-						<button class="btn btn-primary" onclick="">기록 시작</button>
-					</ul>
+					<!-- 기록 시작 div -->
+<!-- 					<ul id="nav3" class="nav justify-content-center" style="margin-top: 70px">
+						<button class="btn btn-primary">기록 시작</button>
+					</ul> -->
 				</div>
-				<div class="col-sm-6 ">
+				<!-- 영상 송출 div -->
+<!-- 				<div class="col-sm-6 ">
 					<div class="creative-content row py-3 justify-content-center">
 						<div class="col-md-7">
 							<img class="team-member-img img-fluid rounded-circle p-4"
@@ -161,7 +167,7 @@ https://templatemo.com/tm-561-purple-buzz
 							</ul>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>
