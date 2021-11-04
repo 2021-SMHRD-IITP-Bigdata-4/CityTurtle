@@ -60,6 +60,7 @@ https://templatemo.com/tm-561-purple-buzz
     });
   </script>
 -->
+<!--  
    <script type="text/javascript">
 	$.ajax({ 
 		type: "GET", 
@@ -79,6 +80,7 @@ https://templatemo.com/tm-561-purple-buzz
 			}
 	});
   </script>
+-->
 		
 </head>
 
@@ -125,10 +127,11 @@ https://templatemo.com/tm-561-purple-buzz
 
 
     <!-- Start Banner Hero -->
+    <!--  
 	<section class="bg-light py-5 count">
 		<div class="container" style="margin-top: 70px">
 			<div class="row">
-				<!-- <div class="col-sm-6"> -->
+				<div class="col-sm-6">
 				<div>
 					<div class="row justify-content-center" style="margin-top: 50px">
 						<div class="col-sm-4">
@@ -149,12 +152,12 @@ https://templatemo.com/tm-561-purple-buzz
 						<div class="col-sm-4">
 							<p class="text-center">분당 눈 깜박임 횟수 </p>
 						</div>
-					</div>
+					</div>-->
 					<!-- 기록 시작 div -->
 <!-- 					<ul id="nav3" class="nav justify-content-center" style="margin-top: 70px">
 						<button class="btn btn-primary">기록 시작</button>
-					</ul> -->
-				</div>
+					</ul>
+				</div> -->
 				<!-- 영상 송출 div -->
 <!-- 				<div class="col-sm-6 ">
 					<div class="creative-content row py-3 justify-content-center">
@@ -169,9 +172,10 @@ https://templatemo.com/tm-561-purple-buzz
 						</div>
 					</div>
 				</div> -->
-			</div>
+<!--  		</div>
 		</div>
 	</section>
+	-->
 	<!-- End Banner Hero -->
     
     <!-- Start Banner Hero -->
