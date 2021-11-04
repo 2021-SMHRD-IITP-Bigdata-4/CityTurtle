@@ -65,7 +65,7 @@ https://templatemo.com/tm-561-purple-buzz
 
 
 <script>
-	function onSignIn(googleUser) {
+/* 	function onSignIn(googleUser) {
 		  var profile = googleUser.getBasicProfile();
 		  
 		  var id_token = googleUser.getAuthResponse().id_token;
@@ -88,7 +88,7 @@ https://templatemo.com/tm-561-purple-buzz
 		    auth2.signOut().then(function () {
 		      console.log('User signed out.');
 		    });
-		  }
+		  } */
 </script>
 
 </head>
@@ -167,8 +167,8 @@ https://templatemo.com/tm-561-purple-buzz
                     <button type ="button" class = "btn" onclick="location.href='${urlKakao}'"><img src='./resources/img/logoKakao5.png'></button>
                     <button type ="button" class = "btn"><img src='./resources/img/logoGoogle4.png'></button>
                 </div>
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                <a href="#" onclick="signOut();">Sign out</a>
+<!--                 <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                <a href="#" onclick="signOut();">Sign out</a> -->
                 <div class="row">
                   <div class="col-lg-6 col-sm-12 text-lg-start text-center">
                       <button type="button" class="btn text-secondary" onclick="location.href='signUp.do'">회원가입</button>
